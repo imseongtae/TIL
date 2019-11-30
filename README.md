@@ -6,7 +6,7 @@ Today I Learned
 
 
 ### Javascript
-[Javascript](./Javascript/Javascript.md)
+[Javascript](./Javascript/README.md)
 
 ### Python
 
