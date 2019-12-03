@@ -3,10 +3,21 @@ Python
 
 ## python TIL  document
 
+## Table of Contents
+
+  1. [Variable](#Variable)
+  1. [Types](#types)
+  1. [References](#references)
+  1. [Objects](#objects)
+  1. [Arrays](#arrays)
+  1. [Destructuring](#destructuring)
+  1. [Strings](#strings)
+  1. [Functions](#functions)
+  1. [Arrow Functions](#arrow-functions)
+  1. [Classes & Constructors](#classes--constructors)
 
 
-
-### Variable(변수)
+## Variable(변수)
 - 메모리에 이름을 붙여넣고 값을 저장하는 것을 변수라고 한다. 
 - 파이썬의 변수는 별도의 타입을 지정하지 않는다.
 - 타입은 선언에 의해 결정된다.
@@ -42,8 +53,21 @@ first_name = 'ham'
 
 
 
+## Type(Data Type)
 
+타입
+- 수치형
+- 문자열: 따옴표로 감싸 나열해 놓은 것이다.
+- 문자열(확장열) 
+	- 개행이나 탭 등 문자열 안에 담기 힘든 문자가 있다.
+	- 특수한 문자는 \ 문자 뒤에 기호로 표기한다.
+	- 확장열을 사용하지 않은 경우 문자열 앞에 접두사  r을 붙인다.
+	
+```python
 
+first_name = 'ham'
+
+```
 
 
 
