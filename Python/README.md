@@ -3,18 +3,30 @@ Python
 
 ## python TIL  document
 
+프로그래밍 언어란?
+
+파이썬으로 할 수 있는 것과 없는 것....
+
+파이썬 버전 차이점
+- 엄격해진 구문, 형변환, 인코딩(utf-8로 바뀜)
+- 파이썬 환경설정하는 법
+
+
+- 파이썬은 세미콜론(;)을 사용하지 않음
+- 대문자와 소문자를 구분해서 실행
+- 주석은 #으로 표시 - 소설책 같은 코드를 쓰는 개발자가 되도록 지향해자..~ 주석과 코드의 내용이 일치하지 않을 가능성이 있으므로....
+- 들여쓰기(4칸)으로 블록을 구분
+
+
+
 ## Table of Contents
 
   1. [Variable](#Variable)
   1. [Types](#types)
-  1. [References](#references)
+  1. [Condition_Structure](#Condition_Structure)
   1. [Objects](#objects)
   1. [Arrays](#arrays)
-  1. [Destructuring](#destructuring)
-  1. [Strings](#strings)
-  1. [Functions](#functions)
-  1. [Arrow Functions](#arrow-functions)
-  1. [Classes & Constructors](#classes--constructors)
+
 
 
 ## Variable(변수)
@@ -33,6 +45,9 @@ price = input('가격을 입력하세요~~')
 count = input('개수를 입력하세요~~!')
 result = int(price) * int(count)
 print(result)
+
+print(a, b, end='--->')
+print(a, b, end='\n')
 
 ```
 네이밍 규칙: PEP8 스타일 가이드, 스네이크 표기법
@@ -103,18 +118,102 @@ member2[0] = '우마왕' # 변경 불가
 - 복합 대입 연산자
 	- 우변의 값이 수식을 계산하여 좌변에 대입한다.
 	- 우변의 수식에 좌변의 변수가 올 수 있다.
+- 문자열 연산자
+	- 문자열에도 연산자를 사용할 수 있다..! 
+
+- 정수와 문자열 연산
+	- 정수와 문자열은 섞어서 사용할 수 없으니 타입을 맞춰준 이후에 같이 사용할 수 있다.
+- 실수의 변환
+- 연산자 우선순위와 결합순서
+
+- 논리 연산자
 
 
-```python
-# 시험에 나올 확률이 높음
+```Python
 
 # 복합 대입 연산자
 a -= 1 # good
 b =- 1 # bad... 변수 b에 -1을 대입한 것과 같다.
 
+s1 = '대한민국'
+s2 = '만세~!'
+print(s2 * 3) # 만세~!만세~!만세~! 
+
+print('대한민국'+str(2002)) # 대한민국2002
+
+print(22 + int("10")) # 32
+print(22 + float("22.2")) # 42.2
+print(22 + int(float("22.2"))) # 42
+
+# 실수의 변환
+print(int(22.7)) # int 는 값을 잘라버림
+
+# 반올림
+print(round(22.6)) # 라운드는 그냥 반올림을 해줌
+print(round(123456, -3)) # 두번째 인자에 값을 넣으면, 일의 자리부터 한 칸씩 올라가서 0으로 만든다.
+
+
+
 
 ```
 
+## Condition_Structure
 
+- if 문
+	- 실행 흐름을 나눈다.
+- 비교 연산자
+	- ==, !=, <, >, <=, >=
+- 논리 연산자
+	- and, or, not
+	- 0은 거짓, 숫자 0 이 아닌 숫자 참, -1과 같은 마이너스값도 참
+	- 빈 문자열('')은 거짓, 나머지는 모두 참, 
+	- 문자열 비교는 대소문자를 구별한다.
+	- 문자열 비교가 가능하다. a 보다 b가 더 큰 문자이고 사전의 뒤쪽에 나오는 문자열을 더 큰 값으로 평가한다. 문자 단위가 길더라도 첫번째 자리값만 비교하다.
+- 블록 구조
+- else 
+- elif
+- if 문 중첩
+
+
+
+if문
+- 조건문의 참, 거짓을 판별하여 명령의 실행 여부를 결정하는 제어문이다.
+- 순서도를 작성하기에 좋다. 어디에서 설명을 해야 할 때, 내가 무엇을 만들었는데, 이러한 로직을 사용했다. 로직을 짰을 때 이러한 식으로 구성을 했다. 
+- 들여쓰기에 따라서 블록의 수준이 결정된다. 그러므로 들여쓰기 깊이가 같다면 여러명령을 실행시킬 수 있다.
+
+```python
+# 조건문과 비교연산자를 활용한 예제
+a = 5
+if a >= 5:
+    print('a는 5보다 크거나 같다.')
+if a != 6:
+    print('a는 6이 아니다!')
+
+# 조건문과 논리연산자를 활용한 예제
+a = 3
+b = 5
+if a == 3 and b == 5: 
+    print('a = 3, b = 5') # a=3,b=5 True
+if a == 5 or b == 5:
+    print('a=5, b=5 or')
+```
+
+else, elif 문
+
+- elif문은 if, else 문을 한 단계 더 확장할 수 있다.
+
+```python
+# 중첩 if 문을 사용한 예제
+age = 26
+if age< 19:
+    print('애들은 가라')
+else:
+    if age < 24:
+        print('젊음을 잘 즐기구 있을 때구만')
+    else:
+        print('성인입니다.')
+
+
+```
 
 
