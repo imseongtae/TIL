@@ -335,6 +335,13 @@ for i in range(1, 6):
 
 
 
+- 컴파일러 언어와의 차이점 컴파일러 언어는 전처리를 해주기 때문에 메인 함수 밑으로 계속 호출해준다...!
+
+- 파이썬은 인터프리터 언어이므로 함수 정의 이후에 호출을 실행한다.
+
+
+
+
 
 
 ## Control_String
@@ -357,7 +364,8 @@ print(str[-2])
 
 ```
 
-**파이썬의 문자열은 변경 불가능한 자료형이다.**  
+- **파이썬의 문자열은 변경 불가능한 자료형이다.**  
+
 ```python
 str = "python"
 str[2] = 'a'  # index 접근을 통해서 변경 불가능
@@ -366,7 +374,93 @@ print(str[2]) # TypeError
 ```
 
 
-- 문자열 검색
+- **문자열 검색**  
+
+```python
+str = "python programming"
+print(len(str))
+print(str.find('o'))
+print(str.rfind('o'))
+print(str.index('o'))
+print(str.count('o'))
+```
+
+- **문자열 조사**  
+큰 실수는 조심할 수 있으나, 문자열 조사 사용을 통해서 작은 실수를 방지할 수 있다. 확장자를 보고 해킹을 막기 위해서 유용하다.
+
+```python
+str = "python programming"
+print('a' in str) # True
+print('pro' in str) # True
+print('proa' in str) # False
+```
+- **문자열 조사 메서드**  
+
+문자열 조사 메서드를 잘 활용하면 유용하개ㅔ ㅐ사용할 수 있다. 아이디를 만들 때 다양한 조건을 검색해 볼 수 있다.
+
+```python
+height = input('키를 입력하세요')
+if height.isdecimal():
+    print('키는', height, 'cm 입니다.')
+else:
+    print('다시 입력하세요')
+```
+
+```python
+print('==== 영문자 입력받아 대소문자 검사하기 | 문자열 조사 ====')
+
+python_string = input('파이썬 철자를 입력하세요')
+if python_string.lower() == 'python':
+    print('정답입니다.')
+else:
+    print('떙')
+```
+
+
+- **문자열 변경 메서드**  
+
+
+```python
+string = 'Hello worlD'
+print(string.lower()) # hello world
+print(string.upper()) # HELLO WORLD
+print(string) # Hello worlD
+```
+
+- **replace(): 문자열 대체 메서드**  
+```python
+string = '나는 정크푸드가 좋아'
+print(string.replace('정크푸드', '건강한 음식'))
+# '나는 건강한 음식가 좋아'
+```
+
+
+- **split(): 문자열 분할 메서드**  
+구분자를 기준으로 문자열을 분할할 수 있다.  
+
+```python
+str = "엽떡->피자->불고기"
+print(str.split('->')) # ["엽떡","피자","불고기"]
+```
+
+
+
+- **문자열 포맷팅**
+	- % 를 사용한 포맷팅
+	- format 함수를 사용한 포맷팅
+
+
+```python
+# 오늘의 날짜를 출력하시오
+year, month, day = 2019, 12, 5
+print('오늘은 %d년 %d월 %d일입니다.' % (year, month, day))
+print('오늘은 {}년 {}월 {}일입니다.'.format(year,month,day))
+
+# 오늘은 2019년 12월 5일입니다.
+```
+
+
+
 
 
 
