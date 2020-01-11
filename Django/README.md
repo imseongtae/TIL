@@ -5,8 +5,7 @@
 ## Django 게시판 만들기 
 
 
-### MVT의 T를 확장하여 상속하기
-### Base template 
+### Base template: MVT의 T를 확장하여 상속하기
 
 디자인의 기준이 되는 HTML 파일을 만들어서
 다른 HTML 파일에서 기준이 되는 파일을 상속받고 화면을 구현하는 기법
