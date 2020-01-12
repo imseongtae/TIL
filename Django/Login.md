@@ -73,6 +73,45 @@
 
 ### Login
 
+#### Login Model
+
+# 클래스는 장고의 모델 클래스를 상속 받아야만 한다 이건 규칙
+
+문자열과 비밀번호는 문자열을 담을 수 있는 필드로 만들고,
+데이트 타임의 약자로 registered_dttm 변수를 생성하여 DateTimeField 메소드를 호출하여 인자로 `auto_now_add=True`를 전달
+auto_now_add 는 클래스가 저장되는 시점의 시간이 자동으로 저장되므로 현재 시간을 계산해서 넣어줄 필요가 없다.
+
+`Meta` 클래스를 통해서 테이블 이름을 지정할 수 있다
+테이블 이름을 지정하는 이유는 기본적으로 생성되는 앱들과 구분하기 위해서이다.
+
+이후 `makemigrations`을 통해 변경사항을 정리하고, `migrate`를 통해 DB에 모델의 변경사항을 적용해야 함
+
+
+```python
+from django.db import models
+
+class Fcuser(models.Model):
+    username = models.CharField(max_length=32, verbose_name='사용자명')
+    password = models.CharField(max_length=64, verbose_name='비밀번호')
+    # EmailField는 데이터가 이메일 형태인지 검증까지 해줌
+    useremail = models.EmailField(max_length=128, verbose_name='이메일')
+    registered_dttm = models.DateTimeField(auto_now_add=True, verbose_name='등록일')
+
+    # 첫 번째 방법, 두 가지의 방법이 있다고 한다.
+    # 클래스가 문자열로 변환 되었을 때, 어떻게 변환할지 결정하는 함수가 있다.
+    # username으로 반환하도록 변경을 한다. 이를 통해 관리자 페이지에 보여지는 정보를 개선할 수 있다.
+    def __str__(self):
+        return self.username
+
+    class Meta:
+        db_table = 'fastcampus_fcuser'
+        verbose_name = '사용자'
+        verbose_name_plural = '사용자'
+        # 장고는 모델을 보여줄 때 기본적으로 복수형을 보여주기 때문에
+        # 복수형에 대한 설정을 따로 해주는 것이 좋다.
+```
+
+
 #### Login View
 
 ```python
@@ -90,7 +129,7 @@ def login(request):
     return render(request, 'login.html', {'form': form})
 ```
 
-#### Login fomrs
+#### Login forms
 
 Django에서 제공하는 `form` 객체를 사용하면 view의 코드량을 줄이고 직관적으로 개선할 수 있다.  
 `forms.py`라는 파일을 만들고, 아래 `LoginForm`클래스에서 데이터를 검증한다.
@@ -139,7 +178,7 @@ class LoginForm(forms.Form):
 커스터 마이징이 가능한 것인가..!?라는 의문이 들었지만 커스터 마이징이 가능함!
 > 아직 어느 정도까지 커스터마이징이 가능한지는 모름
 `as_p` 를 하면 항목 하나하나를 p태그로 감쌈
-마찬가지로 `as_table` 등 여러가지 태그로 감싸는 기능이 있다
+마찬가지로 `as_table` 등 여러가지 태그로 감쌀 수 있다
 
 ```html
 {% extends 'base.html' %}
