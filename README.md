@@ -5,7 +5,7 @@ Learning-Documentation
 title을 클릭하면 연결됩니다.
 
 
-## Table of Contents
+## Contents
 
   1. **[Python](./Python/)**
   1. **[Django](./Django/)**
@@ -22,6 +22,9 @@ title을 클릭하면 연결됩니다.
 
 ### Database
 
+
+
+---
 
 ### 외부강연
 - 김수보 - 대디하우스 연구소장님  
