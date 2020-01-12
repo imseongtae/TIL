@@ -7,7 +7,7 @@
   1. [BaseTemplate](#BaseTemplate)
   1. [Board Model](#Board-Model)
   1. [Board View](#Board-View)
-  
+  1. [Board Template](#Board-Template)
   
 
 
@@ -70,7 +70,7 @@ admin.site.register(Board, BoardAdmin) # 보드어드민 연결
 ## BaseTemplate
 ### MVT의 T를 확장하여 상속하기
 
-```
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -101,7 +101,7 @@ admin.site.register(Board, BoardAdmin) # 보드어드민 연결
 
 ## Board Model
 
-```
+```python
 from django.db import models
 
 class Board(models.Model):
@@ -129,6 +129,30 @@ class Board(models.Model):
 
 
 ## Board View
+
+`boards` 필드를 통해서 board 를 가져온 다음 단축함수 render를 통해 Template 으로 전달한다.
+`Board.objects.all().order_by`의 메서드로 dash(-)가 포함된 값을 전달하면 역순 정렬(내림차순)을 의미한다. 
+
+```python
+from django.shortcuts import render
+from .models import Board
+# Create your views here.
+
+def board_list(request):
+    boards = Board.objects.all().order_by('-id') 
+    return render(request, 'board_list.html', {'boards': boards})
+
+```
+
+**[⬆ back to top](#table-of-contents)**
+
+
+
+## Board Template
+
+
+
+
 
 
 
