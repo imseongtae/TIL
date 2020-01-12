@@ -60,21 +60,10 @@
 
 {% block contents %}
 <!--  Login  -->
+<!--  block과 endblock 사이에 내용을 작성해주면 된다.  -->
 <div class="row mt-5">
     <div class="col-12 text-center">
         <h1>로그인</h1>
-    </div>
-</div>
-
-<div class="row mt-5">
-    <div class="col-12">
-        <form method="post" action=".">
-          <div class="form-group">
-            <label for="username">사용자 이름</label>
-            <input type="text" class="form-control" id="username" name="username" placeholder="사용자 이름">
-          </div>
-          <button type="submit" class="btn btn-primary">로그인</button>
-        </form>
     </div>
 </div>
 <!--  //Login  -->
@@ -103,8 +92,9 @@ def login(request):
 
 #### Login fomrs
 
-Django에서 제공하는 form 객체를 사용하면 view의 코드량을 줄이고 직관적으로 개선할 수 있다.  
-`forms.py`라는 파일을 만들고 아래의 코드를 작성
+Django에서 제공하는 `form` 객체를 사용하면 view의 코드량을 줄이고 직관적으로 개선할 수 있다.  
+`forms.py`라는 파일을 만들고, 아래 `LoginForm`클래스에서 데이터를 검증한다.
+
 
 ```python
 from django import forms
@@ -138,15 +128,59 @@ class LoginForm(forms.Form):
             else:
                 self.user_id = fcuser.id # 이렇게 하면 self를 통해서 클래스 변수로 들어가고 밖에서도 접근할 수 있게 된다.
 
-
-# 폼에서 데이터를 검증할 건지 포함해서 클래스를 만들면
-# 뷰에서 코드가 깔끔해진다.
-
-
-
-
 ```
 
+#### Login Template
+
+
+장고에서 관리해주는 `form` 객체는 form에서 필요한 것들을 기본적으로 만들어준다.
+`form` 객체의 태그는 장고가 자동으로 생성해주고, 사용자의 입력값을 자동으로 검증해준다.
+
+커스터 마이징이 가능한 것인가..!?라는 의문이 들었지만 커스터 마이징이 가능함!
+> 아직 어느 정도까지 커스터마이징이 가능한지는 모름
+`as_p` 를 하면 항목 하나하나를 p태그로 감쌈
+마찬가지로 `as_table` 등 여러가지 태그로 감싸는 기능이 있다
+
+```html
+{% extends 'base.html' %}
+
+{% block contents %}
+<!--  Login  -->
+<div class="row mt-5">
+    <div class="col-12 text-center">
+        <h1>로그인</h1>
+    </div>
+</div>
+
+<div class="row mt-5">
+    <div class="col-12">
+        {{ info_error }}
+        {{ password_error }}
+        {{ password_valid }}
+    </div>
+</div>
+
+<div class="row mt-5">
+    <div class="col-12">
+        <form method="post" action=".">
+            {% csrf_token %}
+            {% for field in form %}
+                <div class="form-group">
+                    <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                    <input type="{{ field.field.widget.input_type }}" class="form-control" id="{{ field.id_for_label }}"
+                           placeholder="{{ field.label }}" name="{{ field.name }}" />
+                </div>
+                {% if field.errors %}
+                    <span style="color: red">{{ field.errors }}</span>
+                {% endif %}
+            {% endfor %}
+          <button type="submit" class="btn btn-primary">로그인</button>
+        </form>
+    </div>
+</div>
+<!--  //Login  -->
+{% endblock %}
+```
 
 
 
