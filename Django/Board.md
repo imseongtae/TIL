@@ -156,7 +156,7 @@ def board_list(request):
 for 문을 통해 `boards` 요소를 순회하여 `board`에 접근하는 코드이다.
 
 
-```
+```html
 {% extends "base.html" %}
 
 {% block contents %}
@@ -195,4 +195,7 @@ for 문을 통해 `boards` 요소를 순회하여 `board`에 접근하는 코드
 {% endblock %}
 
 ```
+
+**[⬆ back to top](#table-of-contents)**
+
 
