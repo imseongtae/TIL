@@ -47,6 +47,9 @@ urlpatterns = [
 
 ### admin 
 
+`list_display`필드에는 타이틀만 나오게끔 설정  
+그리고 보드어드민 연결
+
 ```python
 from django.contrib import admin
 from .models import Board
@@ -54,9 +57,8 @@ from .models import Board
 # Register your models here.
 class BoardAdmin(admin.ModelAdmin):
     list_display = ('title', )
-    # 리스트에는 타이틀만 나오게
 
-admin.site.register(Board, BoardAdmin) # 보드어드민 연결
+admin.site.register(Board, BoardAdmin) 
 ```
 
 ### apps
@@ -101,6 +103,10 @@ admin.site.register(Board, BoardAdmin) # 보드어드민 연결
 
 ## Board Model
 
+writer 필드에는 ForeignKey를 통해 User 테이블과 연결한 값을 넣는다.
+ForeignKey 메소드의 인자값으로 전달하는 `on_delete`는 사용자가 작성한 글들에 대한 정책을 설정할 수 있다.
+`on_delete`의 값으로 `CASCADE`를 전달하면 user가 삭제되었을 때 user가 작성한 글들도 함께 삭제된다. 
+
 ```python
 from django.db import models
 
@@ -108,9 +114,7 @@ class Board(models.Model):
     title = models.CharField(max_length=128, verbose_name='제목')
     contents = models.TextField(verbose_name='내용') # 길이에 제한이 없음
     writer = models.ForeignKey('user.User', on_delete=models.CASCADE, verbose_name='작성자')
-    # ForeignKey를 통해 연결
-    # 사용자가 탈퇴할 경우..! 작성자가 사용한 글들은...! 글들에 대한 정책
-    # CASCADE를 통해 작성자가 작성한 글을 같이 삭제하는 설정
+
     registered_dttm = models.DateTimeField(auto_now_add=True, verbose_name='등록시간')
 
     def __str__(self):
@@ -121,8 +125,6 @@ class Board(models.Model):
         verbose_name = '게시글'
         verbose_name_plural = '게시글'
 ```
-
-
 
 
 **[⬆ back to top](#table-of-contents)**
