@@ -10,7 +10,7 @@ title을 클릭하면 연결됩니다.
   1. **[Python](./Python/)**
   1. **[Django](#Django)**
   1. **[JAVA](./JAVA/)**
-  1. **[외부강연](./JAVA/)**
+  1. **[외부강연]()**
    
 
 ---
@@ -26,7 +26,10 @@ title을 클릭하면 연결됩니다.
 
 
 
-## [Django](./Django/)
+## [Django](./Django/) 
+⬆ link를 클릭하면 이동
+
+
 
 ### User
 - Django 기본 Setting 
