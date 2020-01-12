@@ -80,7 +80,7 @@
 <!--  //Login  -->
 {% endblock %}
 ```
-
+**[⬆ back to top](#table-of-contents)**
 
 ### Login
 
@@ -150,7 +150,7 @@ class LoginForm(forms.Form):
 
 
 
-
+**[⬆ back to top](#table-of-contents)**
 
 
 
