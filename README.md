@@ -6,14 +6,20 @@ TIL
 
 title을 클릭하면 연결됩니다.
 
+
+## Table of Contents
+
+  1. **[Python](./Python/)**
+  1. **[Django](./Django/)**
+  1. **[JAVA](./JAVA/)**
+    
+---
+
+
 ### Javascript
 자바스크립트는 Repository 를 달리합니다.  
 링크는 이쪽으로 >> [Javascript](https://github.com/mchaemil/Javascript-cheetsheet)
 
-### [Python](./Python/README.md)
-
-
-### [JAVA](./JAVA/README.md)
 
 
 ### Database
@@ -52,18 +58,13 @@ https://twitter.com/estima7/status/1062501672616779776
 
 
 
-
-
 이렇게 변화하는 세상에 적응하기 위해 우리는 자기만의 것을 시작해야 한다.
-
-
 소장님의 솔직한 답변이 감사했다. 
 더 이롭고 좋은 일에 쓰이도록 개발하는 일에 힘쓰고 싶다는 말씀이 어떠한 종류의 울림으로 다가온다.
-
-
 덕분에 개발자로서의 태도에 대해 많은 고민을 할 수 있게 되었다. 
 
 
+---
 
 - 네이버 데이터개발자 님
 개발자가 개발하는 과정에 대한 이야기가 발제의 주된 내용이었다.
