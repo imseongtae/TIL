@@ -416,8 +416,29 @@ class LoginForm(forms.Form):
 ```
 
 
+**[⬆ back to top](#table-of-contents)**
+
+## Logout
+
+### Logout View
+
+Logout은 Login의 Template을 그대로 사용하고, View는 주소만 지정해주면 된다.
+
+```python
+def logout(request):
+
+    if request.session.get('user'):
+        del(request.session['user'])
+    return redirect('/')
+    # 템플릿이 필요가 없다. 주소만 지정해주면 된다.
+
+
+```
+
+
 
 **[⬆ back to top](#table-of-contents)**
+
 
 
 
