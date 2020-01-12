@@ -8,9 +8,11 @@ title을 클릭하면 연결됩니다.
 ## Contents
 
   1. **[Python](./Python/)**
-  1. **[Django](./Django/)**
+  1. **[Django](#Django)**
   1. **[JAVA](./JAVA/)**
-    
+  1. **[외부강연](./JAVA/)**
+   
+
 ---
 
 
@@ -22,6 +24,27 @@ title을 클릭하면 연결됩니다.
 
 ### Database
 
+
+
+## [Django](./Django/)
+
+### User
+- Django 기본 Setting 
+- MVT의 Template 상속받아 HTML 중복제거
+- 회원가입 Model, View, Template
+- Login View, Template(Login은 Model이 필요없음)
+- Django의 form 객체를 이용해서 Login 구현 
+- Logout, Logout은 View만 구현하여 해결
+
+### Board
+- Settings
+- BaseTemplate
+- Board Model
+- Board View
+- Board Template
+
+
+**[⬆ back to top](#Contents)**
 
 
 ---
