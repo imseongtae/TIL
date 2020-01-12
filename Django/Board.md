@@ -152,11 +152,47 @@ def board_list(request):
 
 ## Board Template
 
+`{% for board in boards %}` 는  
+for 문을 통해 `boards` 요소를 순회하여 `board`에 접근하는 코드이다.
 
 
+```
+{% extends "base.html" %}
 
+{% block contents %}
 
+<div class="row mt-5">
+    <div class="col-12">
+        <table class="table table-light">
+            <thead class="thead-light">
+                <tr>
+                    <th>#</th>
+                    <th>제목</th>
+                    <th>아이디</th>
+                    <th>일시</th>
+                </tr>
+            </thead>
+            <tbody class="text-dark">
+                {% for board in boards %}
+                <tr>
+                    <td>{{ board.id }}</td>
+                    <td>{{ board.title }}</td>
+                    <td>{{ board.writer }}</td>
+                    <td>{{ board.registered_dttm }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
 
+<div class="row">
+    <div class="col-12">
+        <button class="btn btn-primary">글쓰기</button>
+    </div>
+</div>
 
+{% endblock %}
 
+```
 
