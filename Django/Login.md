@@ -2,6 +2,7 @@
 
 ## Table of Contents
 
+  1. [Settings](#Settings)
   1. [BaseTemplate](#BaseTemplate)
   1. [Login](#Login)
   1. [References](#references)
@@ -21,24 +22,28 @@
 INSTALLED_APPS = [
     '...'
     'board',
-    'fcuser',
+    'user',
 ]
 ```
 
 #### URL and View Mapping
 
-`urls.py`에서 클라이언트의 요청을 분석하는 URLconf를 코딩, URL과 View를 매핑하는 작업
+`urls.py`에서 클라이언트의 요청을 분석하는 URLconf를 코딩, URL과 View를 매핑하는 작업  
 'config'에서 작성
 
 ```python 
-INSTALLED_APPS = [
-    '...'
-    'board',
-    'fcuser',
+from django.contrib import admin
+from django.urls import path, include
+from fcuser.views import home
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('fcuser/', include('fcuser.urls')),
+    path('', home),
 ]
 ```
 
-'application '에서 작성
+`application`에서 작성
 
 ```python 
 from django.urls import path
@@ -50,8 +55,30 @@ urlpatterns = [
     path('logout/', views.logout, name='logout'),
 
 ]
+```  
+
+#### admin 
+
+관리자 페이지의 정보를 개선하는 두 가지 방법 중 하나(다른 한 가지는 model클래스에서 작성)로
+리스트에서 더 많은 정보를 원할 때는 어드민 클래스 안에다가 명시할 수 있다.
+list_display 라는 필드를 통해 내가 출력하고 싶은 필드를 선택할 수 있다.
+인자에 값을 넘겨서 명시하게 되면 클래스 객체가 리스트업이 되는 게 아니라 모델 클래스 안에 있는 필드들이 리스트업 된다.
+그래서 사용자명과 비밀번호가 나오게 되고, 보여지는 정보들이 개선된다.
+
+```python
+from django.contrib import admin
+from .models import Fcuser
+
+# Register your models here.
+
+class FcuserAdmin(admin.ModelAdmin):
+    list_display = ('username', 'password')
+
+admin.site.register(Fcuser, FcuserAdmin)
 ```
 
+
+**[⬆ back to top](#table-of-contents)**
 
 
 ### BaseTemplate
