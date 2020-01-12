@@ -9,8 +9,8 @@
   1. [BaseTemplate](#BaseTemplate)
   1. [Register](#Register)  
   1. [Login](#Login)
-  1. [References](#references)
-
+  1. [Logout](#Logout)
+  
 
 ---
 
