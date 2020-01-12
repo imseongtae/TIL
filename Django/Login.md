@@ -11,6 +11,48 @@
 
 ---
 
+### Settings
+
+
+#### Add Application 
+`settings.py`에서 사용할 애플리케이션 등록
+
+```python 
+INSTALLED_APPS = [
+    '...'
+    'board',
+    'fcuser',
+]
+```
+
+#### URL and View Mapping
+
+`urls.py`에서 클라이언트의 요청을 분석하는 URLconf를 코딩, URL과 View를 매핑하는 작업
+'config'에서 작성
+
+```python 
+INSTALLED_APPS = [
+    '...'
+    'board',
+    'fcuser',
+]
+```
+
+'application '에서 작성
+
+```python 
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('register/', views.register, name='register'),
+    path('login/', views.login, name='login'),
+    path('logout/', views.logout, name='logout'),
+
+]
+```
+
+
 
 ### BaseTemplate
 #### MVT의 T를 확장하여 상속하기
@@ -75,8 +117,6 @@
 
 #### Login Model
 
-# 클래스는 장고의 모델 클래스를 상속 받아야만 한다 이건 규칙
-
 문자열과 비밀번호는 문자열을 담을 수 있는 필드로 만들고,
 데이트 타임의 약자로 registered_dttm 변수를 생성하여 DateTimeField 메소드를 호출하여 인자로 `auto_now_add=True`를 전달
 auto_now_add 는 클래스가 저장되는 시점의 시간이 자동으로 저장되므로 현재 시간을 계산해서 넣어줄 필요가 없다.
@@ -90,6 +130,7 @@ auto_now_add 는 클래스가 저장되는 시점의 시간이 자동으로 저�
 ```python
 from django.db import models
 
+# model에 작성된 클래스는 장고의 모델 클래스를 상속 받아야만 한다는 규칙을 가진다
 class Fcuser(models.Model):
     username = models.CharField(max_length=32, verbose_name='사용자명')
     password = models.CharField(max_length=64, verbose_name='비밀번호')
