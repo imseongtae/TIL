@@ -14,7 +14,7 @@
 
 ---
 
-### Settings
+## Settings
 
 
 #### Add Application 
