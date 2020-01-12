@@ -1,14 +1,16 @@
-# Login/Logout
+# USER
+
+
+
 
 ## Table of Contents
 
   1. [Settings](#Settings)
   1. [BaseTemplate](#BaseTemplate)
+  1. [Register](#Register)  
   1. [Login](#Login)
   1. [References](#references)
-  1. [Objects](#objects)
-  1. [Arrays](#arrays)
-  1. [Destructuring](#destructuring)
+
 
 ---
 
@@ -60,9 +62,8 @@ urlpatterns = [
 #### admin 
 
 관리자 페이지의 정보를 개선하는 두 가지 방법 중 하나(다른 한 가지는 model클래스에서 작성)로
-리스트에서 더 많은 정보를 원할 때는 어드민 클래스 안에다가 명시할 수 있다.
-list_display 라는 필드를 통해 내가 출력하고 싶은 필드를 선택할 수 있다.
-인자에 값을 넘겨서 명시하게 되면 클래스 객체가 리스트업이 되는 게 아니라 모델 클래스 안에 있는 필드들이 리스트업 된다.
+리스트에서 더 많은 정보를 원할 때는 `admin.py`의 어드민 클래스에 명시할 수 있다. list_display 라는 필드를 통해 출력하고 싶은 필드를 선택할 수 있다.  
+인자에 값을 넘겨서 명시하게 되면 클래스 객체가 리스트업이 되는 게 아니라 모델 클래스 안에 있는 필드들이 리스트업된다.
 그래서 사용자명과 비밀번호가 나오게 되고, 보여지는 정보들이 개선된다.
 
 ```python
@@ -76,6 +77,18 @@ class FcuserAdmin(admin.ModelAdmin):
 
 admin.site.register(Fcuser, FcuserAdmin)
 ```
+
+#### apps
+
+`apps.py` 클래스에 아래의 내용을 기입
+
+```python
+from django.apps import AppConfig
+
+class UserConfig(AppConfig):
+    name = 'user'
+```
+
 
 
 **[⬆ back to top](#table-of-contents)**
@@ -140,9 +153,11 @@ admin.site.register(Fcuser, FcuserAdmin)
 ```
 **[⬆ back to top](#table-of-contents)**
 
-### Login
 
-#### Login Model
+
+### Register
+
+#### Register Model
 
 문자열과 비밀번호는 문자열을 담을 수 있는 필드로 만들고,
 데이트 타임의 약자로 registered_dttm 변수를 생성하여 DateTimeField 메소드를 호출하여 인자로 `auto_now_add=True`를 전달
@@ -178,6 +193,128 @@ class Fcuser(models.Model):
         # 장고는 모델을 보여줄 때 기본적으로 복수형을 보여주기 때문에
         # 복수형에 대한 설정을 따로 해주는 것이 좋다.
 ```
+
+#### Register View
+
+url을 통해서 사용자 요청정보가 request 를 통해 들어온다. 이 때 레지스터로 들어오는 요청은 두 가지가 생긴다. 주소 URL로 들어오는 경우와 `Submit` 버튼을 눌러서 들어오는 경우이다.    
+
+
+    # 가지고 온 값으로 Fcuser를 생성해보기, 그러기 위해서는 클래스를 사용해야 하므로
+    # 클래스를 가져오기
+    # 클래스 변수를 만들건데, 필드를 만들 때 지정을 한다.
+    
+```python
+from django.http import HttpResponse
+from django.shortcuts import render, redirect
+from django.contrib.auth.hashers import make_password, check_password
+from .models import Fcuser
+from .forms import LoginForm
+
+def register(request):  
+  if request.method == 'GET':
+    # 경로는 템플릿 폴더를 바라보므로 경로를 따로 표현할 필요는 없다
+    return render(request, 'register.html')
+  elif request.method == 'POST':    
+    username = request.POST.get('username', None)
+    password = request.POST.get('password', None)
+    re_password = request.POST.get('re-password', None)
+    useremail = request.POST.get('useremail', None)
+    # form 을 통해 넘어오는 input 속성의 name 값을 키로 사용해서 값을 얻는다.
+
+    res_data = {}
+    # 먼저 모든 값들이 들어와 있는지 확인을 하고 들어오지 않았을 때 아래 메시지 출력
+    if not (username and password and re_password and useremail):
+        res_data['info_error'] = '회원정보가 올바르게 입력되지 않았습니다.'
+    elif password != re_password:
+        res_data['password_error'] = '비밀번호가 다릅니다.'
+    else:
+      fcuser = Fcuser(
+        username=username,
+        useremail=useremail,
+        # 장고에서는 암호화해서 저장하는 make_password 메서드를 지원해줌
+        # password=password가 아니라 아래처럼 더 개선된 방법으로 작성할 수 있다.
+        password=make_password(password) # 비밀번호를 함수 안에 전달
+      )
+    # 이렇게 하고서 저장을 하면 끝이남
+    fcuser.save() # 클래스 변수 객체를 하나 생성하고 저장하면 된다..!
+
+
+
+    # 로직이 들어간 건 아니지만 입력받은 값으로 로직이 생성되고
+    # 입력 받은 값으로 객체가 생성이 되고 이 만들 객체가 디비에 실제 생성이 되는지 확인해보기
+
+    return render(request, 'register.html', res_data)
+    # res_data 가 html로 전달이 되는데!
+    # 이를 출력하는 코드를 html에서 만들면 된다.
+    # 키와 안에서 사용할 변수가 매핑이 된다.
+
+    # 뭔가 반짝하고서 사라짐
+    # 포스트 분기를 통해 객체를 생성하고 저정 한 후에
+    # return render() 를 통해 페이지를 새로 호춣하기 때문에 페이지가 리로드?가 된 것 같다.
+
+    # html 코드로 반환했기 떄문에
+
+```
+
+#### Register Template
+
+```html
+{% extends 'base.html' %}
+
+{% block contents %}
+<div class="row mt-5">
+    <div class="col-12 text-center">
+        <h1>회원가입</h1>
+    </div>
+</div>
+
+<div class="row mt-5">
+    <div class="col-12">
+        {{ info_error }}
+    </div>
+</div>
+
+<div class="row mt-5">
+    <div class="col-12">
+        <form method="post" action=".">
+          {% csrf_token %}
+          <div class="form-group">
+            <label for="username">사용자 이름</label>
+            <input type="text" class="form-control" id="username" name="username" placeholder="사용자 이름">
+          </div>
+          <div class="form-group">
+            <label for="password">비밀번호</label>
+            <input type="password" class="form-control" placeholder="비밀번호" id="password" name="password">
+                {{ password_error }}
+          </div>
+          <div class="form-group">
+            <label for="re-password">비밀번호 확인</label>
+            <input type="password" class="form-control" placeholder="비밀번호 확인" id="re-password" name="re-password">
+                {{ password_error }}
+          </div>
+          <div class="form-group">
+            <label for="useremail">이메일 주소</label>
+            <input type="email" class="form-control" placeholder="이메일 주소" id="useremail" name="useremail">
+          </div>
+
+          <button type="submit" class="btn btn-primary">등록</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
+```
+
+
+**[⬆ back to top](#table-of-contents)**
+
+
+
+### Login
+
+#### Login Model
+
+Login Model은 reigister 모델을 그대로 사용
 
 
 #### Login View
