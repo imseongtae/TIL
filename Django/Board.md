@@ -6,8 +6,13 @@
   1. [Settings](#Settings)
   1. [BaseTemplate](#BaseTemplate)
   1. [Board Model](#Board-Model)
-  1. [Board View](#Board-View)
+  1. [Board List View](#Board-List-View)
   1. [Board List Template](#Board-List-Template)
+  1. [Board Write View](#Board-Write-View)
+  1. [Board Detail View](#Board-Detail-View)  
+  1. [Board Write Template](#Board-Write-Template)
+  1. [Board Detail Template](#Board-Detail-Template)
+  
   
 
 
@@ -130,7 +135,7 @@ class Board(models.Model):
 **[⬆ back to top](#table-of-contents)**
 
 
-## Board View
+## Board List View
 
 `boards` 필드를 통해서 board 를 가져온 다음 단축함수 render를 통해 Template 으로 전달한다.
 `Board.objects.all().order_by`의 메서드로 dash(-)가 포함된 값을 전달하면 역순 정렬(내림차순)을 의미한다. 
