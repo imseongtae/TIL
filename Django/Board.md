@@ -7,7 +7,7 @@
   1. [BaseTemplate](#BaseTemplate)
   1. [Board Model](#Board-Model)
   1. [Board View](#Board-View)
-  1. [Board Template](#Board-Template)
+  1. [Board List Template](#Board-List-Template)
   
 
 
@@ -150,7 +150,7 @@ def board_list(request):
 
 
 
-## Board Template
+## Board List Template
 
 `{% for board in boards %}` 는  
 for 문을 통해 `boards` 요소를 순회하여 `board`에 접근하는 코드이다.
@@ -197,5 +197,124 @@ for 문을 통해 `boards` 요소를 순회하여 `board`에 접근하는 코드
 ```
 
 **[⬆ back to top](#table-of-contents)**
+
+
+
+## Board Write View
+로그인과 비슷한 점이 있음.  
+상세보기로 넘길지 List로 넘길지 글을 작성 이후에 결정할 수 있음
+
+```python
+def board_write(request):
+  if request.method == 'POST':
+    form = BoardForm(request.POST) # POST일 때 데이터를 넣는다.
+    if form.is_valid():
+      # 세션에서 유저 아이디를 가져오고
+      user_id = request.session.get('user');
+      # 유저아이디를 이용해 모델에서 pk가 user_id인 것을 가져옴
+      fcuser = Fcuser.objects.get(pk=user_id)
+
+      board = Board()
+      board.title = form.cleaned_data['title']
+      board.contents = form.cleaned_data['contents']
+      # 사용자가 로그인했으면 정보가 session에 들어있다.
+      board.writer = fcuser # fcuser 를 writer에 추가
+      board.save() # save를 통해 데이터베이스에 저장이 된다.
+
+      # redirect 경로
+      return redirect('/board/list/')
+  else:
+    form = BoardForm()
+  return render(request, 'board_write.html', {'form': form})
+```
+
+
+## Board Detail View
+
+상세보기를 통해 확인하는 현재 글이 몇 번째 글인지 구별할 수 있어야 함  
+이를 위해 pk을 board_detail 함수의 인자값으로 받고 `Board.objects.get` 메소드의 인자로 넘김
+- 예외처리와 로그인하지 않았을 경우에 대한 처리를 해야 함
+
+```python
+def board_detail(request, pk):
+  board = Board.objects.get(pk=pk)
+  return render(request, 'board_detail.html', {'board': board})
+```
+
+
+**[⬆ back to top](#table-of-contents)**
+
+
+
+
+
+## Board Write Template
+
+```html
+{% extends "base.html" %}
+
+{% block contents %}
+
+<div class="row mt-5">
+  <div class="col-12">
+    <form method="post" action=".">
+      {% csrf_token %}
+      {% for field in form %}
+        <div class="form-group">
+          <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+          {{ field.field.widget.name }}
+          <!--  새로운 태그를 만들어야 한다.-->
+          {% ifequal field.name 'contents' %}
+              <textarea class="form-control" name="{{ field.name }}" placeholder="{{ field.label }}"></textarea>
+          {% else %}
+          <input type="{{ field.field.widget.input_type }}" class="form-control" id="{{ field.id_for_label }}"
+                 placeholder="{{ field.label }}" name="{{ field.name }}" />
+          {% endifequal %}
+        </div>
+      
+        {% if field.errors %}
+            <span style="color: red">{{ field.errors }}</span>
+        {% endif %}
+      {% endfor %}
+      <button type="submit" class="btn btn-primary">글쓰기</button>
+    </form>
+    
+  </div>
+</div>
+
+{% endblock %}
+```
+
+
+## Board Detail Template
+작성한 글의 내용을 확인하는 Board Detail Template
+
+```html
+{% extends "base.html" %}
+
+{% block contents %}
+
+<div class="row mt-5">
+  <div class="col-12">
+    <div class="form-group">
+      <label for="title">제목</label>
+      <input type="text" class="form-control" id="title" value="{{ board.title }}" readonly />
+      <label for="contents">내용</label>
+      <textarea class="form-control" readonly>{{ board.contents }}</textarea>
+    </div>
+
+    <button class="btn btn-primary">돌아가기</button>
+  </div>
+</div>
+
+{% endblock %}
+```
+
+
+
+
+**[⬆ back to top](#table-of-contents)**
+
+
 
 
