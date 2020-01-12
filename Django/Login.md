@@ -17,7 +17,7 @@
 ## Settings
 
 
-#### Add Application 
+### Add Application 
 `settings.py`에서 사용할 애플리케이션 등록
 
 ```python 
@@ -28,7 +28,7 @@ INSTALLED_APPS = [
 ]
 ```
 
-#### URL and View Mapping
+### URL and View Mapping
 
 `urls.py`에서 클라이언트의 요청을 분석하는 URLconf를 코딩, URL과 View를 매핑하는 작업  
 'config'에서 작성
@@ -59,7 +59,7 @@ urlpatterns = [
 ]
 ```  
 
-#### admin 
+### admin 
 
 관리자 페이지의 정보를 개선하는 두 가지 방법 중 하나(다른 한 가지는 model클래스에서 작성)로
 리스트에서 더 많은 정보를 원할 때는 `admin.py`의 어드민 클래스에 명시할 수 있다. list_display 라는 필드를 통해 출력하고 싶은 필드를 선택할 수 있다.  
@@ -71,14 +71,13 @@ from django.contrib import admin
 from .models import Fcuser
 
 # Register your models here.
-
 class FcuserAdmin(admin.ModelAdmin):
     list_display = ('username', 'password')
 
 admin.site.register(Fcuser, FcuserAdmin)
 ```
 
-#### apps
+### apps
 
 `apps.py` 클래스에 아래의 내용을 기입
 
@@ -94,8 +93,8 @@ class UserConfig(AppConfig):
 **[⬆ back to top](#table-of-contents)**
 
 
-### BaseTemplate
-#### MVT의 T를 확장하여 상속하기
+## BaseTemplate
+### MVT의 T를 확장하여 상속하기
 
 디자인의 기준이 되는 HTML 파일을 만들어서
 다른 HTML 파일에서 기준이 되는 파일을 상속받고 화면을 구현하는 기법
@@ -105,7 +104,7 @@ class UserConfig(AppConfig):
 1. 중복을 제거
 1. 유지보수가 용이
 
-#### 상속하는 방법
+### 상속하는 방법
 
 1. children 파일에서 구현할 영역을 `{% block contents %}`와 `{% endblock %}`를 통해 설정
 
@@ -130,7 +129,7 @@ class UserConfig(AppConfig):
 </html>
 ```
 
-#### 상속받는 방법
+### 상속받는 방법
 
 1. `{% extends 'base.html' %}` 최상단에 작성
 1. 시작 태그처럼 사용 `{% block contents %}`
@@ -155,9 +154,9 @@ class UserConfig(AppConfig):
 
 
 
-### Register
+## Register
 
-#### Register Model
+### Register Model
 
 문자열과 비밀번호는 문자열을 담을 수 있는 필드로 만들고,
 데이트 타임의 약자로 registered_dttm 변수를 생성하여 DateTimeField 메소드를 호출하여 인자로 `auto_now_add=True`를 전달
@@ -194,15 +193,20 @@ class Fcuser(models.Model):
         # 복수형에 대한 설정을 따로 해주는 것이 좋다.
 ```
 
-#### Register View
+### Register View
 
 url을 통해서 사용자 요청정보가 request 를 통해 들어온다. 이 때 레지스터로 들어오는 요청은 두 가지가 생긴다. 주소 URL로 들어오는 경우와 `Submit` 버튼을 눌러서 들어오는 경우이다.    
 
 
-    # 가지고 온 값으로 Fcuser를 생성해보기, 그러기 위해서는 클래스를 사용해야 하므로
-    # 클래스를 가져오기
-    # 클래스 변수를 만들건데, 필드를 만들 때 지정을 한다.
-    
+#### URL을 통해서 들어오는 경우
+URL을 통해서 들어오는 경우를 구분하기 위해서 request 정보의 method를 통한 정보를 전송하는 방식을 확인하고, 값이 ‘GET’이라면 render 단축함수의 인자로 request와 template을 전송한다.
+	
+#### Submit 버튼을 통해서 들어오는 경우
+
+request 정보의 method를 통해 들어온 값이 ‘POST’라고 한다면 render 단축함수의 인자로 request와 template 그리고 template으로 함께 전달할 정보를 전송한다  
+input 태그를 통해 전달받은 사용자 데이터를 저장하기 위해서 input 태그의 Attribute 중 name 을 key값으로 하고, value를 가져온다.  
+get('username', None) 메서드를 통해서 대상의 값이 없다면 None 을 저장하고, 아래쪽의 조건문을 통해서 데이터가 유효하게 입력되었는지 검증한다. 데이터를 검증한 후, 객체에 담아서 template에 전달하여 사용자의 입력값이 올바르지 않다면 그 처리를 반환한다. 
+
 ```python
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
@@ -238,25 +242,10 @@ def register(request):
     # 이렇게 하고서 저장을 하면 끝이남
     fcuser.save() # 클래스 변수 객체를 하나 생성하고 저장하면 된다..!
 
-
-
-    # 로직이 들어간 건 아니지만 입력받은 값으로 로직이 생성되고
-    # 입력 받은 값으로 객체가 생성이 되고 이 만들 객체가 디비에 실제 생성이 되는지 확인해보기
-
     return render(request, 'register.html', res_data)
-    # res_data 가 html로 전달이 되는데!
-    # 이를 출력하는 코드를 html에서 만들면 된다.
-    # 키와 안에서 사용할 변수가 매핑이 된다.
-
-    # 뭔가 반짝하고서 사라짐
-    # 포스트 분기를 통해 객체를 생성하고 저정 한 후에
-    # return render() 를 통해 페이지를 새로 호춣하기 때문에 페이지가 리로드?가 된 것 같다.
-
-    # html 코드로 반환했기 떄문에
-
 ```
 
-#### Register Template
+### Register Template
 
 ```html
 {% extends 'base.html' %}
@@ -310,14 +299,14 @@ def register(request):
 
 
 
-### Login
+## Login
 
-#### Login Model
+### Login Model
 
 Login Model은 reigister 모델을 그대로 사용
 
 
-#### Login View
+### Login View
 
 ```python
 def login(request):
@@ -334,7 +323,7 @@ def login(request):
     return render(request, 'login.html', {'form': form})
 ```
 
-#### Login forms
+### Login forms
 
 Django에서 제공하는 `form` 객체를 사용하면 view의 코드량을 줄이고 직관적으로 개선할 수 있다.  
 `forms.py`라는 파일을 만들고, 아래 `LoginForm`클래스에서 데이터를 검증한다.
@@ -374,7 +363,7 @@ class LoginForm(forms.Form):
 
 ```
 
-#### Login Template
+### Login Template
 
 
 장고에서 관리해주는 `form` 객체는 form에서 필요한 것들을 기본적으로 만들어준다.

@@ -461,8 +461,79 @@ print('오늘은 {}년 {}월 {}일입니다.'.format(year,month,day))
 
 
 
+## List and Tuple  
+변수는 하나의 값만을 저장하지만 컬렉션 자료형은 여러개의 값을 집합으로 저장한다. 
+
+###### 여기서 간단한팁!
+~~~
+컬렉션의 이름을 지을 때는 복수형 이름이나 
+컬렉션의 종류를 접미사로 붙이는 방식이 많이 사용된다. 
+예) _list, _dict, _set
+
+~~~
+
+- 리스트란?
+- 이차원 리스트
+- 리스트 관리
+	- 삽입, 삭제, 검색, 정렬
+- 튜플
 
 
+- **리스트란?**  
+파이썬에서 리스트는 목록이라는 뜻으로 다양한 데이터를 담을 수 있고, 내용을 변경할 수 있는 자료형이다. 
+
+```python
+score = [70, 80, 90]
+print(score[1]) # 80
+score[1] = 30
+print(score) # [70, 30, 90]
+```	
+
+- 리스트는 반복문과 함께 사용할 때 위력이 커진다.  
+
+```python
+score = [90, 80, 70, 5, 56]
+sum = 0
+for sub in score:
+	sum += sub
+print(sum) # 301
+```
+
+
+- **in, not in(소속 검사)**  
+자료안에 어떤 요소가 들어있는지 확인하고 싶을 때는 in 연산자를 사용하고, 반대로 요소가 없음을 검사하려면 not in을 사용한다.
+
+```python
+numbers = [1,2,3,4,5]
+print(3 in numbers) # True
+```
+
+
+- **two dimensional array**
+
+```python
+two_arr = [[1,2,3],[4,5],[6,7]]
+for nums in two_arr:
+  for num in nums:
+    print(num, end='')
+  print()
+	
+# 1 2 3
+# 4 5 
+# 6 7 
+```
+
+- **리스트 컴프리헨션**
+	- 리스트 안의 요소가 일정한 규칙을 가지고 있을 때 사용할 수 있는 문법이다.
+	- if 조건은 필요 없을 시 생략한다.
+~~~
+[수식 for 변수 in 리스트 if 조건]
+~~~
+
+```python
+comprehension = [x*2 for x in range(1,11) if x % 3 == 0]
+print(comprehension) # [6,12,18]
+```
 
 
 
