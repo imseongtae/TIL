@@ -362,9 +362,9 @@ class LoginForm(forms.Form):
         password = cleaned_data.get('password')
 
         if username and password:
-			try:			
+			try:
             	user = User.objects.get(username=username)
-			except User.DoesNotExist:
+			except User.DoesNotExist:			
 				self.add_error('username', '아이디가 없습니다.')
                 return # 예외 이후 코드의 진행을 return을 통해 막음
 				
