@@ -15,7 +15,6 @@
   
   
 
-
 ---
 
 ## Settings
@@ -34,7 +33,7 @@ INSTALLED_APPS = [
 ```python
 from django.contrib import admin
 from django.urls import path, include
-from fcuser.views import home
+from user.views import home
 
 urlpatterns = [
     path('board/', include('board.urls')),
@@ -214,13 +213,13 @@ request 메서드를 확인하기 전에 일단 사용자가 있는지 먼저 �
 ```python
 from django.shortcuts import render, redirect
 from django.http import Http404
-from fcuser.models import User
+from user.models import User
 from .models import Board
 from .forms import BoardForm
 
 def board_write(request):
   if not request.session.get('user'):
-    return redirect('/fcuser/login')
+    return redirect('/user/login')
 
   if request.method == 'POST':
     form = BoardForm(request.POST) # POST일 때 데이터를 넣는다.
@@ -228,13 +227,13 @@ def board_write(request):
       # 세션에서 유저 아이디를 가져오고
       user_id = request.session.get('user');
       # 유저아이디를 이용해 모델에서 pk가 user_id인 것을 가져옴
-      fcuser = Fcuser.objects.get(pk=user_id)
+      user = User.objects.get(pk=user_id)
 
       board = Board()
       board.title = form.cleaned_data['title']
       board.contents = form.cleaned_data['contents']
       # 사용자가 로그인했으면 정보가 session에 들어있다.
-      board.writer = fcuser # fcuser 를 writer에 추가
+      board.writer = user # user 를 writer에 추가
       board.save() # save를 통해 데이터베이스에 저장이 된다.
 
       # redirect 경로
