@@ -7,9 +7,16 @@
 
   1. [Settings](#Settings)
   1. [BaseTemplate](#BaseTemplate)
-  1. [Register](#Register)  
-  1. [Login](#Login)
+  1. [Register](#Register)
+  1. [Register Model](#Register-Model)  
+  1. [Register View](#Register-View)  
+  1. [Register Template](#Register-Template)    
+  1. [Login](#Login)  
+  1. [Login View](#Login-View)
+  1. [Login Forms](#Login-Forms)
+  1. [Login Template](#Login-Template)  
   1. [Logout](#Logout)
+  1. [Logout](#Logout-View)
   
 
 ---
@@ -156,7 +163,7 @@ class UserConfig(AppConfig):
 
 ## Register
 
-### Register Model
+## Register Model
 
 문자열과 비밀번호는 문자열을 담을 수 있는 필드로 만들고,
 데이트 타임의 약자로 registered_dttm 변수를 생성하여 DateTimeField 메소드를 호출하여 인자로 `auto_now_add=True`를 전달
@@ -193,15 +200,15 @@ class Fcuser(models.Model):
         # 복수형에 대한 설정을 따로 해주는 것이 좋다.
 ```
 
-### Register View
+## Register View
 
 url을 통해서 사용자 요청정보가 request 를 통해 들어온다. 이 때 레지스터로 들어오는 요청은 두 가지가 생긴다. 주소 URL로 들어오는 경우와 `Submit` 버튼을 눌러서 들어오는 경우이다.    
 
 
-#### URL을 통해서 들어오는 경우
+### URL을 통해서 들어오는 경우
 URL을 통해서 들어오는 경우를 구분하기 위해서 request 정보의 method를 통한 정보를 전송하는 방식을 확인하고, 값이 ‘GET’이라면 render 단축함수의 인자로 request와 template을 전송한다.
 	
-#### Submit 버튼을 통해서 들어오는 경우
+### Submit 버튼을 통해서 들어오는 경우
 
 request 정보의 method를 통해 들어온 값이 ‘POST’라고 한다면 render 단축함수의 인자로 request와 template 그리고 template으로 함께 전달할 정보를 전송한다  
 input 태그를 통해 전달받은 사용자 데이터를 저장하기 위해서 input 태그의 Attribute 중 name 을 key값으로 하고, value를 가져온다.  
@@ -245,7 +252,7 @@ def register(request):
     return render(request, 'register.html', res_data)
 ```
 
-### Register Template
+## Register Template
 
 ```html
 {% extends 'base.html' %}
@@ -301,12 +308,12 @@ def register(request):
 
 ## Login
 
-### Login Model
+## Login Model
 
 Login Model은 reigister 모델을 그대로 사용
 
 
-### Login View
+## Login View
 
 ```python
 def login(request):
@@ -323,7 +330,7 @@ def login(request):
     return render(request, 'login.html', {'form': form})
 ```
 
-### Login forms
+## Login Forms
 
 Django에서 제공하는 `form` 객체를 사용하면 view의 코드량을 줄이고 직관적으로 개선할 수 있다.  
 `forms.py`라는 파일을 만들고, 아래 `LoginForm`클래스에서 데이터를 검증한다.
@@ -331,7 +338,7 @@ Django에서 제공하는 `form` 객체를 사용하면 view의 코드량을 줄
 
 ```python
 from django import forms
-from .models import Fcuser
+from .models import User
 from django.contrib.auth.hashers import check_password
 
 class LoginForm(forms.Form):
@@ -355,15 +362,20 @@ class LoginForm(forms.Form):
         password = cleaned_data.get('password')
 
         if username and password:
-            fcuser = Fcuser.objects.get(username=username)
-            if not check_password(password, fcuser.password):
+			try:			
+            	user = User.objects.get(username=username)
+			except User.DoesNotExist:
+				self.add_error('username', '아이디가 없습니다.')
+                return # 예외 이후 코드의 진행을 return을 통해 막음
+				
+            if not check_password(password, user.password):
                 self.add_error('password', '비밀번호가 틀렸습니다.') # 특정 필드에 에러를 넣는 함수
             else:
-                self.user_id = fcuser.id # 이렇게 하면 self를 통해서 클래스 변수로 들어가고 밖에서도 접근할 수 있게 된다.
+                self.user_id = user.id # 이렇게 하면 self를 통해서 클래스 변수로 들어가고 밖에서도 접근할 수 있게 된다.
 
 ```
 
-### Login Template
+## Login Template
 
 
 장고에서 관리해주는 `form` 객체는 form에서 필요한 것들을 기본적으로 만들어준다.
@@ -420,7 +432,7 @@ class LoginForm(forms.Form):
 
 ## Logout
 
-### Logout View
+## Logout View
 
 Logout은 Login의 Template을 그대로 사용하고, View는 주소만 지정해주면 된다.
 
