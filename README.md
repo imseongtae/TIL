@@ -43,8 +43,12 @@ title을 클릭하면 연결됩니다.
 - Settings
 - BaseTemplate
 - Board Model
-- Board View
-- Board Template
+- Board List View
+- Board List Template
+- Board Write View
+- Board Detail View
+- Board Write Template
+- Board Detail Template
 
 
 **[⬆ back to top](#Contents)**
