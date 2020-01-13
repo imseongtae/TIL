@@ -207,10 +207,21 @@ for 문을 통해 `boards` 요소를 순회하여 `board`에 접근하는 코드
 
 ## Board Write View
 로그인과 비슷한 점이 있음.  
-상세보기로 넘길지 List로 넘길지 글을 작성 이후에 결정할 수 있음
+상세보기로 넘길지 List로 넘길지 글을 작성 이후에 결정할 수 있음  
+로그인하지 않은 사용자가 글을 작성하려고 할 때 예외처리를 해야 하므로  
+request 메서드를 확인하기 전에 일단 사용자가 있는지 먼저 확인
 
 ```python
+from django.shortcuts import render, redirect
+from django.http import Http404
+from fcuser.models import User
+from .models import Board
+from .forms import BoardForm
+
 def board_write(request):
+  if not request.session.get('user'):
+    return redirect('/fcuser/login')
+
   if request.method == 'POST':
     form = BoardForm(request.POST) # POST일 때 데이터를 넣는다.
     if form.is_valid():
@@ -238,11 +249,17 @@ def board_write(request):
 
 상세보기를 통해 확인하는 현재 글이 몇 번째 글인지 구별할 수 있어야 함  
 이를 위해 pk을 board_detail 함수의 인자값으로 받고 `Board.objects.get` 메소드의 인자로 넘김
-- 예외처리와 로그인하지 않았을 경우에 대한 처리를 해야 함
+
+1. 로그인하지 않았을 경우에 대한 처리를 해야 함(board_write에서 작성)
+1. 없는 번호의 게시글을 입력할 경우 예외처리(board_detail에서 작성)
 
 ```python
 def board_detail(request, pk):
-  board = Board.objects.get(pk=pk)
+  try:
+    board = Board.objects.get(pk=pk)
+  except Board.DoesNotExist:
+    raise Http404('게시글을 찾을 수 없습니다.')
+    
   return render(request, 'board_detail.html', {'board': board})
 ```
 
