@@ -16,7 +16,7 @@
   1. [Login Forms](#Login-Forms)
   1. [Login Template](#Login-Template)  
   1. [Logout](#Logout)
-  1. [Logout](#Logout-View)
+  1. [Logout View](#Logout-View)
   
 
 ---
