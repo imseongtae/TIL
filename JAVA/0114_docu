@@ -1,0 +1,338 @@
+
+### 시각화하면 정확하게 보인다.
+
+```
+gapminder %>%
+  filter(year == 2007) %>%
+  ggplot(aes(gdpPercap, lifeExp)) +
+  geom_point(aes(color = continent, size = pop)) +
+  scale_x_log10()
+```
+
+
+선진국하고 후진국을 비교했을 때 선형구조를 가지고 있다는 것을 확인할 수 있다.
+선형 모형으로 GDP를 사용한다고 하면은..
+기대수명에 대해서 GDP가 어떠한 영향을 주는가 
+
+어디에 태어나느냐에 따라서 
+삶의 질, 길이 등이 결정된다. 
+
+
+여러가지 요인들의 관계들을 시각화를 통해서 직관을 확보할 수 있다. 
+
+
+mpg데이터에서 자동차 등급과 주행연비의 가ㅗㄴ계를
+산점도와 상자그림으로 나타내십시오
+
+compact   
+midsize   
+suv       
+2seater   
+
+minivan   
+pickup    
+subcompact
+
+
+
+
+ifelse를 통해서 1과 0을 만들어서 넣을 수 있다. 
+
+
+
+#### one hot encoding
+
+col
+a
+b
+a
+b
+a
+c
+b
+위의 컬럼에서 유일한 것만 추출하면 
+
+col_A col_B col_C
+1       0       0
+0       1       0
+1       0       0
+0       1       0
+1       0       0
+0       0       1
+0       1       0
+
+
+두 개만 가지고 3개 표현이 다가능하다. 
+1 0일 때 B
+0 1일 때 C
+0 0이라면 A..!
+이런 식으로 두 개만 있으면 작업이 가능하다. 
+
+
+
+
+id컬럼을 제거하고, 로지스틱스 회귀분석을 이용한 분류
+예측을 위해 악성(M)을 1로, 양성(B)을 0으로 변경한 후,
+약성과 양성의 빈도를 구해봅시다. 
+
+
+내가 레벨업하고.. 꼬셔야 된다..
+
+
+
+
+#### nomalization, 정규화를 잘 해야...! 한다...!
+
+데이터 전처리에 대한 영역
+그래야 레벨업을 할 수 있다...! 
+
+데이터 경진대회 같은 곳에서도 nomalization에 대한 수요가 일어나고 있다. 
+
+
+
+32. API 
+- 약속, 규칙
+- 프로그래밍을 구현하기 위해 정리해놓은 규칙
+- api 를 쓰라고 했을 때 질문을 못하면 가져다 쓸 수가 없다. 인자로는 무엇을 넘겨야 하는지가 정해져 있으므로 질문을 해야 한다.
+- 타입에 맞게끔 값을 넘기는 게 api가 될 수도 있다.
+- 어떤 값을 넘겨야 하는지, 값은 몇개가 들어가는지..! 등
+
+- url api (약속을 지켜야 한다.)
+- 가령 restful 은 아래처럼 약속을 지켜야 한다.
+- http://www.medici.co.kr/bigdata/name/{id=1} O
+- http://www.medici.co.kr/bigdata/{id=1} X
+
+
+- method api
+```java
+class People {
+  private String name;
+  public void setName(String name) {
+    this.name = name;
+  }
+}
+
+class Main {
+  public static void main(String[] args) {
+    People p = new People();
+    p.setName("아이폰")
+  }
+}
+
+```
+
+
+
+
+### 생성자
+- 생성자는 클래스 이름과 동일하고 리턴타입이 없다. 
+- 객체를 생성할 때 가장 먼저 호출되며, 값을 초기화할 때 사용한다. 
+- Arguement의 개수에 따라서 여러개 사용할 수 있다.
+  - 생성자 오버로딩이라고 한다. 
+- default 생성자는 생성자를 만들지 않아도 자동 생성된다.
+- 아규먼트가 있는 생성자를 만들게 되면 반드시 default 생성자를 만들어야 한다. 그렇지 않으면 오류가 발생한다. 
+
+대문자로 시작하고 리턴타입도 존재하지 않음
+
+
+x에 대해, 컨트롤을 누르면
+지울거니 바꿀거니 생성할 거니를 물어본다.
+
+### this/super
+
+- this 는 자기 자신의 클래스에서 자기자신의 레퍼런스를 가리킬 때 사용하는 키워드
+- People p = new People();
+
+this();
+- this는 생성자로도 사용이 가능하고,
+- 자기자신의 멤버 필드나 멤버 메소드를 가져올 때도 사용한다. 
+- this는 자기 클래스의 래퍼런스로 간다. 
+- 필드값이 여러개면 헷갈릴 수 있으므로..! this를 통해서 이름을 똑같이 맞춘다.
+> 프로그래머들끼리 협업을 더 잘하기 위한 도구로서 기능하는 것인가!?!
+
+
+```java
+class People {
+  private String name;
+
+  public setName(String name) {
+    this.name = name;
+    // this를 쓰지 않으면 name이란 변수명을 두 곳에서 쓸 수 없다
+  }
+}
+
+```
+
+super 는 자식에서 부모를 가리키는 레퍼런스
+super는 부모의 생성자를 호출할 수 있다.
+super는 부모의 멤버필드와 멤버 메소드를 접근할 수 있다. 
+super는 자식에서 부모의 생성자를 호출할 수 있다. 
+
+내가 처리할 수 없는 건 super를 통해 부모로 넘긴다.
+그리하면 생성자 내부에서 클래스에 맞는 처리를 할 수 있다. 
+
+
+34. block 변수와 member field 의 우선순위
+- block 변수와 member field의 이름이 같으면;.. '
+- block 변수가 우선순위가 높다.
+- block가 변수를 사용한다. 
+
+
+
+
+36. 관계 연산자
+- >, <, >=, <=, ==, != 
+
+
+37. 논리연산자
+- &&, ||, !
+- A && B: A도 만족하고 B도 만족할 경우 true를 리턴
+- A || B: A와 B 둘 중에 하나만 만족하면 true를 리턴
+- !A : A값의 반대값(true -> false, false -> true)
+
+28. 삼항 연산자
+- a>10? "ok" : "false";
+- 조건식이 만족하면 그 다음 문장이 실행이 되고, 아니면 다음 문장이 실행된다. 
+
+
+39. 단축 대입연산자
+- +=, -=, /=, %=
+
+
+
+42. 반복문 do~while
+- do에 있는 문장은 반드시 한 번 실행되고, while에 있는 조건을 만족할 동안 do 안에 있는 문장을 반복 실행한다.
+
+```java
+do {
+  Scanner scanner = new Scanner();
+  scanner.nextInt();
+}
+
+```
+
+
+
+윤년을 찾아보자
+윤년이 되는 조건을 찾아봅시다
+
+1) year%4 == 0
+2) 
+3) year%400 -- 
+
+
+```java
+package edu.medici.loop;
+
+public class IfLeapYear2 {
+	
+	public boolean isLeapYear(int year) {
+		boolean isT = false;
+		
+		if(( (year%4)==0 && (year%100)!=0 ) || (year%400 ==0)) {
+			isT = true;
+		} else {
+			isT = false;
+		}
+		return isT;
+	}
+	
+	public void printyear(boolean isT, int year) {
+		if(isT) {
+			System.out.println(year +"년은 윤년입니다.");
+		} else {
+			System.out.println(year +"년은 윤년이 아닙니다.");
+		}
+	}
+	
+	public static void main(String[] args) {	
+		IfLeapYear2 ily = new IfLeapYear2();
+		for (int year = 1996; year <= 2020; year++) {
+			boolean isTF = ily.isLeapYear(year);
+			ily.printyear(isTF, year);
+						
+		} //end for
+		
+		
+	}
+}
+```
+
+
+43. 배열
+
+44. forEach (enhanced for)
+
+- iterator pattern
+- 값을 꺼낼 때만 사용
+- 값을 넣을 때 사용하면 오류가 발생할 수 있다. 
+- for(type a: collection ) lotto...!...!
+
+
+
+
+https://github.com/mchaemil/Learning-Documentation.wiki.git
+
+
+45. LOTTO
+
+#### 객체지향 개념을 빼고 만들어보자..!
+
+로또 만들어 보기
+1 ~ 45 까지의 수 중에서 서로 다른 6개의 수를 추출하기
+
+
+
+
+#### 커서를 놓고 F2 를 누르면 파일 이름을 바꿀 수 있다. 
+코딩을 하다가 이름을 바꾸어야 할 필요가 있을 때..!
+이 기능을 활용하면 reference를 다 바꾸어준다. 
+
+
+
+
+### 마방진
+
+아까전에도 얘기했지만..
+이차원배열인데...
+마방진은 어느쪽으로도 더해도 값이 일정한 진..!
+
+
+
+### 홀수마방진
+
+```
+1) m(0, [n/2]) = 1
+2) 1 ~ n*n까지 순차적으로 넣는다.
+3) 기본흐름: x--, y--
+4) x-1<0, x = n - 1
+   y-1<0, y = n - 1
+5) m(x, y) != 0,
+  x = tempX + 1
+  y = tempY
+```
+
+
+
+
+
+
+
+  3x3
+
+  1~9
+  sum = 15
+
+1~9 > avg * 3
+
+  sum[1:n*n]
+  avg[1:n*n] * n
+
+  1. 가로
+  2. 세로
+  3. 대각선
+
+
+
+#### 팀빌딩은 24일 이전에
+
