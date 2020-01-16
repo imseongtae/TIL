@@ -20,7 +20,7 @@ title을 클릭하면 연결됩니다.
 자바스크립트는 Repository 를 달리합니다.  
 링크는 이쪽으로 >> [Javascript](https://github.com/mchaemil/Javascript-cheetsheet)
 
-![js](https://user-images.githubusercontent.com/40027211/72527861-0ace2080-38ad-11ea-9a77-4947dddda054.png)
+![js](https://user-images.githubusercontent.com/40027211/72528195-d1e27b80-38ad-11ea-9d5f-cdd9ef25aaa8.png)
 
 
 ### Database
