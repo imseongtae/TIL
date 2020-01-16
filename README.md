@@ -20,6 +20,7 @@ title을 클릭하면 연결됩니다.
 자바스크립트는 Repository 를 달리합니다.  
 링크는 이쪽으로 >> [Javascript](https://github.com/mchaemil/Javascript-cheetsheet)
 
+![js](https://user-images.githubusercontent.com/40027211/72527861-0ace2080-38ad-11ea-9a77-4947dddda054.png)
 
 
 ### Database
@@ -29,6 +30,7 @@ title을 클릭하면 연결됩니다.
 ## [Django](./Django/) 
 ⬆ link를 클릭하면 이동
 
+![Django](https://user-images.githubusercontent.com/40027211/72527847-ff7af500-38ac-11ea-9873-118fb84f85c1.png)
 
 
 ### User
@@ -52,6 +54,11 @@ title을 클릭하면 연결됩니다.
 
 
 **[⬆ back to top](#Contents)**
+
+
+
+![python_logo](https://user-images.githubusercontent.com/40027211/72527879-13bef200-38ad-11ea-8c4d-d3771cecff23.png)
+
 
 
 ---
