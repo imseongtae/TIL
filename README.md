@@ -30,7 +30,7 @@ title을 클릭하면 연결됩니다.
 ## [Django](./Django/) 
 ⬆ link를 클릭하면 이동
 
-![Django](https://user-images.githubusercontent.com/40027211/72527847-ff7af500-38ac-11ea-9873-118fb84f85c1.png)
+[![Django](https://user-images.githubusercontent.com/40027211/72527847-ff7af500-38ac-11ea-9873-118fb84f85c1.png)](https://www.youtube.com/watch?v=LJvEIjRBSDA)
 
 
 ### User
