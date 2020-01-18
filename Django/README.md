@@ -8,6 +8,8 @@ Django를 학습한 내용을 문서화합니다.
 
   1. [User](./User.md)
   1. [Board](./Board.md)
+  1. [Bookmark](./Bookmark.md)
+  
   
 ---
 
