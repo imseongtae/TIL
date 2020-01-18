@@ -138,16 +138,27 @@ class Board(models.Model):
 
 `boards` 필드를 통해서 board 를 가져온 다음 단축함수 render를 통해 Template 으로 전달한다.
 `Board.objects.all().order_by`의 메서드로 dash(-)가 포함된 값을 전달하면 역순 정렬(내림차순)을 의미한다. 
+`page`변수에는 페이지 번호를 get형태로 받고, p라는 값으로 받는 데 없다면 첫 번째 페이지로 지정
+그리고 `page`를 int형으로 바꾼다.
+Paginator 생성자의 인자로 한 페이지에 나오는 페이지의 수를 설정한 후에 이를 `paginator`변수에 담는다.
+`paginator` 참조(클래스) 변수를 이용해서 화면에 보여줄 수 있다. 
+
+`boards`에는 Paginator를 통해 얻은 페이지에 대한 정보 들어있음
 
 ```python
 from django.shortcuts import render
+from django.core.paginator import Paginator
 from .models import Board
+
 # Create your views here.
-
 def board_list(request):
-    boards = Board.objects.all().order_by('-id') 
+    all_boards = Board.objects.all().order_by('-id') 
+    
+    page = int(request.GET.get('p', 1))
+    paginator = Paginator(all_boards, 2)
+    
+    borads = paginator.get_page(page)        
     return render(request, 'board_list.html', {'boards': boards})
-
 ```
 
 **[⬆ back to top](#table-of-contents)**
@@ -166,28 +177,60 @@ for 문을 통해 `boards` 요소를 순회하여 `board`에 접근하는 코드
 {% block contents %}
 
 <div class="row mt-5">
-    <div class="col-12">
-        <table class="table table-light">
-            <thead class="thead-light">
-                <tr>
-                    <th>#</th>
-                    <th>제목</th>
-                    <th>아이디</th>
-                    <th>일시</th>
-                </tr>
-            </thead>
-            <tbody class="text-dark">
-                {% for board in boards %}
-                <tr>
-                    <td>{{ board.id }}</td>
-                    <td>{{ board.title }}</td>
-                    <td>{{ board.writer }}</td>
-                    <td>{{ board.registered_dttm }}</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    </div>
+  <div class="col-12">
+    <table class="table table-light">
+      <thead class="thead-light">
+        <tr>
+          <th>#</th>
+          <th>제목</th>
+          <th>아이디</th>
+          <th>일시</th>
+        </tr>
+      </thead>
+      <tbody class="text-dark">
+        {% for board in boards %}
+        <tr>
+          <td>{{ board.id }}</td>
+          <td>{{ board.title }}</td>
+          <td>{{ board.writer }}</td>
+          <td>{{ board.registered_dttm }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12">
+    <nav>
+      <ul class="pagination justify-content-center">
+          {% if boards.has_previous %}
+          <li class="page-item">
+              <a class="page-link" href="?p={{ boards.previous_page_number }}">prev</a>
+          <li>
+          {% else %}
+          <li class="page-item disabled">
+              <a class="page-link" href="#">prev</a>
+          <li>
+          {% endif %}
+
+          <li class="page-item active">
+              <a class="page-link" href="#">{{ boards.number }} / {{ boards.paginator.num_pages }}</a>
+          </li>
+
+          {% if boards.has_next %}
+          <li class="page-item">
+              <a class="page-link" href="?p={{ boards.next_page_number }}">next</a>
+          <li>
+          {% else %}
+          <li class="page-item disabled">
+              <a class="page-link" href="#">next</a>
+          </li>
+          {% endif %}
+      </ul>
+    </nav>
+  </div>
 </div>
 
 <div class="row">
