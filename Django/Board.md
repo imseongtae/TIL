@@ -12,6 +12,8 @@
   1. [Board Detail View](#Board-Detail-View)  
   1. [Board Write Template](#Board-Write-Template)
   1. [Board Detail Template](#Board-Detail-Template)
+  1. [Link Connect](#Link-Connect)
+  
   
   
 
@@ -382,4 +384,103 @@ def board_detail(request, pk):
 
 
 
+## Link Connect
 
+## Home View
+
+User home view에서 단축함수를 사용하여 `home.html`을 전달
+session에 대한 처리를 Home Template에게 위임함!
+
+```python
+def home(request):
+  # user_id = request.session.get('user')
+  # if user_id:
+  #    fcuser = Fcuser.objects.get(pk=user_id)
+  return render(request, 'home.html');
+```
+
+### Home Template
+
+```html
+{% extends 'base.html' %}
+
+{% block contents %}
+<!--  Home  -->
+<div class="row mt-5">
+  <div class="col-12 text-center">
+    <h1>Home Page</h1>
+  </div>
+</div>
+
+<div class="row mt-5">
+  {% if request.session.user %}
+    <div class="col-12">
+      <button class="btn btn-primary btn-block" onclick="location.href='/fcuser/logout/'">Logout</button>
+    </div>
+  {% else %}
+    <div class="col-6">
+      <button class="btn btn-primary btn-block" onclick="location.href='/fcuser/login/'">Login</button>
+    </div>
+    <div class="col-6">
+      <button class="btn btn-primary btn-block" onclick="location.href='/fcuser/register/'">Sign in</button>
+    </div>
+  {% endif %}
+</div>
+
+<div class="row mt-1">
+  <div class="col-12">
+    <button class="btn btn-primary btn-block" onclick="location.href='/board/list/'">View Post</button>
+  </div>
+</div>
+<!--  //Home  -->
+{% endblock %}
+```
+
+### Board List Template
+
+`tr` 태그의 attribute에 `onclick="location.href`속성을 이용하여 각 게시글의 경로를 연결
+
+```html
+<tbody class="text-dark">
+<!--  for 문을 통해 요소를 순회  -->
+  {% for board in boards %}
+    <tr onclick="location.href='/board/detail/{{ board.id }}'">
+      <td>{{ board.id }}</td>
+      <td>{{ board.title }}</td>
+      <td>{{ board.writer }}</td>
+      <td>{{ board.registered_dttm }}</td>
+    </tr>
+  {% endfor %}
+</tbody>
+```
+
+게시판 하단에 글쓰기 화면으로 넘어갈 수 있도록`onclick`을 통해서 `href` 경로 추가
+
+```html
+<div class="row">
+  <div class="col-12">
+    <button class="btn btn-primary" onclick="location.href='/board/write/'">글쓰기</button>
+  </div>
+</div>
+```
+
+### Board Write Template
+
+`form` 태그 안에 게시판 목록의 경로를 가진 돌아가기 버튼을 만듦
+
+```html
+<form method="post" action=".">
+  <button type="button" class="btn btn-primary" onclick="location.href='/board/list/'">돌아가기</button>
+</form>
+```
+
+### Board Detail Template
+
+게시판 목록으로 이동할 수 있도록 `onclick="location.href`의 attribute를 사용하여 돌아가기 버튼에 경로를 추가
+
+```html
+<button type="button" class="btn btn-primary" onclick="location.href='/board/list/'">돌아가기</button>
+```
+
+
+**[⬆ back to top](#table-of-contents)**
