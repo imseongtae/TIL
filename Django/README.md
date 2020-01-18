@@ -69,3 +69,11 @@ DATABASES = {
 TIME_ZONE = 'Asia/Seoul'
 ```
 
+
+### SQLitebrowser
+**Homebrew**  
+If you prefer using Homebrew for macOS, our latest release can be installed via Homebrew Cask:
+
+```
+brew cask install db-browser-for-sqlite
+```
