@@ -21,6 +21,20 @@
 
 ## Settings
 
+### Folder structure
+
+```
+<Root folder>
+│
+├<community_project>
+│ ├── config
+│ ├── user
+│ ├── board
+│ ├── db.sqlite3
+│ └── manage.py
+└venv (가상환경 설정)
+```
+
 ### Add Application 
 `settings.py`에서 사용할 애플리케이션 등록
 
@@ -70,6 +84,31 @@ admin.site.register(Board, BoardAdmin)
 ### apps
 
 자동으로 등록이 되는 것 같은데?
+
+
+### Static Files
+`static` 폴더를 생성하고 그 안에 `CSS, JavaScript` 파일을 정리한다. 
+`STATIC_URL`은 파일에 접근했을 때 어느 폴더에 있는지 알려주기 위한 변수값
+`STATICFILES_DIRS` 안에 리스트로 경로를 넣어주면 된다.
+`BASE_DIR`은 기본 프로젝트를 가리킨다.
+
+```
+<Root folder>
+│
+├<community_project>
+│ └── static
+└venv (가상환경 설정)
+```
+
+```python
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/3.0/howto/static-files/
+STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
+]
+```
 
 
 **[⬆ back to top](#table-of-contents)**
