@@ -10,13 +10,36 @@
   1. **[add](#add)**
   1. **[commit](#commit)**
 
-
   1. **[gitignore](#gitignore)**
 
 
    
 
 ---
+
+## git version
+git의 현재 버전과 설치 유무를 확인할 수 있다.
+
+```
+$ git --version
+```
+
+## git config
+
+환경설정을 확인할 수 있음
+
+```
+$ git config --list
+```
+
+### configure user and email
+`user.name`과 `user.email`을 설정하지 않으면 commit 을 하여도 잔디밭이 가꾸어지지 않는다..!
+
+```
+$ git config --global user.name 아이디
+$ git config --global user.email 이메일 주소
+```
+
 
 ## git init
 `git init` 명령을 실핼하면 git은 `.git` 이라는 하위 디렉토리를 만들고, .git 디렉토리에는 저장소에 필요한 뼈대 파일이 생성된다. 그리고 본격적으로 파일 관리 및 추적을 시작할 수 있게 된다.
@@ -73,6 +96,14 @@ $ git commit –m “initial commit”
 $ git commit –m “git 폴더에 README.md 파일 추가”
 ```
 
+### add commit
+
+git에 의해 추적되는 파일은  
+`git commit -am "commit log message"` 를 통해서 commit을 수행한다. 
+
+```
+$ git commit –am “README.md 문서에 git에 대한 내용을 update”
+```
 
 ### commit history
 history log 확인을 통해서 저장소에서 어떠한 commit 들이 있었는지 확인할 수 있다. 
@@ -86,6 +117,15 @@ $ git log --all --oneline --decorate --graph -10
 위처럼 로그 메시지를 보는 명령어를 입력하면 :(콜론)을 출력한 상태에서 사용자 입력을 기다린다.  
 커밋 히스토리는 무제한적으로 늘어날 수 있기 때문에 사용자의 입력을 통해서 중단할지 아니면 계속해서 보여줄지를 결정해야 하는데, `q` 를 누르면 git log 명령은 중지된다. 
 
+| 명령어 | 설명 | 
+|---|---|
+| `vi <filename>` | 파일의 편집 | 
+| `i` | 데이터 입력 | 
+| `esc` | 작성이 다되면 esc키를 누른다 | 
+| `:wq` | esc 이후 `:`을 누른후 write quit, 파일을 빠져나감  | 
+| `q!` | 강제로 파일을 나올때 |
+| `cat` | 파일의 내용 확인 |
+| `--help` | 세부 옵션 확인 |
 
 
 ## gitignore

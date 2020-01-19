@@ -62,7 +62,12 @@ title을 클릭하면 연결됩니다.
 
 ## Database
 
+![python_logo](https://user-images.githubusercontent.com/40027211/72527879-13bef200-38ad-11ea-8c4d-d3771cecff23.png)
+
+
 ## git
+
+![python_logo](https://user-images.githubusercontent.com/40027211/72527879-13bef200-38ad-11ea-8c4d-d3771cecff23.png)
 
 
 ---
