@@ -46,6 +46,7 @@ $ git config --global user.name 아이디
 $ git config --global user.email 이메일 주소
 ```
 
+**[⬆ back to top](#contents)**
 
 ## git init
 `git init` 명령을 실핼하면 git은 `.git` 이라는 하위 디렉토리를 만들고, .git 디렉토리에는 저장소에 필요한 뼈대 파일이 생성된다. 그리고 본격적으로 파일 관리 및 추적을 시작할 수 있게 된다.
@@ -91,6 +92,8 @@ $ git add .
 $ git add README.md
 ```
 
+**[⬆ back to top](#contents)**
+
 ## commit
 파일이나 폴더의 추가, 변경 사항을 저장소에 기록하기 위한 모든 행동은 commit 명령에 의해 이루어진다.  
 commit은 작업의 분기점이 되며, 변경사항을 비교하기 위한 기준이 된다.   
@@ -134,7 +137,7 @@ $ git log --all --oneline --decorate --graph -10
 | `cat` | 파일의 내용 확인 |
 | `--help` | 세부 옵션 확인 |
 
-
+**[⬆ back to top](#contents)**
 
 ## push
 로컬 저장소에서 `commit`한 변경 사항을 `push`하면 원격저장소에 반영되는데,  
@@ -161,3 +164,4 @@ $ git pull origin master
 관리하지 않을 파일 및 폴더를 설정할 수 있다.   
 주의할 점은 `add`가 한 번 수행된 파일은 `.gitignore`에 의해 ignore되지 않는다.
 
+**[⬆ back to top](#contents)**
