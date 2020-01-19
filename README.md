@@ -12,6 +12,7 @@ title을 클릭하면 연결됩니다.
   1. **[Python](./Python/)**
   1. **[Django](#Django)**
   1. **[JAVA](./JAVA/)**
+  1. **[git](./git/)**
   1. **[외부강연]()**
    
 
@@ -23,9 +24,6 @@ title을 클릭하면 연결됩니다.
 링크는 이쪽으로 >> [Javascript](https://github.com/mchaemil/Javascript-cheetsheet)
 
 ![js](https://user-images.githubusercontent.com/40027211/72528195-d1e27b80-38ad-11ea-9d5f-cdd9ef25aaa8.png)
-
-
-### Database
 
 
 
@@ -61,6 +59,10 @@ title을 클릭하면 연결됩니다.
 
 ![python_logo](https://user-images.githubusercontent.com/40027211/72527879-13bef200-38ad-11ea-8c4d-d3771cecff23.png)
 
+
+## Database
+
+## git
 
 
 ---
