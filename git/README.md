@@ -4,12 +4,14 @@
 
 ## Contents
 
+  1. **[git version](#git-version)**
+  1. **[git config](#git-config)**
   1. **[git init](#git-init)**
   1. **[기존 저장소 clone](#기존-저장소-clone)**
   1. **[status](#status)**
   1. **[add](#add)**
   1. **[commit](#commit)**
-
+  1. **[vi Editor](#vi-Editor)**
   1. **[gitignore](#gitignore)**
 
 
@@ -113,6 +115,7 @@ history log 확인을 통해서 저장소에서 어떠한 commit 들이 있었�
 $ git log --all --oneline --decorate --graph -10
 ```
 
+## vi Editor 
 ### git을 능숙하게 다루려면 vi Editor 사용법에 대한 이해가 조금 필요하다!
 위처럼 로그 메시지를 보는 명령어를 입력하면 :(콜론)을 출력한 상태에서 사용자 입력을 기다린다.  
 커밋 히스토리는 무제한적으로 늘어날 수 있기 때문에 사용자의 입력을 통해서 중단할지 아니면 계속해서 보여줄지를 결정해야 하는데, `q` 를 누르면 git log 명령은 중지된다. 
