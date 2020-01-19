@@ -12,6 +12,10 @@
   1. **[add](#add)**
   1. **[commit](#commit)**
   1. **[vi Editor](#vi-Editor)**
+  1. **[push](#push)**
+  1. **[pull](#pull)**
+
+
   1. **[gitignore](#gitignore)**
 
 
@@ -131,9 +135,29 @@ $ git log --all --oneline --decorate --graph -10
 | `--help` | 세부 옵션 확인 |
 
 
+
+## push
+로컬 저장소에서 `commit`한 변경 사항을 `push`하면 원격저장소에 반영되는데,  
+`$ git push origin <branch-name>`과 같이 명령어를 입력한다.  
+`-u`를 붙이면 원격 저장소에 로그인하는 번거로움을 줄일 수 있다.
+
+```
+$ git push origin master
+$ git push -u origin master
+```
+
+## pull
+원격저장소에 있는 데이터를 로컬저장소로 가져와서 반영함.  
+`pull`은 `fetch` 명령을 실행하고 자동으로 `merge`를 실행하는 원리를 가지고 있음
+
+```
+$ git pull
+$ git pull origin master
+```
+
 ## gitignore
 
 `.gitignore` 파일을 생성하여  
 관리하지 않을 파일 및 폴더를 설정할 수 있다.   
-주의할 점은 add 가 한 번 수행된 파일은 `.gitignore` 파일에 의해 ignore 되지 않는다.
+주의할 점은 `add`가 한 번 수행된 파일은 `.gitignore`에 의해 ignore되지 않는다.
 
