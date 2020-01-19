@@ -100,9 +100,9 @@ $ git commit –m “git 폴더에 README.md 파일 추가”
 
 ### add commit
 
-git에 의해 추적되는 파일은  
-`git commit -am "commit log message"` 를 통해서 commit을 수행한다. 
-
+git에 의해 추적(`tracked`)되는 파일은  
+`git commit -am "commit log message"` 를 통해서 `add`와 `commit`을 한 번에 수행할 수 있다. 
+> 다만, `untracked` 파일은 `add`와 `commit` 한 번에 할 수 없음 
 ```
 $ git commit –am “README.md 문서에 git에 대한 내용을 update”
 ```

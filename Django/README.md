@@ -6,9 +6,10 @@ Django를 학습한 내용을 문서화합니다.
 
 ## Table of Contents
 
+  1. [Polls](./Polls.md)
+  1. [Bookmark](./Bookmark.md)
   1. [User](./User.md)
   1. [Board](./Board.md)
-  1. [Bookmark](./Bookmark.md)
   
   
 ---

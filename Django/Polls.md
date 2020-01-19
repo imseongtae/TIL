@@ -1,14 +1,17 @@
 # Polls
 
 
-
 ## Table of Contents
 
   1. [Settings](#Settings)
-  1. [BaseTemplate](#BaseTemplate)
-  1. [Board Model](#Board-Model)
+  1. [Index View](#Index-View)
+  1. [Index Template](#Index-Template)
+  1. [Detail View](#Detail-View)
+  1. [Detail Template](#Detail-Template)
+  1. [Vote View](#Vote-View)
+  1. [Results View](#Results-View)
+  1. [Results Template](#Results-Template)
 
- 
 
 ---
 
@@ -141,7 +144,21 @@ def detail(request, question_id):
 
 
 ## Vote View
+
+`/polls/3/vote/` 와 같은 URL이 `detail.html`에서 `submit`버튼을 통해 제출되면 `form`의 `action` attribute에 의해서 POST 방식으로 `vote`로 전달된다.   
+`vote` 뷰 함수는 form으로부터 넘어온 `POST` 데이터를 처리한다.
+
+`request.POST['choice']`는 폼에서 키가 `choice`에 해당하는 값인 `choice.id`를 스트링으로 리턴한다. 
+
+`selected_choice.votes`을 1증가시키고, 변경사항을 `selected_choice.save()`을 통해 저장
+
+`HttpResponseRedirect`의 생성자는 인자로 Redirect할 타겟을 인자로 받는데, 이를 위해 `reverse` 함수를 사용해야 한다. `reverse`를 통해 URL을 추출하고 Redirect의 결과로 `results.view`함수를 호출한다.
+
+`POST` 데이터를 처리하는 경우 결과 페이지로 이동하기 위해 `HttpResponseRedirect`객체를 리턴한다
+
 ```python
+from django.http import HttpResponseRedirect 
+from django.urls import reverse
 
 def vote(request, question_id):
   question = get_object_or_404(Question, pk=question_id)
@@ -156,8 +173,6 @@ def vote(request, question_id):
   else:
     selected_choice.votes += 1
     selected_choice.save()
-    # POST 데이터를 정상적으로 처리했다면
-    # 
     return HttpResponseRedirect(reverse('polls:results', args=(question.id, )))
 ```
 
