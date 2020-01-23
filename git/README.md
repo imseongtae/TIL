@@ -14,13 +14,11 @@
   1. **[vi Editor](#vi-Editor)**
   1. **[push](#push)**
   1. **[pull](#pull)**
-
-
   1. **[gitignore](#gitignore)**
+  1. **[branch](#gitignore)**
 
 
    
-
 ---
 
 ## git version
@@ -141,7 +139,7 @@ $ git log --all --oneline --decorate --graph -10
 
 ## push
 로컬 저장소에서 `commit`한 변경 사항을 `push`하면 원격저장소에 반영되는데,  
-`$ git push origin <branch-name>`과 같이 명령어를 입력한다.  
+`git push origin <branch-name>`과 같이 명령어를 입력한다.  
 `-u`를 붙이면 원격 저장소에 로그인하는 번거로움을 줄일 수 있다.
 
 ```
@@ -165,3 +163,44 @@ $ git pull origin master
 주의할 점은 `add`가 한 번 수행된 파일은 `.gitignore`에 의해 ignore되지 않는다.
 
 **[⬆ back to top](#contents)**
+
+
+## branch
+
+`branch`는 개발의 진행 흐름을 나타낸다. 
+배포 완료된 브랜치만 master 브랜치에 `merge`해서 안정 버전의 코드만 master 브랜치로 두자.
+
+브랜치는 `git branch <branch-name>` 명령어를 통해 생성할 수 있다. 
+
+### 생성하기
+
+```
+$ git branch <branch-name>
+```
+
+### 브랜치 보기
+
+```
+$ git branch <branch-name>
+```
+
+### 브랜치 이동
+
+```
+$ git checkout <branch-name>
+```
+
+
+## merge
+
+master 브랜치를 제외한 모든 브랜치는 부모 브랜치가 있다. 브랜치로부터 파생된 브랜치는 상황에 따라 버려질 수도 있지만 대부분 다른 브랜치와 합쳐져 자신이 가지고 있던 의미와 목적을 다른 브랜치에 전달한다. 이것을 병합(merge)이라고 한다.
+
+`merge`가 반영될 브랜치로 `checkout`하여 이동 후,  
+`git merge <branch-name>`명령을 이용해서 병합하기
+
+```
+$ git merge mac
+```
+
+
+
