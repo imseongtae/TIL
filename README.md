@@ -1,11 +1,11 @@
 Learning-Documentation
 =============
 
-학습한 내용을 문서화합니다. 
-title을 클릭하면 연결됩니다.
+학습한 내용을 정리합니다.  
+아래 목차를 통해서 정리한 내용을 확인할 수 있습니다.
 
+## Table of Contents
 
-## Contents
 
   1. **[Javascript](./Javascript/)**
   1. **[React.js](./Reactjs/)**  
@@ -53,7 +53,7 @@ title을 클릭하면 연결됩니다.
 - Board Detail Template
 
 
-**[⬆ back to top](#Contents)**
+**[⬆ back to top](#table-of-contents)**
 
 
 
