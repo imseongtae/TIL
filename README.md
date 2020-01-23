@@ -66,8 +66,11 @@ Learning-Documentation
 
 
 ## git
+![git_img](https://user-images.githubusercontent.com/40027211/72733084-7c261000-3bda-11ea-88ea-fe1f7595d750.png)
 
-![python_logo](https://user-images.githubusercontent.com/40027211/72527879-13bef200-38ad-11ea-8c4d-d3771cecff23.png)
+
+## ts
+![ts_img](https://user-images.githubusercontent.com/40027211/72733075-792b1f80-3bda-11ea-8398-48970e6c17ee.png)
 
 
 ---
