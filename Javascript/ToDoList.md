@@ -1,10 +1,8 @@
 # To Do List
 
-HTML, CSS, Javascript 를 활용해서 만들어본 
-To Do List 입니다. vanillaJS의 실력향상을 위해서 
-ES5의 문법을 사용했습니다. 
-
-단, 호이스팅을 피하기 위해서 변수선언 키워드는 ES6의 `let`,`const`를 사용했습니다.
+HTML, CSS, Javascript를 활용해서 만들어본 
+To Do List입니다. vanillaJS의 실력향상을 위해서 
+노력한 내용을 정리합니다.
 
 
 ## Table of Contents
@@ -12,7 +10,7 @@ ES5의 문법을 사용했습니다.
 1. [HTML](#HTML)
 1. [CSS](#CSS)
 1. [Javascript](#Javascript)
-
+1. [목록추가 기능](#목록추가-기능)
 
 
 
@@ -71,7 +69,9 @@ li {
 ```
 
 
-## Javascript version.1
+## Javascript 
+
+### 목록추가 기능
 
 목록추가 기능을 구현한 Javascript 코드입니다.
 Javascript는 처음 로딩된 문서를 기억할 뿐 동적으로 추가된, 즉 사용자 입력에 의해 추가된 내용은 다시 확인하지 않으므로 `li`요소 각각에 이벤트를 걸어주는 것이 아니라 `ul`목록 태그에 이벤트를 걸어준다.  
@@ -109,4 +109,5 @@ todoForm.addEventListener('submit', function(e){
   console.log('실행 흐름이 이어지냐?');
 })
 ```
+
 

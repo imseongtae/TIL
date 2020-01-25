@@ -19,7 +19,6 @@
 
 ## 배열 내장 함수
 
-
 | 속성 | 설명 | 
 |---|---|
 | `push` | 배열의 마지막 인덱스에 요소를 추가하고 배열의 길이를 반환 | 
@@ -30,18 +29,109 @@
 | `sort` | 배열 안의 요소를 정렬합니다. 인수로는 실제 비교를 담당하는 함수와 참조를 넘김 |
 
 
-
 ## 생성자
 Javascript airbnb 스타일 가이드를 따른다.
 
 **[⬆ back to top](#table-of-contents)**
 
+## Object-shorthand
+Object-shorthand(객체 약식구문)을 통해  
+복잡한 객체 리터럴(표현 방법)을 깔끔하게 정의할 수 있다.  
+`key`이름으로 선언된 값이 존재한다면, 바로 매칭시켜주는 문법이다.
+
+```javascript
+const foo_properties = {
+  x: x, 
+  y: y, 
+  z: z,
+};
+
+const foo_method = {
+  a: function() {},
+  b: function() {}
+};
+```
+
+```javascript
+const foo_properties = {x,y,z};
+
+const foo_method = {
+  a() {},
+  b() {}
+};
+```
+
+[링크 - airbnb style guide Object-shorthand 내용](https://github.com/airbnb/javascript#es6-object-concise)
+
+```javascript
+const lukeSkywalker = 'Luke Skywalker';
+
+// bad
+const obj = {
+  lukeSkywalker: lukeSkywalker,
+};
+
+// good
+const obj = {
+  lukeSkywalker,
+};
+```
 
 ## Destructuring
+배열, 객체, 반복 가능한 객체에서 값을 추출하여 변수 혹은 상수에 할당하는 문장을 말하며, ES6부터 도입되었다.
+
+
+### 객체 비구조화 할당
+비구조화 할당 문법을 통해서 객체 안에 있는 값을 추출해 변수 혹은 상수로 선언할 수 있다.
+
+```javascript
+const object = {a:1, b:2};
+const {a, b} = object;
+
+console.log(a) // 1
+console.log(b) // 2
+```
+
+기본값도 지정가능함!
+
+```javascript
+const object = {a:1};
+const {a, b = 7} = object;
+
+console.log(a) // 1
+console.log(b) // 7
+```
+
+
+
+### 배열 비구조화 할당
+배열 안에 있는 원소를 새로 선언해주고 싶을 때 사용하면 유용하다.
+객체 비구조화 할당처럼 기본값도 지정가능하며 함수의 인자로 넘길 수 있다.
+
+```javascript
+const arr = [1,2];
+const [a, b] = arr;
+
+function print([a,b]) {
+  console.log(a, b) // 1 2
+}
+
+print(arr);
+```
+
 
 ## spread
 
+
 ## class
+
+```javascript
+
+
+
+```
+
+
 
 **[⬆ back to top](#table-of-contents)**
 
@@ -66,12 +156,10 @@ addBtn.classList.contains('active');
 addBtn.classList.replace('oldActive', 'newActive');
 ```
 
-
-
+**[⬆ back to top](#table-of-contents)**
 
 
 ### 이벤트 위임
-
 
 
 
@@ -108,7 +196,8 @@ function logEvent(event) {
 
 
 
-메모리 관리 하이서울
+
+**[⬆ back to top](#table-of-contents)**
 
 ### DOM 탐색
 

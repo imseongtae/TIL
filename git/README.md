@@ -188,7 +188,7 @@ $ git branch <branch-name>
 ### 브랜치 보기
 
 ```
-$ git branch <branch-name>
+$ git branch
 ```
 
 ### 브랜치 이동
