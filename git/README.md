@@ -15,15 +15,16 @@ Version Control System(VCS) 중 하나이다.
   1. **[git config](#git-config)**
   1. **[git init](#git-init)**
   1. **[기존 저장소 clone](#기존-저장소-clone)**
+  1. **[가장 중요한 명령어](#가장-중요한-명령어)**
   1. **[status](#status)**
   1. **[add](#add)**
   1. **[commit](#commit)**
-  1. **[vi Editor](#vi-Editor)**
   1. **[push](#push)**
   1. **[pull](#pull)**
-  1. **[gitignore](#gitignore)**
   1. **[branch](#branch)**
   1. **[merge](#merge)**
+  1. **[gitignore](#gitignore)**
+  1. **[vi Editor](#vi-Editor)**
 
    
 ---
@@ -71,6 +72,15 @@ $ git clone <remote-url>
 
 ```
 $ git remote set-url origin <remote-url>
+```
+
+## 가장 중요한 명령어
+`git`은 협업을 위한 도구이므로 작업을 시작하기 전에 **항상 협업을 위한 준비**를 해야 한다. 이를 위해서  
+아래의 명령어를 통해 원격 저장소의 작업 내용을 로컬 저장소로 반영하고, 나의 `branch`가 `master`인지 내가 생성한 `branch`인지 확인해야 한다. 
+
+```bash
+$ git pull origin master
+$ git branch
 ```
 
 ## status
@@ -123,26 +133,19 @@ $ git commit –am “README.md 문서에 git에 대한 내용을 update”
 history log 확인을 통해서 저장소에서 어떠한 commit 들이 있었는지 확인할 수 있다. 
 아래와 같은 명령어 조합을 통해서 최근의 commit message만 조회할 수 있다. 
 
-```
+```bash
 $ git log --all --oneline --decorate --graph -10
 ```
+### git shortlog 
+간단하게 commit message를 확인해볼 수 있는 명령어도 있다.
 
-## vi Editor 
-### git을 능숙하게 다루려면 vi Editor 사용법에 대한 이해가 조금 필요하다!
-위처럼 로그 메시지를 보는 명령어를 입력하면 :(콜론)을 출력한 상태에서 사용자 입력을 기다린다.  
-커밋 히스토리는 무제한적으로 늘어날 수 있기 때문에 사용자의 입력을 통해서 중단할지 아니면 계속해서 보여줄지를 결정해야 하는데, `q` 를 누르면 git log 명령은 중지된다. 
+```bash
+$ git shortlog
+```
 
-| 명령어 | 설명 | 
-|---|---|
-| `vi <filename>` | 파일의 편집 | 
-| `i` | 데이터 입력 | 
-| `esc` | 작성이 다되면 esc키를 누른다 | 
-| `:wq` | esc 이후 `:`을 누른후 write quit, 파일을 빠져나감  | 
-| `q!` | 강제로 파일을 나올때 |
-| `cat` | 파일의 내용 확인 |
-| `--help` | 세부 옵션 확인 |
+### git diff 
+`git diff`를 통해서 어떤 부분이 변경되었는지 확인할 수 있다.
 
-**[⬆ back to top](#contents)**
 
 ## push
 로컬 저장소에서 `commit`한 변경 사항을 `push`하면 원격저장소에 반영되는데,  
@@ -158,37 +161,31 @@ $ git push -u origin master
 원격저장소에 있는 데이터를 로컬저장소로 가져와서 반영함.  
 `pull`은 `fetch` 명령을 실행하고 자동으로 `merge`를 실행하는 원리를 가지고 있음
 
+**중요! 작업하기 전에 항상 git pull을 통해 원격 저장소의 작업을 당겨와야 한다.**
+
 ```
 $ git pull
 $ git pull origin master
 ```
 
-## gitignore
-
-`.gitignore` 파일을 생성하여  
-관리하지 않을 파일 및 폴더를 설정할 수 있다.   
-주의할 점은 `add`가 한 번 수행된 파일은 `.gitignore`에 의해 ignore되지 않는다.
-
-**[⬆ back to top](#contents)**
-
-
 ## branch
 
-`branch`는 개발의 진행 흐름을 나타낸다. 
+`branch`는 개발의 진행 흐름을 나타낸다.   
+새로운 브랜치는 주로 새로운 기능을 개발할 때 생성하며 나중에 master 브랜치와 합치는 용도로 사용한다.
 배포 완료된 브랜치만 master 브랜치에 `merge`해서 안정 버전의 코드만 master 브랜치로 두자.
 
 브랜치는 `git branch <branch-name>` 명령어를 통해 생성할 수 있다. 
-
-### 생성하기
-
-```
-$ git branch <branch-name>
-```
 
 ### 브랜치 보기
 
 ```
 $ git branch
+```
+
+### 생성하기
+
+```
+$ git branch <branch-name>
 ```
 
 ### 브랜치 이동
@@ -211,3 +208,33 @@ $ git merge mac
 
 **[⬆ back to top](#contents)**
 
+
+
+
+---
+
+## gitignore
+
+`.gitignore` 파일을 생성하여  
+관리하지 않을 파일 및 폴더를 설정할 수 있다.   
+주의할 점은 `add`가 한 번 수행된 파일은 `.gitignore`에 의해 ignore되지 않는다.
+
+**[⬆ back to top](#contents)**
+
+
+## vi Editor 
+### git을 능숙하게 다루려면 vi Editor 사용법에 대한 이해가 조금 필요하다!
+`git shortlog`처럼 로그 메시지를 보는 명령어를 입력하면 :(콜론)을 출력한 상태에서 사용자 입력을 기다린다.  
+커밋 히스토리는 무제한적으로 늘어날 수 있기 때문에 사용자의 입력을 통해서 중단할지 아니면 계속해서 보여줄지를 결정해야 하는데, `q` 를 누르면 git log 명령은 중지된다. 
+
+| 명령어 | 설명 | 
+|---|---|
+| `vi <filename>` | 파일의 편집 | 
+| `i` | 데이터 입력 | 
+| `esc` | 작성이 다되면 esc키를 누른다 | 
+| `:wq` | esc 이후 `:`을 누른후 write quit, 파일을 빠져나감  | 
+| `q!` | 강제로 파일을 나올때 |
+| `cat` | 파일의 내용 확인 |
+| `--help` | 세부 옵션 확인 |
+
+**[⬆ back to top](#contents)**
