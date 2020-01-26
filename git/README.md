@@ -22,7 +22,10 @@ Version Control System(VCS) 중 하나이다.
   1. **[push](#push)**
   1. **[pull](#pull)**
   1. **[branch](#branch)**
+  1. **[reset](#reset)**
+  1. **[revert](#revert)**
   1. **[merge](#merge)**
+  1. **[rebase](#rebase)**
   1. **[gitignore](#gitignore)**
   1. **[vi Editor](#vi-Editor)**
 
