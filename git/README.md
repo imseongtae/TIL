@@ -189,7 +189,7 @@ $ git pull origin master
 
 ### 브랜치 보기
 
-```
+```bash
 $ git branch
 ```
 
@@ -204,6 +204,13 @@ $ git branch <branch-name>
 ```bash
 $ git checkout <branch-name>
 ```
+
+### 브랜치 삭제
+
+```bash
+$ git branch -d <branch-name>
+```
+
 
 **[⬆ back to top](#contents)**
 
