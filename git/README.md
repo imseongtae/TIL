@@ -90,6 +90,9 @@ $ git branch
 $ git status
 ```
 
+**[⬆ back to top](#contents)**
+
+
 ## add
 다음 commit에 추가하기 위해 파일을 staged 상태로 만듦
 add 명령은 아래처럼 전체를 보낼 수도 있고
@@ -146,6 +149,8 @@ $ git shortlog
 ### git diff 
 `git diff`를 통해서 어떤 부분이 변경되었는지 확인할 수 있다.
 
+**[⬆ back to top](#contents)**
+
 
 ## push
 로컬 저장소에서 `commit`한 변경 사항을 `push`하면 원격저장소에 반영되는데,  
@@ -167,6 +172,7 @@ $ git push -u origin master
 $ git pull
 $ git pull origin master
 ```
+**[⬆ back to top](#contents)**
 
 ## branch
 
@@ -184,16 +190,78 @@ $ git branch
 
 ### 생성하기
 
-```
+```bash
 $ git branch <branch-name>
 ```
 
 ### 브랜치 이동
 
-```
+```bash
 $ git checkout <branch-name>
 ```
 
+**[⬆ back to top](#contents)**
+
+
+## reset
+**reset은 과거로 되돌아가기 위해 사용, 혼자 로컬에서 작업할 때 유용하다.**
+현재 커밋 시점이 HEAD이고, 여기서 한 칸 뒤로 되돌리고 싶을 때 reset을 사용한다.
+
+```bash
+$ git reset HEAD~1
+```
+### reset 주의사항
+`reset`을 실행하면 내가 실수한 커밋의 내용과 기록 자체가 사라진다.  
+이로 인해 당황할 수 있는데, 이를 해결하기 위해서는 깃허브에 실수했던 걸 push해놓고 리셋하는 게 좋다.
+
+`git reflog`라고 `reset`을 되돌리는 방법이 있긴하지만 이건 가급적 쓰면 안된다.
+애초에 안 쓰는 게 가장 좋으므로!
+
+### reset의 3가지 모드
+`reset`을 통해 어느 단계로 돌아갈지 선택할 수 있다.
+되돌리는 시점에 따라서 `soft`, `mixed`, `hard`로 구분되며,  
+`mixed`가 기본이다. `hard`를 하면 변경내역이 다 사라지므로 안 하는 게 좋다.   
+`mixed`가 기본인 건 이유가 있는 법!
+
+| 파일 상태에 따른 `reset`모드 |  
+|:---:|
+| **new commit** |
+| add한 내용, Staged -> soft | 
+| 수정한 내용, Modified -> mixed |
+| **기존 commit**, Unmodified -> hard |
+
+
+### git reset --hard
+`git reset --hard` 명령을 입력하면 기존 파일로 되돌아간다.
+수정한 내용(Modified)과 add한 내용(Staged)에서 기존 커밋으로 되돌아간다.
+**커밋 이전에만 쓸 수 있고, 혼자 작업할 때만 사용하기 유용한 명령이다..!**
+
+```bash
+$ git reset --hard
+```
+**[⬆ back to top](#contents)**
+
+
+## revert 
+**revert는 과거 실수를 바로잡기 위해 사용, 협업할 때 사용해야 한다.**
+`revert`는 실수를 인정하고 새로운 커밋을 통해 실수 이전의 지점으로 돌리는 명령어이다.
+
+```bash
+$ git revert HEAD
+```
+
+위의 명령어를 입력하면 vim에디터가 나오는데! 상단에 커밋 메시지를 적고,  
+`:wq`를 통해 에디터를 종료하면 된다.
+
+`revert`는 과거 실수를 바로 잡고, 되돌리지만 이 과정을 `commit`으로 남긴다.
+실수한 내용이 그대로 남지만 **협업**할 때 주로 사용한다.
+가령, 원격 서버에 `push`까지 했을 경우 내 실수를 만회하기 위해 `reset`을 해봤자  
+다른 팀원들은 `reset`을 적용받지 못한 채 작업을 이어나가는 문제가 발생할 수 있다.  
+그러므로 실수가 발생했더라도 `revert`를 통해서 실수를 만회(실수를 만들어내기 이전 지점으로 돌아가는)하는 커밋을 퍼뜨리고 이러한 변경사항을 공유해야 한다. (이를 통해 동료에게 실수를 만회한 작업사항을 같이 적용할 수 있다.) 
+
+### commit 아이디만 있으면 과거의 어느 지점으로도 revert할 수 있다.
+
+**[⬆ back to top](#contents)**
 
 ## merge
 
@@ -221,7 +289,6 @@ $ git merge mac
 
 **[⬆ back to top](#contents)**
 
-
 ## vi Editor 
 ### git을 능숙하게 다루려면 vi Editor 사용법에 대한 이해가 조금 필요하다!
 `git shortlog`처럼 로그 메시지를 보는 명령어를 입력하면 :(콜론)을 출력한 상태에서 사용자 입력을 기다린다.  
@@ -238,3 +305,21 @@ $ git merge mac
 | `--help` | 세부 옵션 확인 |
 
 **[⬆ back to top](#contents)**
+
+## git 프롬프트 한글로 변경하는 법
+
+윈도우의 경우 git bash는 한글로 나오는데 명령 프롬프트가 한글이 안 될 경우, 
+한글로 바꾸고 싶을 때 명령 프롬프트의 언어 설정을 변경한다.
+프롬프트나 터미널 별로 한글 설정하는 방법이 다를 수 있다.
+
+### for Windows
+```bash
+$ set LC_ALL=ko_KR.UTF-8
+```
+
+
+
+
+### 깃으로 만나는 모든 에러는 구글을 통해 해결할 수 있다. 
+
+
