@@ -309,7 +309,7 @@ $ git merge mac
 $ git merge --abort
 ```
 
-### 코드를 수정하여 add, commit을 하면 변경사항이 반영됨
+### 코드를 수정하여 add, commit을 하면 변경사항이 반영되어 merge가 이루어짐
 
 
 ## rebase
@@ -323,6 +323,9 @@ $ git rebase mac
 ```
 
 ### rebase abort, rebase를 해제하기
+`rebase`도 `merge`와 마찬가지로 `--abort`로 연결을 해제할 수 있다.
+해제하면 `rebase`나 `merge` 이전 시점으로 돌아간다.
+
 ```bash
 $ git rebase --abort
 ```
