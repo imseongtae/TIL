@@ -5,6 +5,9 @@
 
 1. [Types](#types)
 1. [DOM 탐색](#DOM-탐색)
+1. [생성자](#생성자)
+1. [class](#class)
+
 1. [Destructuring](#destructuring)
 
 1. [Javascript for Web](#Javascript-for-Web)
@@ -76,6 +79,34 @@ const obj = {
   lukeSkywalker,
 };
 ```
+
+## class
+클래스를 만들어놓고 클래스를 통해 객체를 생성하면 같은 형태를 지닌  
+객체를 만들 때 객체들이 지닌 값과 함수를 보기 좋은 형태로 관리할 수 있다.
+
+```javascript
+class Burger {
+  constructor(name) {
+    this.name = name;
+    this.ingredients = [];
+  }
+  addIngredient(ingredient) {
+    this.ingredients.push(ingredient)
+  }
+  print(){
+    console.log('주문한 '+this.name+'는 다음 재료를 가지고 있습니다.')
+    console.log(this.ingredients.join(','))
+  }
+}
+
+const burger = new Burger('아보카도 버거')
+burger.addIngredient('아보카도');
+burger.addIngredient('양파');
+burger.addIngredient('양상추');
+
+burger.print();
+```
+
 
 ## Destructuring
 배열, 객체, 반복 가능한 객체에서 값을 추출하여 변수 혹은 상수에 할당하는 문장을 말하며, ES6부터 도입되었다.
