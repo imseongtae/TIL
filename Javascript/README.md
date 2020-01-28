@@ -246,3 +246,14 @@ HTML 문서의 요소는 부모, 자식, 형제 구조를 이루므로 **특정 
 **[⬆ back to top](#table-of-contents)**
 
 
+### Node 생성/삽입/삭제
+
+| 속성 | 설명 | 
+|---|---|
+| `createElement(요소 이름)` | 새로운 요소 노드 객체를 생성 | 
+| `appendChild(삽입할 노드)` | 인자로 넘긴 노드를 마지막 자식 노드로 삽입 | 
+| `removeChild(자식 노드)` | 노드에서 인자로 넘긴 자식 노드를 삭제 | 
+| `replaceChild(새로운 노드, 자식노드)` | 인자로 받은 자식 노드를 제거하고, 새로운 노드로 바꿈  | 
+
+
+**[⬆ back to top](#table-of-contents)**
