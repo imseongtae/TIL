@@ -1,4 +1,5 @@
 IGNORE
 .tmp
 goorm.manifest
+.DS_Store
 
