@@ -274,3 +274,66 @@ HTML 문서의 요소는 부모, 자식, 형제 구조를 이루므로 **특정 
 
 
 **[⬆ back to top](#table-of-contents)**
+
+
+### Storage 메서드
+
+| 속성 | 설명 |
+|---|---|
+| Storage.setItem() | 인자로 key, value를 전달해 Storage에 저장 |
+| Storage.getItem() | 인자로 key를 전달하여 Storage에 저장된 값을 조회 |
+| Storage.removeItem() | 인자로 key을 전달하면 해당 키가 Storage에서 지워짐 |
+| Storage.clear() | Storage 전체를 비움 |
+
+
+### localStorage에 데이터 넣어보기
+`localStorage`에 데이터를 저장할 때 key/value 형식으로 저장할 수도 있지만, 객체 형태로 저장하려면 `JSON.stringify()`를 통해 객체 타입을 문자열 타입으로 변환하여 저장해야 한다. 또한 반대로 `localStorage`의 데이터를 가져올 때는 `JSON.parse()`를 통해 문자열을 객체 타입으로 변환하여 가져와야 합니다. 
+
+```javascript
+const TODOS_LS = "toDos";
+const toDos = [];
+
+for (let i = 0; i < 5; i++) {
+  const toDoObj = {
+    text:"안녕하세요",
+    id: i + 1
+  }
+  toDos.push(toDoObj);  
+}
+
+localStorage.setItem(TODOS_LS, JSON.stringify(toDos))
+```
+
+
+### localStorage 활용
+
+#### JSON.stringify
+`localStorage.setItem(TODOS_LS, toDos)`처럼 `setItem()`메소드의 인자에 자바스크립트 데이터를 직접 넣으면 `LocalStorage`에는 `[object Object]`처럼 데이터가 들어간다.
+
+왜냐하면 `LocalStorage`에는 자바스크립트의 data를 저장할 수 없기 때문이다. `LocalStorage`는 모든 데이터를 `string`으로 저장한다. 그래서 자바스크립트 `object`가 `string`이 되도록 바꾸고 저장해야 한다. 이를 위해서 `JSON.stringify()`메소드를 사용해야 하는데, `JSON.stringify()`는 인자로 전달된 자바스크립트 `object`를 `string`으로 바꿔준다.
+
+```javascript
+function saveToDos(){
+  localStorage.setItem(TODOS_LS, JSON.stringify(toDos));
+}
+```
+
+#### JSON.parse
+`localStorage.getItem()`으로 데이터를 불러온 경우 불러온 데이터가 `string`이라는 문제가 생긴다! 이를 자바스크립트에서 활용하기 위해서는 `JSON(Javascript Object Notation)`을 사용해야 한다! JSON을 통해 string을 object로, object를 string으로 변경할 수 있다.
+
+`JSON.parse()`를 사용하면 데이터를 가져올 때 자바스크립트가 다룰 수 있도록 `string`을 `object`로 바꿔준다!
+
+아래는 `localStorage`에서 가져온 코드를 `JSON.parse()`메서드를 통해 `string`을 `object`로 바꾸었다.
+
+```javascript
+function loadToDos() {
+  const loadedToDos = localStorage.getItem(TODOS_LS);
+  if(loadedToDos !== null) {
+    const parsedToDos = JSON.parse(loadedToDos);
+
+    parsedToDos.forEach(toDo => {
+      paintToDo(toDo.text);
+    });
+  } 
+}
+```
