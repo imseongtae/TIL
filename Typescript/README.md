@@ -15,9 +15,8 @@
 ## Table of Contents
 
 1. [Primitive Types](#Primitive-Types)
-1. [DOM 탐색](#DOM-탐색)
-1. [생성자](#생성자)
-1. [To Do List](./ToDoList.md)
+1. 
+1. 
 
 ---
 
@@ -132,8 +131,6 @@ console.log(user.name);
 
 
 **[⬆ back to top](#table-of-contents)**
-
-
 
 
 
