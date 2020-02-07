@@ -116,7 +116,7 @@ let n: null = null;
 
 ```typescript
 function error(message: string): never {
-    throw new Error(message);
+	throw new Error(message);
 }
 ```
 
@@ -129,7 +129,13 @@ console.log(user.name);
 
 
 
-
-
 **[⬆ back to top](#table-of-contents)**
+
+
+
+
+
+
+
+
 
