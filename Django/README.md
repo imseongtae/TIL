@@ -1,7 +1,9 @@
 # Django
 
+![Django](https://user-images.githubusercontent.com/40027211/72527847-ff7af500-38ac-11ea-9873-118fb84f85c1.png)
 
 Django를 학습한 내용을 문서화합니다. 
+
 
 
 ## Table of Contents
@@ -10,8 +12,7 @@ Django를 학습한 내용을 문서화합니다.
   1. [Bookmark](./Bookmark.md)
   1. [User](./User.md)
   1. [Board](./Board.md)
-  
-  
+
 ---
 
 

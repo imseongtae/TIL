@@ -1,78 +1,50 @@
-Learning-Documentation
-=============
+# TIL:walking:
 
-학습한 내용을 정리합니다.  
-아래 목차를 통해서 정리한 내용을 확인할 수 있습니다.
+**자신과의 작은 약속**
+
+쓸 데 없고, 사소해 보이는 내용일지라도 정리하기 위해 노력합니다.
+
+비록 느리고 더딜지라도 하루하루 성장하고 있다는 위안과
+
+학습한 내용을 돌아보며 용기를 얻고 싶기 때문입니다.
+
+
+
+#### 내용을 더 잘 정리하기 위한 규칙:card_file_box:
+
+- 프로그래밍 언어/프레임워크/라이브러리/프로그램/강연 등의 이름으로 폴더를 만든다.
+- 학습한 내용, 기억하고 싶은 내용을 정리한다.
+- 직접 작성한 내용만 정리한다. (복붙은 절대 안됨)
+
+
+
+
+:arrow_down:_아래 목차를 통해서 내용을 확인할 수 있습니다._
+
+
 
 ## Table of Contents
 
 
   1. **[Javascript](./Javascript/)**
-  1. **[React.js](./Reactjs/)**  
+  1. **[Vue.js](./Vuejs/)**  
   1. **[Python](./Python/)**
-  1. **[Django](#Django)**
+  1. **[Django](./Django/)**
   1. **[JAVA](./JAVA/)**
   1. **[git](./git/)**
+  1. **[React.js](./Reactjs/)**
   1. **[외부강연]()**
-   
+
 ---
 
 
-### [Javascript](./Javascript/)
-자바스크립트는 Repository 를 달리합니다.  
-링크는 이쪽으로 >> [Javascript](https://github.com/mchaemil/Javascript-cheetsheet)
-
-![js](https://user-images.githubusercontent.com/40027211/72528195-d1e27b80-38ad-11ea-9d5f-cdd9ef25aaa8.png)
+### 
 
 
 
-## [Django](./Django/) 
-⬆ link나 이미지를 클릭하면 이동
-
-[![Django](https://user-images.githubusercontent.com/40027211/72527847-ff7af500-38ac-11ea-9873-118fb84f85c1.png)](./Django/)
 
 
-### User
-- Django 기본 Setting 
-- MVT의 Template 상속받아 HTML 중복제거
-- 회원가입 Model, View, Template
-- Login View, Template(Login은 Model이 필요없음)
-- Django의 form 객체를 이용해서 Login 구현 
-- Logout, Logout은 View만 구현하여 해결
 
-### Board
-- Settings
-- BaseTemplate
-- Board Model
-- Board List View
-- Board List Template
-- Board Write View
-- Board Detail View
-- Board Write Template
-- Board Detail Template
-
-
-**[⬆ back to top](#table-of-contents)**
-
-
-## Python
-
-![python_logo](https://user-images.githubusercontent.com/40027211/72527879-13bef200-38ad-11ea-8c4d-d3771cecff23.png)
-
-
-## Database
-
-![python_logo](https://user-images.githubusercontent.com/40027211/72527879-13bef200-38ad-11ea-8c4d-d3771cecff23.png)
-
-
-## git
-
-![git_img](https://user-images.githubusercontent.com/40027211/72733084-7c261000-3bda-11ea-88ea-fe1f7595d750.png)
-
-
-## ts
-
-![ts_img](https://user-images.githubusercontent.com/40027211/72733075-792b1f80-3bda-11ea-8398-48970e6c17ee.png)
 
 
 ---
@@ -115,7 +87,6 @@ https://twitter.com/estima7/status/1062501672616779776
 더 이롭고 좋은 일에 쓰이도록 개발하는 일에 힘쓰고 싶다는 말씀이 어떠한 종류의 울림으로 다가온다.
 덕분에 개발자로서의 태도에 대해 많은 고민을 할 수 있게 되었다. 
 
-
 ---
 
 - 네이버 데이터개발자 님
@@ -123,7 +94,7 @@ https://twitter.com/estima7/status/1062501672616779776
 
 
 이상한 선배가 들려주는 소프트웨어 만듦 이야기 
- 
+
 고민을 문제로 만드는 일이 중요하다..!! (문제: 해답을 요구하는 물음)
 고민을 문제로 정의하는 과정이 중요하다 
 
@@ -174,7 +145,6 @@ https://twitter.com/estima7/status/1062501672616779776
 그대로 다 때려넣으면 예기치 못한 사태가 발생한다...! 
 ```
 중요한 건 의미있고, 유효한 데이터를 넣는 작업이 중요하다.
-
 
 ---
 
