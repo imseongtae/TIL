@@ -100,8 +100,8 @@ sure = true;
 ### Void
 
 ```typescript
-function warnUser(): void {
-	console.log("This is my warning message");
+function log(msg): void {
+  console.log("Log message: " + msg);
 }
 ```
 
@@ -116,9 +116,11 @@ let n: null = null;
 
 ```typescript
 function error(message: string): never {
-	throw new Error(message);
+  throw new Error(message);
 }
 ```
+
+
 
 ### Object(객체)
 
