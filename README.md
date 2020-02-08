@@ -16,7 +16,7 @@
 - 학습한 내용, 기억하고 싶은 내용을 정리한다.
 - 학습한 내용이 작은 부분일지라도 그냥 넘기지 않고 정리한다.
 - 직접 학습한 내용만 정리한다.
-- 내용을 채우기 위한 학습 및 복사,붙여넣기는 안된다.
+- 내용 채우기만을 위한 복붙은 하지 않는다
 
 
 
@@ -30,12 +30,13 @@
 
   1. **[Javascript](./Javascript/)**
   1. **[Javascript for Web](./Javascript-for-Web/)**
-  1. **[Vue.js](./Vuejs/)**  
+  1. **[Vue.js](./Vue.js/)**  
   1. **[Python](./Python/)**
   1. **[Django](./Django/)**
   1. **[JAVA](./JAVA/)**
   1. **[git](./git/)**
-  1. **[React.js](./Reactjs/)**
+  1. **[Github](./Github/)**
+  1. **[React.js](./React.js/)**
   1. **[Typescript](./Typescript/)**
   1. **[외부강연](./Invitation-Lecture/)**
 
