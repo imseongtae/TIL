@@ -1,20 +1,21 @@
 # Vue.js
 
+Vue.js는 가볍고 단순한 구조를 가지고 있어서 기존의 프로젝트에도 쉽게 적용할 수 있다. 또한 재사용이 가능한 컴포넌트 기반이므로 이를 이용하거나 ES6를 이용할 수도 있다. 그리고 routing, vuex를 사용해 한 곳에서 애플리케이션 전체에서 사용하는 데이터를 효과적으로 관리할 수도 있다. 
 
-
-양방향 바인딩, 속도가 빠름
-
-Vue.js는 가볍고 단순한 구조를 가지고 있다.그래서 기존의 프로젝트에도 쉽게 적용할 수 있다. 또한 재사용이 가능한 컴포넌트 기반이므로 이를 이용하거나 ES6를 이용할 수도 있다. 그리고 routing, vuex를 사용해 한 곳에서 애플리케이션 전체에서 사용하는 데이터를 효과적으로 관리할 수도 있다. 
-
-양방향 데이터 바인딩을 이용해 UI와 데이터 모델간의 reactivity 기능을 만들 수 있다.
+양방향 데이터 바인딩을 이용해 UI와 데이터 모델간의 reactivity 기능을 만들 수 있다는 장점이 있다.
 
 
 
 ## Table of Contents
 
-1. [Primitive Types](#Primitive-Types)
+1. [뷰 인스턴스](#뷰-인스턴스)
+1. [컴포넌트를 사용한 작성방법](#컴포넌트를 사용한 작성방법)
+1. [선언적 렌더링](#선언적-렌더링)
+1. [조건문과 반복문](#조건문과-반복문)
+1. [사용자 입력 핸들링](#사용자-입력-핸들링)
 1. 
-1. Reference Docs
+1. 
+1. [Reference Docs](#Reference-Docs)
 
 ---
 
@@ -30,9 +31,123 @@ Vue.js는 가볍고 단순한 구조를 가지고 있다.그래서 기존의 프
 
 
 
-## 선언적 렌더링([Declarative Rendering](https://vuejs.org/v2/guide/#Declarative-Rendering))
+## 뷰 인스턴스
 
-Vue.js는 간단한 템플릿 구문을 사용해 DOM에서 데이터를 선언적으로 렌더링할 수 있는 시스템이 있다.
+1. new Vue() 생성자를 통해 뷰 인스턴스 생성
+2. el 속성으로 뷰 인스턴스가 그려질 지점 지정!
+3. data 속성에 key-value 형식의 데이터를 정의
+4. `{{ }}`를 통해 화면에 뷰인스턴스의 데이터 속성 값과 연결 혹은 대체됨
+
+```html
+<div id="app">
+  {{ message }} <!-- 4. 화면에 뷰인스턴스의 데이터를 연결 -->  
+</div>
+```
+
+```javascript
+new Vue({ // 1. new Vue() 생성자를 통해 뷰 인스턴스 생성
+  el:'#app', // 2. el 속성으로 뷰 인스턴스가 그려질 지점 지정!
+  data: {
+    message: "Hello Vue.js!" // 3. data 속성에 key-value 형식의 데이터를 정의
+  }
+})
+```
+
+### 뷰 인스턴스 옵션 속성
+
+#### el 속성
+
+`el` 속성은 통해 뷰로 만든 화면이 그려지는 시작점을 의미하며, `el`속성에 의해 선택될 선택자는 `CSS 선택자 규칙`과 같다.
+
+```html
+<div class="selected-by-css">
+  {{ message }}
+</div>
+```
+
+```javascript
+new Vue({
+  el:'.selected-by-css'
+})
+```
+
+**[⬆ back to top](#table-of-contents)**
+
+
+
+## 컴포넌트를 사용한 작성방법
+
+컴포넌트 시스템은 Vue의 중요한 개념인데, 조합하여 화면을 구성할 수 있는 블록을 의미한다. 컴포넌트는 작고 독립적이므로 재사용할 수 있기 때문에 대규모 애플리케이션을 구축할 수 있게 해준다.
+
+컴포넌트를 통해 아래와 같은 이점을 얻을 수 있다.
+
+1. 화면을 일괄적인 패턴으로 구조화하여 개발할 수 있음
+2. 재사용이 편리함
+
+Vue에서 컴포넌트는 **미리 정의된 옵션을 가진 Vue 인스턴스**이다. Vue에서 컴포넌트를 등록하는 방법은 간단하다.
+
+```javascript
+// todo-item 엘리먼트는 app안에 child으로  작성되어야 함
+Vue.component('todo-item', {
+  template: '<li>This is a todo</li>'
+})
+
+var app = new Vue({el:'#app', data: {...}})
+```
+
+```html
+<div id="app">
+  <ol>
+    <todo-item></todo-item>
+  </ol>
+</div>
+```
+
+### HTML 사용자 정의 태그 스펙
+
+HTML 사용자 정의 태그 스펙은 `케밥 케이스`와 `모두 소문자`를 강제하는데, 뷰에서는 이를 따르지 않아도 되지만 가급적 지키는 게 좋다.
+
+### 컴포넌트의 유효 범위
+
+전역 컴포넌트와 지역 컴포넌트는 유효 범위가 다르다.  
+
+#### 전역 컴포넌트 
+
+전역 컴포넌트는 한 번 등록하면 어느 인스턴스에서나 사용할 수 있으며, Vue 생성자에서 `component()`를 호출해야 한다. 
+
+```javascript
+Vue.component('global-component', {
+  template: '<div>전역 컴포넌트임</div>'
+})
+```
+
+#### 지역 컴포넌트 
+
+지역 컴포넌트는 새 인스턴스를 생성할 때 마다 등록해야 하며, 유효 범위는 지역 컴포넌트가 등록된 인스턴스를 벗어날 수 없다. 사용하기 위해선 인스턴스의 속성으로 `components`를 추가하고 등록할 컴포넌트의 이름과 내용을 정의하면 된다.
+
+```javascript
+new Vue({
+  components: {
+    'local-component' : {
+      template: '<div>지역 컴포넌트입니다.</div>'
+    }
+  }
+})
+```
+
+**[⬆ back to top](#table-of-contents)**
+
+
+
+## 선언적 렌더링
+
+Vue.js는 간단한 템플릿 구문을 사용해 DOM에서 데이터를 선언적으로 렌더링(**Declarative Rendering**)할 수 있는 시스템이 있다.
+
+### {{ }} - 콧수염 괄호
+
+`{{}}`는 뷰 인스턴스의 데이터를 HTML 태그에 연결하는 가장 기본적인 텍스트 삽입 방식이다.  뷰 인스턴의 데이터를 HTML에서 표현하기 위해 사용한다. 
+
+> double mustaches, mustache tag, 콧수염 괄호, 이중 중괄호
 
 ```html
 <div id="app">
@@ -43,15 +158,39 @@ Vue.js는 간단한 템플릿 구문을 사용해 DOM에서 데이터를 선언�
 ```javascript
 var app = new Vue({
 	el: '#app',
-	data: {
-		message: '반가워 Vue!'
-	}
+  data: {
+    message: 'hello Vue! thx'
+  }
 })
 ```
 
+위의 코드는  웹 페이지 상에서는 아래처럼 표현된다!
+
+---
+
+hello Vue! thx
+
+---
+
+`Vue 인스턴스`의 `data`속성이 바뀌면 뷰 반응성에 의해 자동으로 갱신되는데, 이를 막고 싶다면 아래의 코드처럼, div 태그의 속성으로 `v-once`를 사용한다. 
+
+```html
+<div id="app" v-once>
+  {{ message }}
+</div>
+```
+
+**[⬆ back to top](#table-of-contents)**
 
 
-## 조건문과 반복문([Conditionals and Loops](https://vuejs.org/v2/guide/#Conditionals-and-Loops))
+
+
+
+
+
+
+
+## 조건문과 반복문
 
 ### 조건문
 
@@ -95,7 +234,9 @@ var app = new Vue({
 })
 ```
 
-## 사용자 입력 핸들링([사용자 입력 핸들링](https://kr.vuejs.org/v2/guide/index.html#사용자-입력-핸들링))
+**[⬆ back to top](#table-of-contents)**
+
+## 사용자 입력 핸들링
 
 사용자와 앱의 상호작용을 위해 `v-on`디렉티브를 사용하여 `Vue 인스턴스`에서 메소드를 호출하는 이벤트 리스너를 추가할 수 있다. 
 
@@ -126,28 +267,9 @@ Vue는 입력과 앱의 상태를 양방향으로 바인딩하는 `v-model`디�
 
 > Vue also provides the `v-model` directive that makes two-way binding between form input and app state a breeze:
 
-## 컴포넌트를 사용한 작성방법
+**[⬆ back to top](#table-of-contents)**
 
-컴포넌트 시스템은 Vue의 또 다른 중요한 개념인데, 이는 작고 독립적이며, 재사용할 수 있는 컴포넌트로 구성된 대규모 애플리케이션을 구축할 수 있게 해주는 추상적 개념이다. 
 
-Vue에서 컴포넌트는 **미리 정의된 옵션을 가진 Vue 인스턴스**이다. Vue에서 컴포넌트를 등록하는 방법은 간단하다.
-
-```javascript
-// todo-item 엘리먼트는 app안에 child으로  작성되어야 함
-Vue.component('todo-item', {
-  template: '<li>This is a todo</li>'
-})
-
-var app = new Vue({el:'#app', data: {...}})
-```
-
-```html
-<div id="app">
-  <ol>
-    <todo-item></todo-item>
-  </ol>
-</div>
-```
 
 
 
@@ -164,6 +286,7 @@ var app = new Vue({el:'#app', data: {...}})
 ## Reference Docs
 
 - [Vue.js Tutorial](https://kr.vuejs.org/v2/guide/index.html)
+- [OOD - 커플링이란 무엇이며, 어떻게 줄일 수 있을까?](https://vandbt.tistory.com/13)
 
 
 
