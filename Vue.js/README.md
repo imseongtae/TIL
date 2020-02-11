@@ -9,8 +9,9 @@ Vue.js는 가볍고 단순한 구조를 가지고 있어서 기존의 프로젝�
 ## Table of Contents
 
 1. [뷰 인스턴스](#뷰-인스턴스)
-1. [컴포넌트를 사용한 작성방법](#컴포넌트를 사용한 작성방법)
+1. [컴포넌트를 사용한 작성방법](#컴포넌트를-사용한-작성방법)
 1. [선언적 렌더링](#선언적-렌더링)
+1. [라이프 싸이클](#라이프-싸이클)
 1. [조건문과 반복문](#조건문과-반복문)
 1. [사용자 입력 핸들링](#사용자-입력-핸들링)
 1. 
@@ -79,6 +80,8 @@ new Vue({
 
 컴포넌트 시스템은 Vue의 중요한 개념인데, 조합하여 화면을 구성할 수 있는 블록을 의미한다. 컴포넌트는 작고 독립적이므로 재사용할 수 있기 때문에 대규모 애플리케이션을 구축할 수 있게 해준다.
 
+<img src="https://user-images.githubusercontent.com/40027211/74282098-e4dc5480-4d62-11ea-836e-3d3a456fbe14.png" alt="components" style="zoom:67%;" />
+
 컴포넌트를 통해 아래와 같은 이점을 얻을 수 있다.
 
 1. 화면을 일괄적인 패턴으로 구조화하여 개발할 수 있음
@@ -135,6 +138,25 @@ new Vue({
 })
 ```
 
+### 좋은 컴포넌트를 위한 FIRST 원칙 
+
+1. **F**ocus(단일 책임 원칙): 하나의 컴포넌트는 하나의 책임만을 가진다.
+
+2. **I**ndependent(독립적): 컴포넌트는 다른 컴포넌트와 독립적으로 작동할 수 있어야 한다.
+
+3. Reusable(재사용): 컴포넌트는 재사용할 수 있어야 한다.
+
+4. Small(작음): 컴포넌트는 작은 크기로 유지한다. 이를 통해 유지 보수의 복잡성을 낮춘다.
+
+5. Testable(테스트 가능): 유닛 테스트가 가능하여야 한다.	
+	- 유닛 테스트가 가능하다는 것은 하나의 컴포넌트가 가진 기능과 목적이 명확함을 의미
+
+### 커플링(Coupling)
+
+어떤 모듈을 변경할 때 다른 모듈의 변경이 요구된다면 **커플링(Coupling)이 존재**한다
+
+[참고: OOD - 커플링이란 무엇이며, 어떻게 줄일 수 있을까?](https://vandbt.tistory.com/13)
+
 **[⬆ back to top](#table-of-contents)**
 
 
@@ -183,6 +205,58 @@ hello Vue! thx
 **[⬆ back to top](#table-of-contents)**
 
 
+
+## 라이프 싸이클
+
+<img src="https://user-images.githubusercontent.com/40027211/74282739-f96d1c80-4d63-11ea-917f-e230861bbd4a.PNG" alt="life-cycle" style="zoom:67%;" />
+
+인스턴스의 상태에 따라 호출할 수 있는 속성들을 라이프 싸이클이라고 한다. 뷰의 라이프 싸이클에는 인스턴스의 생성, 변경, 소멸과 관련된 8개 속성이 있다.
+
+> 라이프 싸이클은 애플리케이션이 가지는 생명 주기를 일컫는다.
+
+**[⬆ back to top](#table-of-contents)**
+
+## 뷰 컴포넌트 통신
+
+뷰의 컴포넌트는 유효 범위가 독립적이므로 다른 컴포넌트의 값을 직접적으로 참조할 수가 없으므로 뷰에서 정의한 컴포넌트 간의 데이터 전달 방법을 따라야 한다. 
+
+<img src="https://user-images.githubusercontent.com/40027211/74282095-e3ab2780-4d62-11ea-9298-15d7092180f2.png" alt="props-events" style="zoom:67%;" />
+
+
+
+### 상위에서 하위 컴포넌트로 데이터 전달하는 법
+
+```javascript
+Vue.component('child-component', {
+  props: ['props 속성이름']
+});
+```
+
+```html
+<child-component v-bind:props 속성이름="상위 컴포넌트의 data 속성"></child-component>
+```
+
+### 컴포넌트 간의 관계
+
+컴포넌트를 등록함과 동시에 뷰 인스턴스가 상위 컴포넌트가 된다. 위의 코드를 예시로 들면, `<child-component>`는 생성함과 동시에 뷰 인스턴스의 하위 컴포넌트가 된다. 
+
+### 하위에서 상위로 컴포넌트 이벤트 전달하기
+
+하위에서 상위 컴포넌트와 통신하기 위해서는 이벤트를 발생시켜 상위 컴포넌트로 신호를 보내면 된다. 
+
+> 하위에서 상위로 데이터를 전달하는 방법은 뷰의 단방향 데이터 흐름에 어긋하는 구현 방방법이다. 다만 복잡한 애플리케이션을 구현해야 할 경우 이벤트 버스를 이용하여 데이터를 전달해야 하는 경우도 있다.
+
+### 이벤트 발생과 수신형식
+
+```javascript
+// $emit()을 이용한 event 발생
+this.$emit('이벤트명')
+```
+
+```html
+<!-- v-on:속성을 이용한 event 수신 -->
+<child-component v-on:이벤트명="상위 컴포넌트의 메서드명"></child-component>
+```
 
 
 
@@ -251,17 +325,19 @@ var app = new Vue({
 
 ```javascript
 var app = Vue({
-  el:'#app',
-  data: {
-    message: "hello Vue.js!"
-  }, //end data
-  methods: {
-    reverseMessage: function() {
-			this.message = this.message.split('').reverse().join('');
+	el:'#app',
+	data: {
+		message: "hello Vue.js!"
+	},
+	methods: {
+    reverseMessage() {
+      this.message = this.message.split('').reverse().join('');
     }
   }
 })
 ```
+
+
 
 Vue는 입력과 앱의 상태를 양방향으로 바인딩하는 `v-model`디렉티브(directive)를 제공한다.
 
