@@ -33,16 +33,18 @@ TypeScript를 실행하기 위해선 TypeScript룰 컴파일해주는 Node.js가
 ## Table of Contents
 
 1. [Primitive Types](#Primitive-Types)
-1. 
-1. 
+1. [Type alias](#Type-alias)
+1. [Function](#Function)
+1. [Interface](#Interface)
+1. [Class](#Class)
+1. [Inheritance](#Inheritance)
+1. [Access modifier](#Access-modifier)
 
 ---
 
 
 
 ## Primitive Types
-
-
 
 ### Boolean(논리)
 
@@ -53,14 +55,18 @@ let isDone: boolean = true;
 
 ### Number(숫자)
 
+자바스크립트와 마찬가지로 모든 숫자를 부동소수점으로 나타냄. 
+
 ```typescript
 let demical: number = 6;
-let hex: number = 0xf00d;
-let binary: number = 0b1010;
-let octal: number = 0o744;
+let hex: number = 0xf00d; // 16진수
+let binary: number = 0b1010; // 2진수
+let octal: number = 0o744; // 8진수
 ```
 
 ### String(문자열)
+
+따옴표와 쌍따옴표를 사용
 
 ```typescript
 let color: string = "blue";
@@ -80,9 +86,9 @@ let sentence: string = `Hello, my name is ${fullName}`;
 let list: number[] = [1,2,3];
 ```
 
-#### generic array
+#### **generic array**
 
-`Array<elemType>`  과 같은 문법을 통해 들어올 데이터 타입을 미리 지정할 수 있다.
+`Array<elemType>`과 같은 문법을 통해 들어올 **데이터 타입**을 **미리 지정**할 수 있다.
 
 ```typescript
 let list Array<number> = [1,2,3];
@@ -103,10 +109,12 @@ x = [10, "x"]; // Error
 ```typescript
 enum Color { Red = 1, Green, Blue }
 let color: Color = Color.Green;
-console.log(color)
+console.log(color) // 2
 ```
 
 ### Any(임의)
+
+동적 콘텐츠가 컴파일 타입검사를 통과하도록 해줌, 다만 임의형을 자주 사용하게 되면 정적 변수를 사용하는 게 무의미해진다. 
 
 ```typescript
 let sure: any = 1;
@@ -116,6 +124,8 @@ sure = true;
 
 ### Void
 
+어떤 것도 없다는 의미, 값을 반환하지 않는 함수의 반환 유형으로 쓰임
+
 ```typescript
 function log(msg): void {
   console.log("Log message: " + msg);
@@ -124,22 +134,33 @@ function log(msg): void {
 
 ### Null and Undefined
 
+다른 모든 타입의 하위타입. 모든 타입에 null과 undefined를 지정할 수 있음
+
 ```typescript
 let u: undefined = undefined;
 let n: null = null;
 ```
 
-### Naver
+### Never
+
+절대 발생하지 않을 값의 유형을 나타냄. 절대 리턴이 발생하지 않는다든가, 항상 예외값을 던져 절대 반환을 하지 않는 경우
 
 ```typescript
 function error(message: string): never {
   throw new Error(message);
+}
+function forever(): never {
+  while(true) {
+    
+  }
 }
 ```
 
 
 
 ### Object(객체)
+
+타입으로 지정되지 않은 타입. 즉, number, string, symbol, null, undefined 가 아닌 다른 유형을 말한다.
 
 ```typescript
 let user: { name: string, age: number; } = {name: "ham", age:1 };
@@ -149,6 +170,222 @@ console.log(user.name);
 
 
 **[⬆ back to top](#table-of-contents)**
+
+
+
+## Type alias
+
+### 복잡한 타입을 간단하게 쓸 수 있는 기능
+
+```typescript
+type = UNIQID = string | null
+
+function getUserID(id: UNIQID) {
+	console.log(id)
+}
+
+getUserID('ham1234')
+getUserID(null)
+getUserID(12) // error TS2345: Argument of type '12' is not assignable to parameter of type 'string'.
+
+```
+
+### 특정값만 받는 기능
+
+```typescript
+type USER_TYPE = 'TESTER' | 'ADMIN'
+let userType: USER_TYPE = 'TESTER'
+userType = 'abcd' // Type '"abcd"' is not assignable to type 'USER_TYPE'.
+```
+
+
+
+## Function
+
+함수 선언문과 함수 리터럴로 정의하는 방법을 모두 사용할 수 있다. 
+
+```typescript
+const Add = function(a: number, b: number): number {
+  return a + b;
+}
+```
+
+### 파라미터는 기본값을 넣어줄 수도 있고, 넣지 않을 수도 있다.
+
+```typescript
+function point(x:number, y:number = 10): number {
+	return x + y;
+}
+console.log("OUTPUT: " + point(20)) // OUTPUT: 30
+
+function optionPoint(x: number, y?: number): number {
+  if(y) {
+    return x + y;
+  }
+  return x;
+}
+console.log("OUTPUT: " + optionPoint(10, 10)) // OUTPUT: 20
+console.log("OUTPUT: " + optionPoint(10)) // OUTPUT: 10
+
+```
+
+### rest Parameter
+
+```typescript
+function cities(name: string, ...restName: string[]) {
+  return name+ ',' + restName.join(',')
+}
+
+let ourCities = cities('서울', '경기', '부산', '광명', '대구', '인천', '광주')
+console.log(ourCities)
+```
+
+### tsc를 통해 컴파일
+
+```javascript
+function cities(name) {
+    var restName = [];
+    for (var _i = 1; _i < arguments.length; _i++) {
+        restName[_i - 1] = arguments[_i];
+    }
+    return name + ',' + restName.join(',');
+}
+var ourCities = cities('서울', '경기', '부산', '광명', '대구', '인천', '광주');
+console.log(ourCities);
+```
+
+
+
+## Interface
+
+타입의 이름을 지정하는 역할(코드의 타입을 정의), 자바스크립트로 컴파일 될 때 제거
+
+개념적으로 와닿지 않으면..! 사용하려는 자료형을 조립해서 사용한다고 생각하면 됨
+
+```typescript
+interface Size { width: number; height: number;}
+interface Label { title: string; size: Size;}
+
+function labelPrint(label: Label): void {
+  console.log(label)
+}
+let myLabel = <Label>{
+  title: '타입스크립트 도서', size: { width: 20, height: 29 }
+}
+
+labelPrint(myLabel)
+```
+
+`<Config>`나 `as Config`는 타입 어설션(Type assertions)의 표현식으로 같은 의미이다.
+
+```typescript
+interface Config { name: string; path: string; version?: string; }
+interface App { fullPath: string; version?: string; }
+
+function applicationInit(config: Config): App {
+  let app = {fullPath: config.name + config.path} as App
+  if(config.version) {
+    app.version = config.version
+  }
+  return app;
+}
+
+console.log(applicationInit({name:'ham', path:'/til/folder'} as Config))
+console.log(applicationInit(<Config>{name:'ham', path:'/til/folder', version: '1.0.0'}))
+```
+
+
+
+## Class
+
+```typescript
+class Animal {
+  name: string;
+  legs: number;
+
+  constructor(name: string, legs: number = 4) {
+    this.name = name;
+    this.legs = legs;
+  }
+  info(): string {
+    return `${this.name} has ${this.legs} legs`;
+  }
+}
+
+let dog: Animal = new Animal('멍멍이')
+console.log(dog.info()) // 멍멍이 has 4 legs
+```
+
+
+
+## Inheritance
+
+하위 클래스를 만들 때는 `extends` 키워드를 사용. 파생 클래스는 생성자 함수에서 `super()`를 호출해야 하며, 상위 클래스의 메서드를 호출할 수 있다.
+
+```typescript
+
+```
+
+
+
+## Access modifier
+
+### public 
+
+```typescript
+class Face {
+  public edge: number;
+
+  constructor(edge: number) {
+    this.edge = edge;
+  }
+}
+
+class Rect extends Face {
+  constructor() {
+    super(4);    
+  }
+}
+
+const rect = new Rect();
+console.log(rect.edge)
+```
+
+### private
+
+### protected
+
+### readonly
+
+
+
+## getter/setter
+
+`get` 키워드를 붙여 값을 받을 수 있고, `set` 키워드를 붙여서 값을 할당할 수 있다. 
+
+```typescript
+class Face {
+  private _edge: number = 3;
+  get edge() {
+    return this._edge;
+  }
+  set edge(value: number) {
+    this._edge = value;
+  }
+}
+const face = new Face()
+console.log(face.edge)
+face.edge = 5;
+console.log(face.edge)
+```
+
+
+
+
+
+
+
+
 
 
 
