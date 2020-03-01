@@ -1,8 +1,7 @@
 # To Do List
 
 HTML, CSS, Javascript를 활용해서 만들어본 
-To Do List입니다. vanillaJS의 실력향상을 위해서 
-노력한 내용을 정리합니다.
+To Do List입니다. 
 
 
 ## Table of Contents
@@ -106,7 +105,6 @@ todoForm.addEventListener('submit', function(e){
   // let text = userInput.value;
   list.innerHTML += '<li>' + userInput.value + '</li>';
   userInput.value = '';
-  console.log('실행 흐름이 이어지냐?');
 })
 ```
 
