@@ -7,7 +7,6 @@
 1. [Web Storage](#Web-Storage)
 2. [localStorage와 sessionStorage](#localStorage와-sessionStorage)
 3. [JSON](#JSON)
-4. [생성자](#생성자)
 5. [참고](#참고)
 
 ---
