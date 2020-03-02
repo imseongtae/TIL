@@ -37,8 +37,11 @@ TypeScript를 실행하기 위해선 TypeScript룰 컴파일해주는 Node.js가
 1. [Function](#Function)
 1. [Interface](#Interface)
 1. [Class](#Class)
+1. [Generics](#Generics)
 1. [Inheritance](#Inheritance)
 1. [Access modifier](#Access-modifier)
+1. [getter/setter](#getter/setter)
+1. 
 
 ---
 
@@ -254,9 +257,21 @@ var ourCities = cities('서울', '경기', '부산', '광명', '대구', '인천
 console.log(ourCities);
 ```
 
+### example
+
+```typescript
+function sumArr(numbers: number[]): number {
+  return numbers.reduce((acc, current) => acc + current, 0)
+}
+const total = sumArr([1,2,3,4,5]);
+console.log(total) // 15
+```
+
 
 
 ## Interface
+
+> JAVA에서는 인터페이스를 아무것도 구현된 것이 없는 기본 설계도로 표현하며, 오직 추상 메서드와 상수만을 멤버로 가진다. 인터페이스는 불완전하므로 다른 클래스를 작성하는 데 도움을 줄 목적으로 사용된다. 
 
 타입의 이름을 지정하는 역할(코드의 타입을 정의), 자바스크립트로 컴파일 될 때 제거
 
@@ -294,6 +309,66 @@ console.log(applicationInit({name:'ham', path:'/til/folder'} as Config))
 console.log(applicationInit(<Config>{name:'ham', path:'/til/folder', version: '1.0.0'}))
 ```
 
+### example.1
+
+`constructor`의 파라미터에 **접근 제한자**를 사용하여 **멤버 변수 사용을 대체**하기
+
+```typescript
+interface Shape {
+  getArea(): number, // Shape interface에는 getArea라는 함수가 꼭 있어야 함
+}
+
+class Circle implements Shape {
+  constructor(public radius: number) {
+    this.radius = radius;
+  }  
+  getArea() { // 너비를 구하는 함수
+    return this.radius * this.radius * Math.PI;
+  }
+}
+
+class Rectangle implements Shape {
+  height: number;
+  constructor(private width: number, height: number) {
+    this.width = width;
+    this.height = height;
+  }
+  getArea() {
+    return this.width * this.height;
+  }
+}
+
+const shapes: Shape[] = [new Circle(5), new Rectangle(5, 10)]
+shapes.forEach(shape => {
+  console.log(shape.getArea()) // 78.53981633974483 // 50
+})
+```
+
+### example.2
+
+`interface`가 `interface`를 상속(`extends`)하는 예제. `interface`를 통해서 코드의 중복을 제거. `interface`를 상속하지 않았다면 `property`의 개수가 늘어남
+
+```typescript
+interface Person {
+  name: string;
+  age?: number;
+}
+interface Developer extends Person {
+  skills: string[],
+}
+const person: Person = {
+  name: '임사람',
+  age: 30,
+};
+const expert: Developer = {
+  name: '임개발',
+  skills: ['JavaScript', 'TypeSript', 'Vue.js']
+}
+const people: Person[] = [person, expert];
+console.log(people);
+// [{ name: '임사람', age: 30 },{ name: '임개발', skills: [ 'JavaScript', 'TypeSript', 'Vue.js' ] }]
+```
+
 
 
 ## Class
@@ -314,6 +389,87 @@ class Animal {
 
 let dog: Animal = new Animal('멍멍이')
 console.log(dog.info()) // 멍멍이 has 4 legs
+```
+
+
+
+## Generics
+
+`Generics`은 타입스크립트에서 `funtion`, `class`, `interface`, `type alias` 를 사용하게 될 때 여러 종류의 타입에 대해 호환을 맞춰야 하는 상황에서 사용. 함수에 `Generics`을 사용하면 파라미터로 다양한 타입을 넣을 수도 있고, 타입 지원을 지켜낼 수도 있습니다. 
+
+### function에서 Generics
+
+```typescript
+function merge<A, B>(a: A, b: B): A & B {
+  return {
+    ...a, 
+    ...b,
+  }
+}
+const merged = merge({foo: 1}, {bar: 1})
+console.log(merged) // { foo: 1, bar: 1 }
+```
+
+```typescript
+function wrap<T>(param: T) {
+  return {
+    param
+  }
+}
+const wrapped = wrap(10);
+console.log(wrapped) // { param: 10 }
+```
+
+### Interface에서 Generics
+
+```typescript
+interface Items<T> {
+  list: T[];
+}
+const items: Items<string> = {
+  list: ['a', 'b', 'c']
+}
+console.log(items) // { list: [ 'a', 'b', 'c' ] }
+```
+
+### type에서 Generics
+
+```typescript
+type Items<T> = {
+  list: T[];
+}
+const items: Items<string> = {
+  list: ['one','two','three']
+}
+```
+
+### class에서 Generics
+
+```typescript
+class Queue<T> {
+  list: T[] = [];
+  get length() {
+    return this.list.length;
+  }
+  enqueue(item: T) {
+    this.list.push(item);
+  }
+  dequeue() {
+    return this.list.shift();
+  }  
+}
+
+const queue = new Queue<number>();
+queue.enqueue(0);
+queue.enqueue(1);
+queue.enqueue(2);
+queue.enqueue(3);
+queue.enqueue(4);
+console.log(queue.dequeue()); // 0
+console.log(queue.dequeue()); // 1
+console.log(queue.dequeue()); // 2
+console.log(queue.dequeue()); // 3
+console.log(queue.dequeue()); // 4
 ```
 
 
