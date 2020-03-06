@@ -4,8 +4,8 @@
 
 ## Table of Contents
 
-1. [뷰 인스턴스](#뷰-인스턴스)
-1. [컴포넌트를 사용한 작성방법](#컴포넌트를-사용한-작성방법)
+1. [단축기](#단축키)
+1. [작업물](#작업물)
 1. [참고문헌](#참고문헌)
 
 
@@ -18,9 +18,48 @@
 
 ## 단축키
 
-- 컴포넌트키: `k`
-- 그룹: `g`
+- `ctrl`을 누르고 마우스로 할 수 있는 일이 많다!
+- `alt`를 통해 간격을 잡을 수 있다. 
+
+| 단축키        | 기능               |
+| ------------- | ------------------ |
+| 잠그기        | `ctrl + shift + L` |
+| 그룹화        | `ctrl + G`         |
+| 이름 변경     | `ctrl + R`         |
+| 컴포넌트 생성 | `ctrl + alt + k`   |
+| Rectangle     | `R`                |
+| Arrow         | `shift + L`        |
+|               |                    |
+|               |                    |
+
+
+
+## Skill
+
+### Fill Linear
+
+- Linear 속성을 이용해 세련미 있는 디자인을 만들 수 있다. 
 - 
+
+
+
+### Frame
+
+- 웹 디자인은 `Frame`을 `1980 x 1080`으로 설정해서 시작했다.
+
+- 
+
+  
+
+
+
+
+
+
+
+## 작업물
+
+- [Design Tutorial A Music Website](https://www.figma.com/file/aFhCvX8lElRxuY2cW1QXV0/Untitled?node-id=0%3A1)
 
 
 
