@@ -85,6 +85,78 @@ Ampersand(상위 선택자 참조)
 
 
 
+## 중첩된 속성
+
+```scss
+.box {
+  font: {
+    weight: bold;
+    size: 10px;
+    family: sans-serif;
+  }
+  margin: {
+    top: 10px;
+    left: 20px;
+  }
+  padding: {
+	  bottom: 40px;
+    right: 30px;
+  }
+}
+```
+
+Compiled to:
+
+```css
+.box {
+	font-weight: bold;
+  font-size: 10px;
+  font-family: sans-serif;
+  
+  margin-top: 10px;
+  margin-left: 20px;
+  
+  padding-bottom: 40px;
+  padding-right: 30px;
+}
+```
+
+
+
+## 변수(Variables)
+
+반복적으로 사용되는 값을 변수로 지정할 수 있으며, 사용하기 위해선 변수의 이름 앞에 `$`를 붙인다.
+
+```scss
+$color-primary: #e96900;
+$url-images: "/assets/images/";
+$w: 200px;
+
+.box {
+  width: $w;
+  margin-left: $w;
+  background: $color-primary url($url-images + "bg.jpg")
+}
+```
+
+Complied to: 
+
+```css
+.box {
+  width: 200px;
+  margin-left: 200px;
+  background: #e96900 url( "/assets/images/bg.jpg")
+}
+```
+
+
+
+
+
+
+
+
+
 
 
 
