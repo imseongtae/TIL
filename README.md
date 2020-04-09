@@ -30,7 +30,9 @@
 
   1. **[Javascript](./Javascript/)**
   1. **[Javascript for Web](./Javascript-for-Web/)**
-  1. **[Vue.js](./Vue.js/)**  
+  1. **[Vue.js](./Vue.js/)**
+  1. **[Node.js](./Node.js/)**
+  1. **[WEB](./WEB/)**
   1. **[Python](./Python/)**
   1. **[Django](./Django/)**
   1. **[JAVA](./JAVA/)**
