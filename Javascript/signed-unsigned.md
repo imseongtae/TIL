@@ -6,7 +6,9 @@
 
 - 아래 그림은 **정수 3인 1바이트**를  2진수로 표현할 때 할당되는 메모리 비트
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6b163100-1b0e-4df3-9676-05aa7332ee22/diff.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6b163100-1b0e-4df3-9676-05aa7332ee22/diff.png)
+<img width="556" alt="diff" src="https://user-images.githubusercontent.com/60806840/79068365-5dc74080-7d01-11ea-8df2-4d614a72cb75.png">
+
+
 
 ## Signed
 
@@ -18,7 +20,9 @@
   - signed는 C/C++ 프로그램 언어에서 정수형 변수 중 부호를 갖는 변수를 선언 한다. 정수형 중 음수는 2의 보수 체계를 사용하므로 이 키워드에 의해 부호를 사용할 수 있도록 변수 선언할 수 있다. 그러나 정수형의 변수에서 unsigned가 없으면 음수를 사용할 수 있는 부호를 갖는 정수형이 된다. 따라서 프로그램에서는 이 키워드는 많이 사용은 하지 않는다.
 - Signed에서는 파란색으로 칠해진 영역이 MSB
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/71b65f1a-8f6d-435b-ac1d-8920bc2e8224/Signed.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/71b65f1a-8f6d-435b-ac1d-8920bc2e8224/Signed.png)
+<img width="500" alt="Signed" src="https://user-images.githubusercontent.com/60806840/79068366-5e5fd700-7d01-11ea-9f62-93ecbe7959a8.png">
+
+
 
 ## Unsigned
 
@@ -30,7 +34,11 @@
   - unsigned는 C/C++ 언어에서 사용되는 지정자로 정수형과 같이 사용되어 부호 비트를 제거해 저장 가능한 양수 범위를 두배로 늘이는 역할을 한다. char와 int의 signed 정수형 변수에서 MSB가 부호 비트이다. 1이면 음수이고 0이면 양수이다. 그러나 unsigned을 사용하면 음수를 사용하지 않겠다는 의미 이므로 부호 비트가 필요 없다. 따라서 이진수와 같은 십진수가 된다.
 - Unsigned에서는 MSB가 없음
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/247dfd0e-4040-40c6-9901-6a27c026d063/Unsigned.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/247dfd0e-4040-40c6-9901-6a27c026d063/Unsigned.png)
+<img width="500" alt="Unsigned" src="https://user-images.githubusercontent.com/60806840/79068367-5ef86d80-7d01-11ea-98c4-b16c0dd840c5.png">
+
+
+
+
 
 ## JavaScript의 숫자
 
@@ -40,7 +48,9 @@ JavaScript는 **IEEE 754**(ITripleE 754)라는 규격을 따르고 있다. JavaS
 
 - 아래 그림은 자바스크립트에서 사용하는 **IEEE 754 부동소수점 규격**
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/86d39678-d517-4aa4-bfce-44912f1fed68/IEEE754.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/86d39678-d517-4aa4-bfce-44912f1fed68/IEEE754.png)
+<img width="550" alt="IEEE754" src="https://user-images.githubusercontent.com/60806840/79068368-5ef86d80-7d01-11ea-8f3f-a145f1f60b51.png">
+
+
 
 ### JavaScript의 숫자를 이해하기 위한 예시
 
@@ -51,6 +61,8 @@ JavaScript는 **IEEE 754**(ITripleE 754)라는 규격을 따르고 있다. JavaS
 
 - JavaScript는 **정밀한 값을 표현**하는데 좋은 규격을 따름
 - **IEEE 754 부동소수점 규격**은 `Number` 타입으로 `Double`로 취급
+
+
 
 ## Signed/Unsigned와 JavaScript의 관계?
 
