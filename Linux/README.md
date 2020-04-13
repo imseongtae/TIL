@@ -83,3 +83,4 @@ rm *
 ## 참고 문헌
 
 - [리눅스 기본 명령어]([https://gyoogle.dev/blog/linux/Linux%20Basic%20Command.html](https://gyoogle.dev/blog/linux/Linux Basic Command.html))
+- [리눅스 rm 명령어, 옵션 사용법 정리 (파일, 디렉토리 삭제 명령)](https://withcoding.com/95)
