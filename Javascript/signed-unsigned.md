@@ -54,38 +54,42 @@ JavaScript는 **IEEE 754**(ITripleE 754)라는 규격을 따르고 있다. JavaS
 
 ### JavaScript의 숫자를 이해하기 위한 예시
 
-- 1.0과 1은 다르다. 1.0은 1에 아주 근사(근접)한 수이다.
-- 자바스크립트의 숫자 규격은 스탑 워치⏱️로 비유할 수 있다. 스탑 워치⏱️는 1000분의 1초까지 정밀하게 계산하지만 **이 범위를 벗어난다면 오차를 허용**한다.
+- 1.0과 1은 다르다. **1.0은 1에 아주 근사(근접)한 수**이다.
+- 자바스크립트의 숫자 규격은 **스탑 워치⏱️**로 비유할 수 있다. **스탑 워치⏱️**는 1000분의 1초까지 정밀하게 계산하지만 **이 범위를 벗어난다면 오차를 허용**한다.
 
 ### JavaScript의 숫자의 특징
 
-- JavaScript는 **정밀한 값을 표현**하는데 좋은 규격을 따름
-- **IEEE 754 부동소수점 규격**은 `Number` 타입으로 `Double`로 취급
+- 64비트라는 크기로 인해 **정밀한 값을 표현**하는데 좋음
+- **IEEE 754 부동소수점 규격**은 `Number` 타입 `Double`로 취급
 
 
 
-## Signed/Unsigned와 JavaScript의 관계?
+## Signed/Unsigned와 JavaScript의 관계
 
 ### 무슨 관계가 있을까?
 
 - 자바스크립트에서 **버퍼를 읽거나 쓰는 예문**들을 볼때 C에서 사용되는 `signed`와 `unsigned`라는 키워드에 비유하는 내용을 자주 접할 수 있음
-
-- 자바스크립트 비트연산자 사용시 Unsigned 32-bit Integer로 변환
-
-- `unsigned/signed`에 따라서 **성능에 영향**을 줄 때 ⇒ 64-bit signed 대신 32-bit unsigned를 사용할때 성능이 빠르고 이게 병목지점인 경우
-
-- `unsigned`를 사용하기 위해 결정내리는 경우(libsora님 글)
-1. API에서 unsigned를 사용하라는 경우
+- 자바스크립트는 비트연산자 사용시 `Unsigned` 32-bit Integer로 변환됨
+- `unsigned/signed` 구분에 따라서 **성능에 영향**을 줄 때 ⇒ 64-bit `signed` 대신 32-bit `unsigned`를 사용할때 성능이 빠르고 이게 병목지점인 경우
+- unsigned를 사용하기 위해 결정내리는 경우(libsora님 글)
+  1. API에서 `unsigned`를 사용하라고 권고하는 경우
   2. 2진수, 16진수가 개입된 로직
-  3. 이외에 나머지 경우는 전부 signed
+  3. 이외에 나머지 경우는 전부 `signed`
+
+
 
 ## 참고문헌
+
+### Blog Post
 
 - [변수](https://tew_books.gitlab.io/javascript_tutorial/2.Variables.html)
 - [나는 unsigned가 싫어요](https://libsora.so/posts/i-hate-unsigned/)
 - [Signed와 Unsigned 차이 - Firejune](https://firejune.com/1791/Signed와+Unsigned+차이)
 - [Signed와 Unsigned의 차이.](https://themangs.tistory.com/entry/Signed와-Unsigned의-차이)
 - [자바스크립트 (JavaScript)에서 Unsigned 32-bit Integer로 변환하기](https://devday.tistory.com/entry/자바스크립트-JavaScript에서-Unsigned-32bit-Integer로-변환하기)
+- My Blog - 자바스크립트
+
+### 참고 서적
+
 - 모던 자바스크립트 입문 - 부동소수점과 정확도 문제
-- My Blog
 
