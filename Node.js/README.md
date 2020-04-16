@@ -1,6 +1,14 @@
 # Node.js
 
-**Node.js** 는 **서버사이드 자바스크립트**이며 구글의 자바스크립트 엔진인 **V8**을 기반으로 구성된 일종의 소프트웨어 시스템이다. 
+## Node.js란 무엇인가?
+
+**Node.js** 는 **서버사이드 자바스크립트**이며 구글의 자바스크립트 엔진인 **V8**을 기반으로 구성된 **자바스크립트 런타임**이다. Node.js는 이벤트 기반, 논블로킹 I/O 모델을 사용해 가볍고 효율적이다.
+
+### 서버로서의 Node.js
+
+서버는 네트워크를 통해 클라이언트에 정보나 서비스를 제공하는 컴퓨터 또는 프로그램을 말한다. 서버는 클라이언트의 요청에 대해 응답을 하는데, 응답으로 항상 Yes를 하는 것은 아니고, No를 할 수도 있다. 
+
+
 
 - 자바스크립트 기반
 - 이벤트 기반의 프로그래밍 모델
@@ -47,8 +55,8 @@ console.log('Server is running at http://localhost:3000/');
 var fs = require('fs');
 
 fs.readFile('text.txt', 'utf8', function(err, data) {
-	console.log('비동기적 읽기 \n' + data);
-	console.log('\n비동기적 읽기 끝')
+  console.log('비동기적 읽기 \n' + data);
+  console.log('\n비동기적 읽기 끝')
 });
 
 var text = fs.readFileSync('text.txt', 'utf8');
@@ -82,7 +90,7 @@ var custom_event = new EventEmitter();
 
 //event 이름: ham, 
 custom_event.on('ham', function() { 
-	console.log('이벤트 콜') // event listener
+  console.log('이벤트 콜') // event listener
 })
 custom_event.emit('ham');
 ```
@@ -96,7 +104,7 @@ var EventEmitter = require('events');
 var custom_event = new EventEmitter();
 
 custom_event.on('ham', function() {
-	console.log('이벤트 콜')
+  console.log('이벤트 콜')
 })
 
 custom_event.removeAllListeners(); // 모든 이벤트 리스너를 제거
@@ -111,21 +119,20 @@ custom_event.emit('ham');
 
 ```javascript
 function Foo() {
-	
+
 }
 Foo.prototype = {
-	bar :function() {
-		console.log('Foo_bar 실행')
-	}
+  bar :function() {
+    console.log('Foo_bar 실행')
+  }
 }
 
-
 function Bar() {
-	
+
 }
 Bar.prototype = Object.create(Foo.prototype);
 Bar.prototype.baz = function() {
-	console.log('Bar_baz 실행')
+  console.log('Bar_baz 실행')
 }
 
 Foo.prototype.bar();
@@ -140,9 +147,9 @@ Bar.prototype.baz();
 ```javascript
 function Foo() {}
 Foo.prototype = {
-	bar :function() {
-		console.log('Foo_bar 실행')
-	}
+  bar :function() {
+    console.log('Foo_bar 실행')
+  }
 }
 
 function Bar() {}
@@ -151,7 +158,7 @@ Bar.prototype = Object.create(Foo.prototype);
 Bar.prototype = Foo.prototype;
 
 Bar.prototype.baz = function() {
-	console.log('Bar_baz 실행')
+  console.log('Bar_baz 실행')
 }
 
 Foo.prototype.bar();
