@@ -7,7 +7,7 @@
 1. [Setting](#Setting)
 1. [Divide App.vue file](#Divide-App.vue-file)
 1. [컴포넌트 등록](#컴포넌트-등록)
-1. 
+1. [Props](#Props)
 1. 
 
 ---
@@ -57,10 +57,10 @@ declare module '*.html' {
     <V extends Vue, U extends ComponentOptions<V> | FunctionalComponentOptions>(
       options: U,
     ): U;
-    <V extends typeof Vue>(component: V): V;    
-  }
-  const withRender: WithRender;
-  export default withRender;
+  <V extends typeof Vue>(component: V): V;    
+}
+	const withRender: WithRender;
+	export default withRender;
 }
 ```
 
@@ -74,9 +74,9 @@ declare module '*.html' {
 import UserInfo from '@/components/UserInfo.vue'; // 절대경로
 
 @Component({
-	components: {
-		UserInfo,
-	}
+  components: {
+    UserInfo,
+  }
 })
 ```
 
@@ -86,26 +86,26 @@ import UserInfo from '@/components/UserInfo.vue'; // 절대경로
 
 ```vue
 <template>
-  <div>
-    {{ name }} > <br/>
-    <b>{{ userName }}</b>
+<div>
+  {{ name }} > <br/>
+  <b>{{ userName }}</b>
   </div>
 </template>
 
 <script lang="ts">
-import { Vue, Component } from "vue-property-decorator";
+  import { Vue, Component } from "vue-property-decorator";
 
-@Component({
-  props: {
-    name: String,
-  },
-})
+  @Component({
+    props: {
+      name: String,
+    },
+  })
 
-export default class PropsSample extends Vue {
-  get userName() {
-    return this.$props.name;
+  export default class PropsSample extends Vue {
+    get userName() {
+      return this.$props.name;
+    }
   }
-}
 </script>
 
 
