@@ -40,9 +40,19 @@
   1. **[Github](./Github/)**
   1. **[React.js](./React.js/)**
   1. **[Typescript](./Typescript/)**
+  1. **[Jest](./Jest/)**
+  1. **[AWS](./AWS/)**
+  1. **[Figma](./Figma/)**
+  1. 
   1. **[외부강연](./Invitation-Lecture/)**
 
 ---
 
 
+
+## TIL Diary
+
+**Sun May 30 2020**
+
+[x] 화면에 한 꺼번에 많은 데이터를 뿌리는 일을 피하기 위해 페이지네이션 기법을 선택. 블로그 포스팅을 보고 프로젝트에 적용하는 과정에서 computed 속성의 위력을 체험. computed를 통해 프론트에서 데이터를 들고 있다가 사용자와 상호작용할 수 있다 
 
