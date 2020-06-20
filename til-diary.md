@@ -8,10 +8,16 @@
 
 
 
+**Fri Jun 19 2020**
+
+- [x] 블로그에 GA를 설정하고, django-study 포스트의 내용을 수정함
+- [x] nodejs와 express를 이용해서 post와 get API 제작
+- [x] productive-box가 정상적으로 작동하는 것 확인 
+
 **Thu Jun 18 2020**
 
 - [x] django study를 간단하게 진행함. sh님의 노트북에서 django를 설치할 수 없는 환경 설정 오류가 뿜어져 나옴. 아마 jupyter notebook과 anaconda와 같은 툴 때문이지 않을까 추측. 다음 회차에는 노트북을 바꿔 진행해보기로 함
-- [ ] 블로그 만들었고, 내일은 GA를 달자
+- [x] 오늘은 블로그를 만들었고, 내일은 GA를 달자
 
 
 
