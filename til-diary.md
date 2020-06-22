@@ -6,12 +6,19 @@
 
 ---
 
+**Mon Jun 22 2020**  
+- [x] 커피 한 잔 마시며 끝내는 VueJS 학습
+  - [x] 메모 관리 애플리케이션 만들기 localStorage app
+- [x] django study 진행 - 첫 번째 hello world part
+- [x] 블로그 logo 배경 흰색에서 투명으로 바꾸기
+- [x] nodejs users CRUD API
+
 
 
 **Sun Jun 21 2020**
 
 - [x] 커피 한 잔 마시며 끝내는 VueJS 학습
-  - [x] 메모 관리 애플리케이션 만들기 localStorage app
+  - [x] 메모 관리 애플리케이션 만들기
 - [ ] view에서 css import를 간단하게 처리할 수도 있는데... 왜 어렵게 처리했지..?! 그냥 App.vue에서 import하면 된다
 
 
