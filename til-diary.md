@@ -8,6 +8,21 @@
 
 
 
+**Sun Jun 21 2020**
+
+- [x] 커피 한 잔 마시며 끝내는 VueJS 학습
+  - [x] 메모 관리 애플리케이션 만들기 localStorage app
+- [ ] view에서 css import를 간단하게 처리할 수도 있는데... 왜 어렵게 처리했지..?! 그냥 App.vue에서 import하면 된다
+
+
+
+**Sat Jun 20 2020**
+
+- [x] 커피 한 잔 마시며 끝내는 VueJS 학습
+  - [x] Vuex
+  - [x] Vue Router 
+- [x] nodejs와 express를 이용한 put, delete API 제작
+
 **Fri Jun 19 2020**
 
 - [x] 블로그에 GA를 설정하고, django-study 포스트의 내용을 수정함
