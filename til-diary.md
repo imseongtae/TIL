@@ -6,7 +6,16 @@
 
 ---
 
+**Tue Jun 23 2020**
+
+- [x] nodejs payment API 제작 어려움.. SQL Syntax 에러.. SQL에 대한 더 높은 이해가 필요함 - DML에 대한 학습과 숙련이 필요..!
+- [x] aws s3를 이용하여 파일을 업로드 기능 학습
+- [ ] protocol 학습 - 간단한 채팅앱 다시 만들기
+
+
+
 **Mon Jun 22 2020**  
+
 - [x] 커피 한 잔 마시며 끝내는 VueJS 학습
   - [x] 메모 관리 애플리케이션 만들기 localStorage app
 - [x] django study 진행 - 첫 번째 hello world part
