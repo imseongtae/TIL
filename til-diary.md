@@ -6,6 +6,12 @@
 
 ---
 
+**Wed Jun 24 2020**
+
+- [x] 이력서 수정
+- [x] 커피 한 잔 마시며 끝내는 VueJS 학습
+  - [x] axios 이용하여 back-end API 연동
+
 **Tue Jun 23 2020**
 
 - [x] nodejs payment API 제작 어려움.. SQL Syntax 에러.. SQL에 대한 더 높은 이해가 필요함 - DML에 대한 학습과 숙련이 필요..!
