@@ -1,10 +1,18 @@
 # Diary📒
 
-하루를 돌아보기 위해 **TIL Diary**📒를 작성합니다. 학습하며 겪었던 어려움이나 문제 해결과정을 기록합니다. 
+하루를 돌아보기 위해 **TIL Diary**📒를 작성합니다. 학습 내용 및 학습하며 겪었던 어려움이나 문제 해결과정을 기록합니다. 
 
 
 
 ---
+
+
+
+**Thu Jun 25 2020**
+
+- [x] 
+- [x] axios API를 모듈화해 사용할 때 `return memos.delete('/', memoId)` 인자에 이렇게 값을 전달하여 오류를 냄. `memos.delete(`/${memoId}`);` 백틱기호로 감싸서 전달해야 한다.
+- [x] Memo application Refactoring 완료. vuex의 헬퍼 함수에 익숙해지면 우아한 코드를 작성하게 될 수 있을 것 같다.
 
 **Wed Jun 24 2020**
 
