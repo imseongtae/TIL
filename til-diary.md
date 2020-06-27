@@ -8,9 +8,13 @@
 
 
 
+**Fri Jun 26 2020**
+
+- [x] 교육센터에서 기업 면접 기회를 가짐
+- [x] django study handbook에서 board 내용 분리하기 gitbook 수정
+
 **Thu Jun 25 2020**
 
-- [x] 
 - [x] axios API를 모듈화해 사용할 때 `return memos.delete('/', memoId)` 인자에 이렇게 값을 전달하여 오류를 냄. `memos.delete(`/${memoId}`);` 백틱기호로 감싸서 전달해야 한다.
 - [x] Memo application Refactoring 완료. vuex의 헬퍼 함수에 익숙해지면 우아한 코드를 작성하게 될 수 있을 것 같다.
 
