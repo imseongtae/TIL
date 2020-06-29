@@ -6,6 +6,13 @@
 
 ---
 
+
+
+**Sun Jun 28 2020**
+
+- [x] hello world react-native
+- [x] `react native no bundle url present` 서버를 실행시키지 않아서 만나게 된 에러..! `ios` 실행 이후 `npm start` !!
+
 **Sat Jun 27 2020**
 
 - [x] 이동욱님의 가이드를 따라 이력서 작성 
