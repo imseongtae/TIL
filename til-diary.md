@@ -8,6 +8,13 @@
 
 
 
+**Tue Jun 29 2020**
+
+- [x] Django Study 진행.. polls앱 vote 페이지 에러가 난 것 같은데..! 교안 수정해야 함..!
+- [x] 은경님 블로그 만드는 것 도와드림
+- [x] react-native.. 효율적으로 학습할 수 있는 방법이 없을까..
+  - [ ] eslint와 prettier 적용 과정에서 branch 꼬임..
+
 **Sun Jun 28 2020**
 
 - [x] hello world react-native
