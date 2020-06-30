@@ -6,7 +6,12 @@
 
 ---
 
+**Tue Jun 30 2020**
 
+- [x] react-native 세팅할 때 작성한 코드들은 src 안으로..!
+- [ ] react-native.. 효율적으로 학습할 수 있는 방법이 없을까..
+- [x] node.js jwt token 학습
+  - [ ] jwt token 학습한 내용 핸드북에 정리하기
 
 **Mon Jun 29 2020**
 
