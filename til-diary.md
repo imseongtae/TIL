@@ -8,7 +8,9 @@
 
 
 
+**Thu Jul 02 2020**
 
+- [x] react-native todo app 만듦. 복잡도가 높은 것 같고.. 아직 적응이 필요한 것 같다..!
 
 **Wed Jul 01 2020**
 
@@ -20,6 +22,7 @@
 
 - [x] react-native 세팅할 때 작성한 코드들은 src 안으로..!
 - [ ] react-native.. 효율적으로 학습할 수 있는 방법이 없을까..
+- [x] Counter App을 통해 Props와 State의 개념.. ! 학습
 - [x] node.js jwt token 학습
   - [ ] jwt token 학습한 내용 핸드북에 정리하기
 
