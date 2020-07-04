@@ -8,6 +8,11 @@
 
 
 
+**Fri Jul 03 2020**
+
+- [x] 생활코딩 web2-nodejs
+- [ ] Javascript notion 문서 정리
+
 **Thu Jul 02 2020**
 
 - [x] react-native todo app 만듦. 복잡도가 높은 것 같고.. 아직 적응이 필요한 것 같다..!
