@@ -8,10 +8,15 @@
 
 
 
+**Sat Jul 04 2020**
+
+- [x] web2-nodejs-mysql 글쓰기 앱 학습 중 mysql 모듈 import 중 에러가 발생하여 mysql2를 대체 사용해 해결! 
+- [x] velog에서 여러 글을 봄..! 네이밍 관련 글, 취업 수기 등... 다시금 의지를 다잡자!
+
 **Fri Jul 03 2020**
 
 - [x] 생활코딩 web2-nodejs
-- [ ] Javascript notion 문서 정리
+- [ ] Javascript notion 문서 정리(findIndex, find, spread 등! 개념 점검)
 
 **Thu Jul 02 2020**
 
