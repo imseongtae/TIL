@@ -8,7 +8,11 @@
 
 
 
+**Mon Jul 06 2020**
 
+- [x] 생활코딩 WEB2 Nodejs-MySQL
+  - [x] 데이터를 입력 받는 부분에 sanitize-html 적용
+- [x] 비사이드 인터뷰..!
 
 **Sun Jul 05 2020**
 
