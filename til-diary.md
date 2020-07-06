@@ -8,10 +8,21 @@
 
 
 
+
+
+**Sun Jul 05 2020**
+
+- [x] django 게시판 만들어보기
+- [x] 자바스크립트로 하는 자료구조와 알고리즘 chapter.1 보기
+
 **Sat Jul 04 2020**
 
 - [x] web2-nodejs-mysql 글쓰기 앱 학습 중 mysql 모듈 import 중 에러가 발생하여 mysql2를 대체 사용해 해결! 
-- [x] velog에서 여러 글을 봄..! 네이밍 관련 글, 취업 수기 등... 다시금 의지를 다잡자!
+- [x] velog에서 여러 글을 봄..! 취업 수기 등... 다시금 의지를 다잡자!
+  - [x] [누가 이름을 함부로 짓는가 - 변수 네이밍]([https://velog.io/@mowinckel/%EB%88%84%EA%B0%80-%EC%9D%B4%EB%A6%84%EC%9D%84-%ED%95%A8%EB%B6%80%EB%A1%9C-%EC%A7%93%EB%8A%94%EA%B0%80](https://velog.io/@mowinckel/누가-이름을-함부로-짓는가))
+  - [x] [아무도 가르쳐주지 않는 것]([https://velog.io/@mowinckel/%EC%95%84%EB%AC%B4%EB%8F%84-%EA%B0%80%EB%A5%B4%EC%B3%90-%EC%A3%BC%EC%A7%80-%EC%95%8A%EB%8A%94-%EA%B2%83](https://velog.io/@mowinckel/아무도-가르쳐-주지-않는-것))
+  - [x] [신입 프론트엔드 개발자가 되기까지]([https://velog.io/@kimu2370/%EC%8B%A0%EC%9E%85-%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C-%EA%B0%9C%EB%B0%9C%EC%9E%90%EA%B0%80-%EB%90%98%EA%B8%B0%EA%B9%8C%EC%A7%80](https://velog.io/@kimu2370/신입-프론트엔드-개발자가-되기까지))
+  - [x] [해영인이 개발자로 전직한 이야기]([https://velog.io/@bong2030/%ED%95%B4%EC%98%81%EC%9D%B8%EC%9D%B4-%EA%B0%9C%EB%B0%9C%EC%9E%90%EB%A1%9C-%EC%A0%84%EC%A7%81%ED%95%9C-%EC%9D%B4%EC%95%BC%EA%B8%B0Wecode-%EB%B6%80%ED%8A%B8%EC%BA%A0%ED%94%84-%EC%88%98%EB%A3%8C%ED%9B%84%EA%B8%B0](https://velog.io/@bong2030/해영인이-개발자로-전직한-이야기Wecode-부트캠프-수료후기))
 
 **Fri Jul 03 2020**
 
