@@ -268,9 +268,85 @@ console.log(checkPlanet(2));
 
 
 
+### 문제 14: 3의 배수인가요?
+
+```js
+const isMultipleOfThree = num => {
+	let result;
+	if (num % 3 === 0) {
+		result = '짝';
+	} else {
+		result = num;
+	}
+	return result;
+};
+
+//---result---
+console.log('입력: 9, 결과:', isMultipleOfThree(9));
+console.log('입력: 2, 결과:', isMultipleOfThree(2));
+
+```
 
 
 
+### 문제15: 자기소개
+
+입력으로 이름이 주어지면 '안녕하세요 제 이름은 haemil입니다' 라고 출력되게
+
+```js
+const introMyName = name => {
+	console.log(`안녕하세요 제 이름은 ${name}입니다.`);
+};
+
+introMyName('haemil');
+```
+
+
+
+### 문제 16: 로꾸꺼
+
+문장이 입력되면 거꾸로 출력하는 프로그램을 만들어보기
+
+```js
+const reverseText = text => {
+	console.log(`${text.split('').reverse().join('')}`);
+};
+reverseText('hello world');
+
+```
+
+
+
+### 문제 17: 놀이기구 키 제한
+
+```js
+const tallerThan150cm = height => {
+	if (150 <= height) {
+		console.log('Yes');
+	} else {
+		console.log('No');
+	}
+};
+
+tallerThan150cm(150); // Yes
+tallerThan150cm(149); // No
+```
+
+
+
+### 문제 19: 제곱을 구하자
+
+```js
+const getSquareValue = (a, b) => {
+	let result = a;
+	for (let i = 1; i < b; i++) {
+		result *= a; // a값 만큼 곱해야 하는데... 이전값을 곱한다..
+	}
+	return result;
+};
+
+console.log(getSquareValue(2, 10)); // 1024
+```
 
 
 
