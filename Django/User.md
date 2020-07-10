@@ -17,7 +17,6 @@
   1. [Login Template](#Login-Template)  
   1. [Logout](#Logout)
   1. [Logout View](#Logout-View)
-  
 
 ---
 
@@ -43,11 +42,11 @@ INSTALLED_APPS = [
 ```python 
 from django.contrib import admin
 from django.urls import path, include
-from fcuser.views import home
+from user.views import home
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('fcuser/', include('fcuser.urls')),
+    path('user/', include('user.urls')),
     path('', home),
 ]
 ```
@@ -64,7 +63,7 @@ urlpatterns = [
     path('logout/', views.logout, name='logout'),
 
 ]
-```  
+```
 
 ### admin 
 
@@ -75,13 +74,13 @@ urlpatterns = [
 
 ```python
 from django.contrib import admin
-from .models import Fcuser
+from .models import User
 
 # Register your models here.
-class FcuserAdmin(admin.ModelAdmin):
+class UserAdmin(admin.ModelAdmin):
     list_display = ('username', 'password')
 
-admin.site.register(Fcuser, FcuserAdmin)
+admin.site.register(User, UserAdmin)
 ```
 
 ### apps
@@ -179,7 +178,7 @@ auto_now_add 는 클래스가 저장되는 시점의 시간이 자동으로 저�
 from django.db import models
 
 # model에 작성된 클래스는 장고의 모델 클래스를 상속 받아야만 한다는 규칙을 가진다
-class Fcuser(models.Model):
+class User(models.Model):
     username = models.CharField(max_length=32, verbose_name='사용자명')
     password = models.CharField(max_length=64, verbose_name='비밀번호')
     # EmailField는 데이터가 이메일 형태인지 검증까지 해줌
@@ -193,7 +192,7 @@ class Fcuser(models.Model):
         return self.username
 
     class Meta:
-        db_table = 'fastcampus_fcuser'
+        db_table = 'community_user'
         verbose_name = '사용자'
         verbose_name_plural = '사용자'
         # 장고는 모델을 보여줄 때 기본적으로 복수형을 보여주기 때문에
@@ -218,7 +217,7 @@ get('username', None) 메서드를 통해서 대상의 값이 없다면 None 을
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.contrib.auth.hashers import make_password, check_password
-from .models import Fcuser
+from .models import User
 from .forms import LoginForm
 
 def register(request):  
@@ -239,7 +238,7 @@ def register(request):
     elif password != re_password:
         res_data['password_error'] = '비밀번호가 다릅니다.'
     else:
-      fcuser = Fcuser(
+      user = User(
         username=username,
         useremail=useremail,
         # 장고에서는 암호화해서 저장하는 make_password 메서드를 지원해줌
@@ -247,7 +246,7 @@ def register(request):
         password=make_password(password) # 비밀번호를 함수 안에 전달
       )
     # 이렇게 하고서 저장을 하면 끝이남
-    fcuser.save() # 클래스 변수 객체를 하나 생성하고 저장하면 된다..!
+    user.save() # 클래스 변수 객체를 하나 생성하고 저장하면 된다..!
 
     return render(request, 'register.html', res_data)
 ```
@@ -300,7 +299,6 @@ def register(request):
 
 {% endblock %}
 ```
-
 
 **[⬆ back to top](#table-of-contents)**
 
