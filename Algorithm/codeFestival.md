@@ -334,6 +334,40 @@ tallerThan150cm(149); // No
 
 
 
+### 문제18: 평균 점수
+
+세 과목의 점수가 주어지면 전체 평균 점수를 구하는 프로그램 작성하기
+
+```js
+const readline = require('readline');
+const rl = readline.createInterface({
+	input: process.stdin,
+	output: process.stdout,
+});
+
+let temp;
+rl.on('line', function (line) {
+	// console.log('hello !', line);
+	temp = line;
+	console.log('변수에 담음', temp);
+	const spliteTemp = temp.split(' ');
+	let result = 0;
+	spliteTemp.forEach(num => {
+		result += parseInt(num, 10);
+	});
+	result /= spliteTemp.length;
+	console.log('결과: ', result);
+	rl.close();
+}).on('close', function () {
+	process.exit();
+});
+
+```
+
+
+
+
+
 ### 문제 19: 제곱을 구하자
 
 ```js
@@ -347,6 +381,85 @@ const getSquareValue = (a, b) => {
 
 console.log(getSquareValue(2, 10)); // 1024
 ```
+
+
+
+### 문제20: 몫과 나머지 
+
+공백으로 구분된 두 숫자가 주어질 경우, 두번째 숫자로 첫 번째 숫자를 나누어 출력하시오
+
+```js
+const readline = require('readline');
+const rl = readline.createInterface({
+	input: process.stdin,
+	output: process.stdout,
+});
+
+rl.on('line', function (line) {
+	// console.log('hello !', line);
+	let temp = line.split(' ');
+	const result = temp[0] / temp[1];
+	console.log(result);
+	rl.close();
+}).on('close', function () {
+	process.exit();
+});
+```
+
+
+
+### 문제21: Set은 어떻게 만드나요? 
+
+skip
+
+### 문제22: 
+
+skip
+
+### 문제23: OX 문제
+
+틀림
+
+### 문제24: 대문자로 바꿔주세요
+
+```js
+function isUpperCase(name) {
+	return name.toUpperCase();
+}
+
+console.log(isUpperCase('mary'));
+```
+
+
+
+### 문제25: 원의 넓이 구하기
+
+```js
+function getCircleArea(n) {
+	const circleArea = n * n * 3.14;
+	console.log(circleArea);
+}
+
+getCircleArea(3);
+```
+
+
+
+### 문제26: 행성 문제2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
