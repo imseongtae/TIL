@@ -8,6 +8,11 @@
 
 
 
+**Mon Jul 13 2020**
+
+- [x] `react-native` 로 특정 기능을 구현하고 싶어도 기능을 특정할 수 있는 keyword를 모르겠음. 특정 기능의 이름을 모르니.. slide up, modal, dropdown의 변형 등 다양한 검색어 속에서 헤매이게 됨
+- [ ] `react-native` 에서는 CSS Flex가 권장된다고 하는데, 버튼 위치를 잡을 때..`position: absolute`를 사용함.. 더 좋은 방법이 없을까
+
 **Sun Jul 12 2020**
 
 - [x] react-native todo app이 `react native version mismatch` 라는 오류를 발생하며 실행이 안 되는 오류가 발생. 이를 해결하기 위해 stackoverflow 를 살펴봤지만 이 오류를 해결할 수 있는 눈에 띄는 방법은 없었음..! `react-native` 버전을 낮추거나 높이는 시도, 모든 터미널을 닫고 다시 시작하는 시도 등은 의미가 없었고, `node_modules` 을 지우고 다시 실행하니 실행이 됨...;;
