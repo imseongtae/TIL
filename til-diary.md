@@ -8,10 +8,17 @@
 
 
 
+**Tue Jul 14 2020**
+
+- [ ] `react-native` 를 활용한 앱 개발은 실행환경이 달라 생기는 어려움과 익숙하지 않은 에러들이 많음. 이로 인해 웹 개발에 비해 재미가 떨어진다고 느낌
+- [ ] `React`에도 그렇게 익숙하지도 않아서  `react-native` 학습이 어떻게 보면 허들..!이긴 하지만 확실히 리액트가 가지는 이점이 크다는 사실을 깨달음! => `react-native`를 통해서 `React` 학습에 다시 박차를 가하는 계기를 갖자
+
+
+
 **Mon Jul 13 2020**
 
 - [x] `react-native` 로 특정 기능을 구현하고 싶어도 기능을 특정할 수 있는 keyword를 모르겠음. 특정 기능의 이름을 모르니.. slide up, modal, dropdown의 변형 등 다양한 검색어 속에서 헤매이게 됨
-- [ ] `react-native` 에서는 CSS Flex가 권장된다고 하는데, 버튼 위치를 잡을 때..`position: absolute`를 사용함.. 더 좋은 방법이 없을까
+- [ ] `react-native` 에서는 CSS Flex가 권장된다고 하는데, 버튼 위치를 잡을 때 `position: absolute`를 사용함.. 아직 익숙해지기 위해서는 시간이 더 필요하다는 것을 반증하는 코드..!
 
 **Sun Jul 12 2020**
 
