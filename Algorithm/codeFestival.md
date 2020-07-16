@@ -167,7 +167,7 @@ console.log(result);
 
 
 
-### 문제 10: 별찍기
+### 문제 10: 별찍기 - skip
 
 ```js
 // 입력 
@@ -447,9 +447,161 @@ getCircleArea(3);
 
 ### 문제26: 행성 문제2
 
+```js
+const 태양계 = [
+	'수성',
+	'금성',
+	'지구',
+	'화성',
+	'목성',
+	'토성',
+	'천왕성',
+	'해왕성',
+];
+
+// 입출력
+// 입력: 수성
+// 출력: Mercury
+
+const solarSystem = [
+	'Mercury',
+	'Venus',
+	'Earth',
+	'Mars',
+	'Jupiter',
+	'Saturn',
+	'Uranus',
+	'Neptune',
+];
+
+function translateToEnglish(planetName) {
+	const samePlanet = 태양계.filter(planet => planetName === planet)[0];
+	let result = null;
+	switch (samePlanet) {
+		case '수성':
+			result = solarSystem[0];
+			break;
+		case '금성':
+			result = solarSystem[1];
+			break;
+		case '지구':
+			result = solarSystem[2];
+			break;
+		case '화성':
+			result = solarSystem[3];
+			break;
+		case '목성':
+			result = solarSystem[4];
+			break;
+		case '토성':
+			result = solarSystem[5];
+			break;
+		case '천왕성':
+			result = solarSystem[6];
+			break;
+		case '해왕성':
+			result = solarSystem[7];
+			break;
+		default:
+			console.log('잘못된 값을 입력했거나 값이 없습니다.');
+			break;
+	}
+	return result;
+}
+
+console.log(translateToEnglish('목성')); // Jupiter
+```
 
 
 
+### 문제 27: 객체 만들기 - Skip
+
+
+
+### 문제:28 2-gram
+
+```js
+const readline = require('readline');
+
+const rl = readline.createInterface({
+	input: process.stdin,
+	output: process.stdout,
+});
+
+rl.on('line', function (line) {
+	for (let i = 0; i < line.length; i++) {
+		if (i === line.length - 1) {
+			break;
+		}
+		console.log(line[i], line[i + 1]);
+	}
+	rl.close();
+}).on('close', function () {
+	process.exit();
+});
+
+```
+
+
+
+### 문제:29 대문자만 지나가세요 
+
+```js
+function isUppercase(character) {
+	const upperCase = character.toUpperCase();
+	console.log('upperCase value: ', upperCase);
+	console.log('character value: ', character);
+	return character === upperCase ? 'YES' : 'NO';
+}
+
+console.log(isUppercase('z'));
+```
+
+
+
+### 문제:30 문자열 속 문자 찾기
+
+- 첫 번째 입력: pineapple is yummy 
+- 두 번째 입력: apple
+- 출력 예시: 4
+- 다음에 풀 때는 문자열 메소드를 사용하지 않고..! 구현해보기
+
+```js
+function findLetterInString(string, letter) {
+	let result = '';
+	return string.indexOf(letter) !== -1
+		? (result = string.indexOf(letter))
+		: 'No Result';
+}
+
+console.log(findLetterInString('pineapple is yummy', 'apple'));
+console.log(findLetterInString('jay! javascript is awesome!', 'java'));
+```
+
+
+
+### 문제:31 자바스크립트 자료형의 복잡도 - skip
+
+```js
+
+```
+
+
+
+### 문제:32 문자열 만들기
+
+문자열을 입력받으면 개수 출력
+
+```js
+function divideWordSpacing(text) {
+	const count = (text.match(/\s/g) || []).length;
+	return count + 1;
+}
+
+const currentText =
+	'안녕하세요. 저는 제주대학교 컴공과 혜림입니다. 반갑습니다.';
+console.log(divideWordSpacing(currentText));
+```
 
 
 
