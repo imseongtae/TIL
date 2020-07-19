@@ -8,14 +8,22 @@
 
 
 
+**Sat Jul 18 2020**
+
+- [x] html과 css 학습했던 내용 Github에 정리
+- [x] 정리한 내용 중에 3개 포트폴리오에 포함
+- [x] web2 nodejs 학습내용 정리하며, 코드 리팩토링 진행 중에 여러 에러를 겪게 됨.. express 사용해서 CRUD API 한땀한땀 다시 만들어야 할 것 같은데?..
+
+
+
 **Fri Jul 17 2020**
 
-- [x] nodejs api 만들 때 / 슬래시 빼서 에러남..; express를 사용한다면 만나지 않을 에러지만.. 새삼 URL 요청을 받는 처리의 중요성을 실감
-- [x] `home` 함수에서는 파리미터 `response` 하나만 전달받아 사용하는데, home 함수를 호출하는 곳에서 home(request, response) 처럼 두 개의 arguments를 전달하여 에러
+- [x] nodejs api 만들 때 `/` 슬래시 빼서 에러 발생. express를 사용한다면 만나지 않을 에러지만.. 새삼 URL 요청을 받는 처리의 중요성을 실감
+- [x] `home` 함수에서는 파리미터 `response` 하나만 전달받아 사용하는데, home 함수를 호출하는 곳에서 `home(request, response)` 처럼 두 개의 arguments를 전달하여 에러
 - [x] `form attribute`를 설정할 때 `method`를 `post`로 설정하지 않아서 에러 발생!
 - [x] update나 delete 같은 작업을 요청할 때 쿼리스트링으로 id값을 전달한다. 생활코딩 강의에서는 `<input type="hidden" value={author.id} />` 처럼 `attribute`를 작성
-- [x] 트랜잭션! 일련의 작업을 실패했을 때 지금까지 내렸던 명령을 한 번에 이전으로 돌릴 수 있는 환상적인 기능이다. - 이고잉샘의 설명
-- [x] 저자가 삭제되었을 때, 저자가 작성했던 글 또한 연쇄적으로 삭제하기 위한 처리 작업. 가령, 저자 중 taeho가 삭제되었을 때, taeho가 작성한 글도 삭제되도록
+- [x] 트랜잭션은 일련의 작업을 실패했을 때 지금까지 내렸던 명령을 한 번에 이전으로 돌릴 수 있는 환상적인 기능이다. - 이고잉샘의 설명
+- [x] 저자가 삭제되었을 때, 저자가 작성했던 글 또한 연쇄적으로 삭제하기 위한 처리 작업. 가령, 저자 중 taeho가 삭제되었을 때, taeho가 작성한 글도 삭제되도록 - https://github.com/imseongtae/web2-nodejs-mysql
 
 **Thu Jul 16 2020**
 
