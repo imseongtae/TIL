@@ -8,13 +8,21 @@
 
 
 
+
+
+**Mon Jul 20 2020**
+
+- [x] web2 nodejs master branch에 `rebase`
+
+**Sun Jul 19 2020**
+
+- [x] API Test
+
 **Sat Jul 18 2020**
 
 - [x] html과 css 학습했던 내용 Github에 정리
 - [x] 정리한 내용 중에 3개 포트폴리오에 포함
-- [x] web2 nodejs 학습내용 정리하며, 코드 리팩토링 진행 중에 여러 에러를 겪게 됨.. express 사용해서 CRUD API 한땀한땀 다시 만들어야 할 것 같은데?..
-
-
+- [x] web2 nodejs 학습내용 정리하며, 코드 리팩토링 진행 중에 여러 에러를 겪음.. express 사용해서 CRUD API를 만드는 것과는 다른 종류의 에러
 
 **Fri Jul 17 2020**
 
