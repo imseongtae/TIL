@@ -10,6 +10,11 @@
 
 
 
+**Tue Jul 20 2020**
+
+- [x] pcs back-end Refactoring 
+- [x] `Sequelize setting`
+
 **Mon Jul 20 2020**
 
 - [x] web2 nodejs master branch에 `rebase`
