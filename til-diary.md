@@ -8,9 +8,12 @@
 
 
 
+**Wed Jul 22 2020**
 
+- [x] `supertest`, `should`, `mocha`를 이용해서 Test code 작업
+- [ ] user API 제작
 
-**Tue Jul 20 2020**
+**Tue Jul 21 2020**
 
 - [x] pcs back-end Refactoring 
 - [x] `Sequelize setting`
