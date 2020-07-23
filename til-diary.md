@@ -8,6 +8,14 @@
 
 
 
+
+
+**Thu Jul 23 2020**
+
+- [x] User API Test code 작성
+- [x] Memo API 제작
+- [x] Memo API Test code 작성
+
 **Wed Jul 22 2020**
 
 - [x] `supertest`, `should`, `mocha`를 이용해서 Test code 작업
