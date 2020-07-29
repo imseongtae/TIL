@@ -8,6 +8,15 @@
 
 
 
+
+
+
+
+**Sun Jul 26 2020**
+
+- pcs back-end ver.2에 Swagger 적용
+- swagger를 적용하는 과정에서 코드 정리
+
 **Sat Jul 25 2020**
 
 - hello Swagger 추가하여 swagger 학습
