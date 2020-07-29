@@ -10,7 +10,10 @@
 
 
 
+**Mon Jul 27 2020**
 
+- performance API 제작, 
+- performance API에 대한 테스트 케이스 작성
 
 **Sun Jul 26 2020**
 
