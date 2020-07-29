@@ -8,6 +8,36 @@
 
 
 
+**Sat Jul 25 2020**
+
+- hello Swagger 추가하여 swagger 학습
+
+**Fri Jul 24 2020**
+
+- [x] path 모듈을 사용하면 nodejs 에서도 절대경로를 사용할 수 있다. 상대 경로 사용으로 인해 경로가 깊어질 경우 절대 경로를 사용하는 것은 좋은 방법
+- [x] `Cannot read property 'should' of undefined` 와 같은 에러는 API 가 미작성되었을 때 주로 발생
+- [x] `destroy` 와 `findByPk()` 의 새로운 활용법..!
+- [x] **nodejs**를 실행하는 기준은 절대 경로이다..! 이러한 이해를 놓쳤을 때 고생할 뻔 함
+- [ ] table의 pk를 무엇으로 설정해야 하는지 고민이 됨. 테이블 간의 관계를 생각한다면 API의 기준을 따르는 것이..!
+- [ ] 데이터 베이스에 없는 값이라면 외부 API로 요청을 보내고, 해당 정보는..! database에 저장한다면..!
+
+
+
+```js
+const path = require('path');
+const Facility = path.join(__dirname, './models/');
+
+// 데이터 모두 삭제가 필요할 경우 
+db.User.destroy({
+  where: {},
+  truncate: true
+})
+
+// nodejs를 실행하는 기준은 절대 경로
+const dummy = fs.readFileSync('./api/facility/scripts/facility_dummy.json'); 
+
+```
+
 
 
 **Thu Jul 23 2020**
