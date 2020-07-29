@@ -8,21 +8,25 @@
 
 
 
+**Tue Jul 28 2020**
 
+- [x] 게시판 목록 페이지와 게시판 상세 페이지 추가
+- [x] 회원가입 페이지와 회원가입 폼 컴포넌트 추가
 
 **Mon Jul 27 2020**
 
-- performance API 제작, 
-- performance API에 대한 테스트 케이스 작성
+- [x] performance API 제작, 
+- [x] performance API에 대한 테스트 케이스 작성
+- [x] Vuejs 로 제작하는 board 앱 저장소 생성
 
 **Sun Jul 26 2020**
 
-- pcs back-end ver.2에 Swagger 적용
-- swagger를 적용하는 과정에서 코드 정리
+- [x] pcs back-end ver.2에 Swagger 적용
+- [x] swagger를 적용하는 과정에서 코드 정리
 
 **Sat Jul 25 2020**
 
-- hello Swagger 추가하여 swagger 학습
+- [x] hello Swagger 추가하여 swagger 학습
 
 **Fri Jul 24 2020**
 
