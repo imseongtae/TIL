@@ -8,6 +8,14 @@
 
 
 
+**Sun Aug 01 2020**
+
+- [x] pcs front-end ver.2 작업 본격적으로 시작
+- [x] 초기 프로젝트 세팅
+- [x] SCSS 를 사용하기 위해  `vue.config.js` 의 `additionalData`를 통해 등록
+
+
+
 **Fri Jul 31 2020**
 
 - [x] props를 통해 데이터를 주입받을 때 validator 작성...!의 중요성. 그렇지만 타입스크립트를 도입한다면 해결될 문제인가?에 대해 고민
