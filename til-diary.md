@@ -8,13 +8,22 @@
 
 
 
-**Sun Aug 01 2020**
+**Mon Aug 03 2020**
+
+- [x] pcs-front-ver.2 공연 정보 페이지 및 공연 정보 상세 페이지
+- [x] pcs-front-ver.2 공연 시설 페이지 및 공연 시설 상세 페이지
+
+**Sun Aug 02 2020**
+
+- [x] pcs-front-ver.2 프론트엔드 회원가입 및 로그인/로그아웃 기능
+- [x] pcs-back-ver.2 Auth API 
+  - [x] Auth API 추가하며 User Model 이 `bcrypt` 사용하도록 수정
+
+**Sat Aug 01 2020**
 
 - [x] pcs front-end ver.2 작업 본격적으로 시작
 - [x] 초기 프로젝트 세팅
 - [x] SCSS 를 사용하기 위해  `vue.config.js` 의 `additionalData`를 통해 등록
-
-
 
 **Fri Jul 31 2020**
 
