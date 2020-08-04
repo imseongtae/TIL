@@ -590,7 +590,8 @@ console.log(findLetterInString('jay! javascript is awesome!', 'java'));
 
 ### 문제:32 문자열 만들기
 
-문자열을 입력받으면 개수 출력
+- 문자열을 입력받으면 개수 출력
+- `space` 를 기준으로 문자를 구분했기 때문에 정확한 답은 아님..! 좀 더 문자 덩어리를 기준으로 수를 셀 수 있는 방법을 찾아야 함
 
 ```js
 function divideWordSpacing(text) {
@@ -601,6 +602,27 @@ function divideWordSpacing(text) {
 const currentText =
 	'안녕하세요. 저는 제주대학교 컴공과 혜림입니다. 반갑습니다.';
 console.log(divideWordSpacing(currentText));
+```
+
+
+
+### 문제:33 거꾸로 출력하기
+
+```js
+const readline = require('readline');
+
+const rl = readline.createInterface({
+	input: process.stdin,
+	output: process.stdout,
+});
+
+rl.on('line', function (line) {
+	const result = line.split(' ').reverse().join(' ');
+	console.log(result);
+	rl.close();
+}).on('close', function () {
+	process.exit();
+});
 ```
 
 
