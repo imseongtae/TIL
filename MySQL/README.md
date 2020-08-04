@@ -8,12 +8,10 @@
 
 
 
-
-
 ## Table of Contents
 
 1. [DDL](#ddl)
-1. 
+1. [DML](#dml)
 
 ---
 
@@ -181,7 +179,13 @@ mysql> desc mytable;
 </div>
 ```
 
-## DML(Data Manipulation Language)
+
+
+**[⬆ back to top](#table-of-contents)**
+
+## DML
+
+Data Manipulation Language
 
 ### CRUD [Create(생성), Read(읽기), Update(갱신), Delete(삭제)]
 
@@ -200,3 +204,10 @@ INSERT into mytable(name, model_num, model_type) values('lattepanda', 'DFR0419',
 ```sql
 select * from <tablename>
 ```
+
+
+
+
+
+**[⬆ back to top](#table-of-contents)**
+
