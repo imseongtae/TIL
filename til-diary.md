@@ -8,6 +8,12 @@
 
 
 
+**Wed Aug 05 2020**
+
+- [x] 리팩토링 2판 그룹스터디
+- [x] front-end 면접
+- [x] pcs back-end ver.2 auth test code 작성
+
 
 
 **Tue Aug 04 2020**
