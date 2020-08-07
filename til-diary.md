@@ -8,13 +8,19 @@
 
 
 
+**Thu Aug 06 2020**
+
+- [x] back-end API model 부분 toJSON 메서드 포함하도록 수정
+- [ ] front-end 게시판 작업
+  - [x] 글 목록을 보여주기 위한 PostListPage, PostList component
+  - [x] Post routes
+  - [x] post api
+
 **Wed Aug 05 2020**
 
 - [x] 리팩토링 2판 그룹스터디
 - [x] front-end 면접
 - [x] pcs back-end ver.2 auth test code 작성
-
-
 
 **Tue Aug 04 2020**
 
