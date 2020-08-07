@@ -9,6 +9,7 @@ button 태그와 anchor 태그 사용에서 혼란을 느껴 정리
 1. [button](#button)
 1. [anchor](#anchor)
 1. [button과 anchor의 사용](#button과-anchor의-사용)
+1. [참고](#참고)
 
 ---
 
@@ -33,7 +34,7 @@ button 태그와 anchor 태그 사용에서 혼란을 느껴 정리
 
 - 다른 자원을 참조(링크) 할 때 사용
 
-### <input> 태그
+### `<input>` 태그
 
 - 사용자의 입력을 받은 `form`을 서버측에 전송하거나 서버측으로부터 새로운 데이터를 받아서 현재 페이지를 갱신할 때 사용
 
@@ -95,4 +96,12 @@ button 태그와 anchor 태그 사용에서 혼란을 느껴 정리
 - **목록** - 목록 페이지 링크 이므로 `a` 요소로 구현.
 - **수정** - 수정 페이지 링크 일때에는 `a` 요소로 구현. 현재 페이지에서 자바스크립트를 이용하여 숨은 서식을 드러내는 기능이라면 `button type="button"` 으로 구현.
 - **삭제** - 서버측 스크립트에 따라서 다양한 방법으로 마크업 할 수 있으나 보통 URL 이동을 하기 때문에 `a` 요소로 처리함. URL 이동 없이 그냥 삭제가 된다면 상황에 따라 `input` 또는 `button` 모두 사용할 수 있음.
-- **글쓰기** - 글쓰기 페이지로 이동하는 버튼이라면 `a` 요소로 구현. 글쓰기 페이지에서 작성된 글을 전송하는 버튼이라면 `input type="submit"` 으로 구현.
+- **글쓰기** - 글쓰기 페이지로 이동하는 버튼이라면 `a` 요소로 구현. 글쓰기 페이지에서 작성된 글을 전송하는 버튼이라면 `input type="submit"` 으로 구현
+
+
+
+## 참고
+
+- [3탄 - 버튼과 링크 - 접근성 AOA11Y 유튜브](https://www.youtube.com/watch?v=dhsr2LGTA-s)
+- [버튼의 올바른 마크업 - 웹 접근성 연구소 전문가 답변](https://www.wah.or.kr:444/Participation/consultingView.asp?cType=&seq=1079&page=1?cType=&FindTxt=&cMail=)
+- [링크? 버튼? 어떻게 다를까? #4 Button 살펴보기 - 접근성 AOA11Y 유튜브](https://www.youtube.com/watch?v=z3MlZIlMjXk)
