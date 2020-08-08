@@ -6,6 +6,14 @@
 
 ---
 
+**Sat Aug 08 2020**
+- [x] github intro 꾸미기
+- [x] pcs front ver.2 `README.md` 내용 추가 및 수정
+- [ ] front-end, back-end 게시판 작업 중
+
+**Fri Aug 07 2020**
+- [x] pcs front ver.2 `README.md` 내용 추가
+- [ ] front-end 게시판 작업 중
 
 **Fri Aug 07 2020**
 - [x] pcs front ver.2 `README.md` 내용 추가
