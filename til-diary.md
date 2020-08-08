@@ -7,6 +7,10 @@
 ---
 
 
+**Fri Aug 07 2020**
+- [x] pcs front ver.2 `README.md` 내용 추가
+- [ ] front-end 게시판 작업 중
+
 
 **Thu Aug 06 2020**
 
