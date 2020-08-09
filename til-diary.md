@@ -6,14 +6,15 @@
 
 ---
 
+**Sun Aug 09 2020**
+- [x] front-end 게시판 작업
+  - [x] 게시글 생성 기능
+  - [x] 권한을 가진 사용자 게시글 수정 기능
+
 **Sat Aug 08 2020**
 - [x] github intro 꾸미기
 - [x] pcs front ver.2 `README.md` 내용 추가 및 수정
 - [ ] front-end, back-end 게시판 작업 중
-
-**Fri Aug 07 2020**
-- [x] pcs front ver.2 `README.md` 내용 추가
-- [ ] front-end 게시판 작업 중
 
 **Fri Aug 07 2020**
 - [x] pcs front ver.2 `README.md` 내용 추가
