@@ -6,6 +6,11 @@
 
 ---
 
+
+**Mon Aug 10 2020**
+- [x] front-end 게시판 작업 완료
+- [x] back-end API 제작
+
 **Sun Aug 09 2020**
 - [x] front-end 게시판 작업
   - [x] 게시글 생성 기능
