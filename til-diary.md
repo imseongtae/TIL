@@ -7,9 +7,14 @@
 ---
 
 
+
+**Tue Aug 11 2020**
+- [x] `pagination component` Common component로 분리
+- [x] back-end post API에 대한 테스트 케이스 제작
+
 **Mon Aug 10 2020**
-- [x] front-end 게시판 작업 완료
-- [x] back-end API 제작
+- [x] pcs ver.2 front-end 게시판 작업 완료
+- [x] pcs ver.2 back-end post API 제작
 
 **Sun Aug 09 2020**
 - [x] front-end 게시판 작업
