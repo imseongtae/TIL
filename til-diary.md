@@ -6,7 +6,8 @@
 
 ---
 
-
+**Wed Aug 12 2020**
+- [x] 리팩터링 ver.2 chapter 3, 4
 
 **Tue Aug 11 2020**
 - [x] `pagination component` Common component로 분리
