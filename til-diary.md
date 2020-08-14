@@ -6,11 +6,16 @@
 
 ---
 
-**Thu Aug 13 2020**
-- [x] Performance 페이지 리팩토링 
+**Fri Aug 14 2020**
+- [x] Facility 페이지 및 기능 리팩토링 
   - [x] Components 분리하기 위해 AppPagination 사용
   - [x] Vuex를 활용해 상태 관리
+  - [x] Back-end facility API limit 설정 해제, limit이나 offset을 활용할 방법을 고민해보면 좋을 것 같음
 
+**Thu Aug 13 2020**
+- [x] Performance 페이지 및 기능 리팩토링 
+  - [x] Components 분리하기 위해 AppPagination 사용
+  - [x] Vuex를 활용해 상태 관리
 
 **Wed Aug 12 2020**
 - [ ] 리팩터링 ver.2 chapter 3, 4
