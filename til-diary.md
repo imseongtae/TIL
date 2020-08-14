@@ -6,8 +6,14 @@
 
 ---
 
+**Thu Aug 13 2020**
+- [x] Performance 페이지 리팩토링 
+  - [x] Components 분리하기 위해 AppPagination 사용
+  - [x] Vuex를 활용해 상태 관리
+
+
 **Wed Aug 12 2020**
-- [x] 리팩터링 ver.2 chapter 3, 4
+- [ ] 리팩터링 ver.2 chapter 3, 4
 
 **Tue Aug 11 2020**
 - [x] `pagination component` Common component로 분리
