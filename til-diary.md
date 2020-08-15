@@ -6,6 +6,11 @@
 
 ---
 
+**Sat Aug 15 2020**
+- [x] 생활코딩 OAuth 시청
+- [x] pcs ver.2 front-end facility, performance 상세 페이지 table에 `th` 태그를 활용하도록 수정
+- [x] pcs ver.2 back-end facility model 수정
+
 **Fri Aug 14 2020**
 - [x] Facility 페이지 및 기능 리팩토링 
   - [x] Components 분리하기 위해 AppPagination 사용
