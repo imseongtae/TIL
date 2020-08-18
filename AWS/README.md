@@ -54,9 +54,20 @@ Amazon Elastic Compute Cloud(Amazon EC2)는 가상 서버를 필요한 만큼 �
 
 ## Elastic Load Balancing
 
+ELB는 `Elastic Load Balancing`의 약자로 시스템에 가해지는 부하를 여러대의 시스템으로 분산해서 규모있는 시스템을 만들 수 있도록 해주는 단일 진입점이다. 
+도달한 트래픽을 ELB라는 단일 진입점이 받아내는데, 이후 각각의 컴퓨터들에게 트래픽을 분산해서 처리할 수 있도록 교차로의 역할을 하는 게 Load Balancer이다.
 `Elastic Load Balancing(ELB)`는 들어오는 애플리케이션 트래픽을 Amazon EC2 인스턴스, 컨테이너, IP 주소와 같은 여러 대상에 자동으로 분산시킨다. ELB는 단일 AZ(Availability Zone) 또는 여러 AZ에서 다양한 애플리케이션 부하를 처리하므로 내결함성과 가용성을 향상한다.
 
-
+### ELB 특징
+- 트래픽 분산
+- 자동 확장
+- 인스턴스의 상태를 자동 감지해서 오류가 있는 시스템은 배제
+- 사용자 세션을 특정 인스턴스에 고정
+- SSL 암호화 지원 
+- SSL의 경유지로 ELB를 사용하는 경우에 SSL 처리에 따른 부하를 ELB가 수용하게 된다.
+- IPv4, IPv6 지원
+- CloudWatch를 통해서 모니터링
+- 사용한 시간과 통과한 트래픽에 따라서 종량제로 과금
 
 
 
@@ -95,7 +106,7 @@ Simple Storage Service는 인터넷용 스토리지 서비스이다.
 ## 참고문헌
 
 - [[초보자를 위한 AWS 웹구축] 0. 웹서버 아키텍처 소개]([https://tech.cloud.nongshim.co.kr/2018/10/11/%EC%B4%88%EB%B3%B4%EC%9E%90%EB%A5%BC-%EC%9C%84%ED%95%9C-aws-%EC%9B%B9%EA%B5%AC%EC%B6%95-%EC%9B%B9%EC%84%9C%EB%B2%84-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98-%EC%86%8C%EA%B0%9C/](https://tech.cloud.nongshim.co.kr/2018/10/11/초보자를-위한-aws-웹구축-웹서버-아키텍처-소개/))
-
+- [Elastic Load Balancing (ELB) - 생활코딩](https://opentutorials.org/course/608/3008)
 
 
 **[⬆ back to top](#table-of-contents)**
