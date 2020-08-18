@@ -6,6 +6,13 @@
 
 ---
 
+**Mon Aug 17 2020**
+- [x] `kakao API` 문서 들여다보기 큰 서비스에서 제공하는 API..
+
+**Sun Aug 16 2020**
+- [x] `npm outdated` 명령을 통한 패키지 모듈 관리
+- [x] `npx`를 통해 `dependencies`나 `devDependencies`에 설치한 모듈을 명령어처럼 쓸 수 있게 도와주는 모듈이다.
+
 **Sat Aug 15 2020**
 - [x] 생활코딩 OAuth 시청
 - [x] pcs ver.2 front-end facility, performance 상세 페이지 table에 `th` 태그를 활용하도록 수정
