@@ -6,6 +6,10 @@
 
 ---
 
+**Tue Aug 18 2020**
+- [x] express boilerplate 작업 중, auth API만 기본적으로 작업해놓기
+- [x] ELB에 대해 추가적인 이해를 얻을 수 있는 내용을 생활코딩을 보며 정리
+
 **Mon Aug 17 2020**
 - [x] `kakao API` 문서 들여다보기 큰 서비스에서 제공하는 API..
 
