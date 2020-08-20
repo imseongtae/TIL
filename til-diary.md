@@ -6,6 +6,20 @@
 
 ---
 
+**Thu Aug 20 2020**
+- [x] aws VPC 설정, DB 생성
+- [x] Application 배포를 위한 준비 작업 중 에러 발생
+
+**Wed Aug 19 2020**
+- [x] 업무내용 교통 정리
+- [ ] Assignment: Django App AWS에 배포
+- [ ] Assignment: 랜딩 페이지
+- [x] 리팩터링 스터디
+  - 테스트 코드의 위치와 배포에서 제외하는 법에 대해 질문하기
+  - SPA에 대한 이야기 속에서 SEO, SSR을 고려해 AWS에 배포하는 방식에 대한 이야기를 나눔
+  - [Express EC2에 배포해보기(1)](https://velog.io/@jdm1219/Node.js-EC2%EC%97%90-%EB%B0%B0%ED%8F%AC%ED%95%B4%EB%B3%B4%EA%B8%B01-u2jxekif10)
+
+
 **Tue Aug 18 2020**
 - [x] express boilerplate 작업 중, auth API만 기본적으로 작업해놓기
 - [x] ELB에 대해 추가적인 이해를 얻을 수 있는 내용을 생활코딩을 보며 정리
