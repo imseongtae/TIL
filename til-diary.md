@@ -6,6 +6,11 @@
 
 ---
 
+**Mon Aug 24 2020**
+- [ ] backend API 작업..!
+- [x] MySQL 재설치 후 `The specified item could not be found in the keychain. (-25300)` 에러 발생..
+- [ ] 필요한 UI Test 하기
+
 **Sun Aug 23 2020**
 - [x] nuxt.js를 활용한 vue-bird lint setting
 
