@@ -6,7 +6,11 @@
 
 ---
 
+**Sun Aug 23 2020**
+- [x] nuxt.js를 활용한 vue-bird lint setting
 
+**Sat Aug 22 2020**
+- [x] nuxt.js를 활용한 vue-bird
 
 **Fri Aug 21 2020**
 - [x] nuxt.js 알아보기
