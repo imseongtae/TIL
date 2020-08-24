@@ -6,6 +6,11 @@
 
 ---
 
+
+
+**Fri Aug 21 2020**
+- [x] nuxt.js 알아보기
+
 **Thu Aug 20 2020**
 - [x] aws VPC 설정, DB 생성
 - [x] Application 배포를 위한 준비 작업 중 에러 발생
