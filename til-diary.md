@@ -6,6 +6,9 @@
 
 ---
 
+**Tue Aug 25 2020**
+- [x] 랜딩페이지 회원가입, 로그인, 로그아웃
+
 **Mon Aug 24 2020**
 - [ ] backend API 작업..!
 - [x] MySQL 재설치 후 `The specified item could not be found in the keychain. (-25300)` 에러 발생..
