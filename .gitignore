@@ -1,3 +1,6 @@
+# ignore document
+test.md
+
 IGNORE
 .tmp
 goorm.manifest
