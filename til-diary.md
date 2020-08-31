@@ -6,6 +6,10 @@
 
 ---
 
+
+**Sat Aug 29 2020**
+- [x] `vue-cli` 기반 `app`으로 github action test 배포
+
 **Fri Aug 28 2020**
 - [x] vue.js 공식 문서 semantics 부분 조금 번역..!
 - [x] sql injection, xss, csrf 대응하기 위한 준비
