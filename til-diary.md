@@ -7,8 +7,14 @@
 ---
 
 
+**Sun Aug 30 2020**
+- [x] refactoring 조금..!
+- [x] `vue-cli` 기반 `app`으로 github action test 배포 성공..!
+- [x] `home`이외의 경로에서는 새로고침을 하면(가령, `about(/about)`), 404 Not Found 에러 발생 - 원인은 error에도 `index.html`을 설정해야 함 [stackoverflow 답변](https://stackoverflow.com/questions/43095823/vue-js-router-history-mode-and-aws-s3-routingrules)
+
+
 **Sat Aug 29 2020**
-- [x] `vue-cli` 기반 `app`으로 github action test 배포
+- [x] `vue-cli` 기반 `app`으로 github action test 배포 시도
 
 **Fri Aug 28 2020**
 - [x] vue.js 공식 문서 semantics 부분 조금 번역..!
