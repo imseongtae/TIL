@@ -6,9 +6,12 @@
 
 ---
 
+**Mon Aug 31 2020**
+- [x] EC2 인스턴스에 backend REST API 서버 배포, 프론트와 상호작용 테스트
+- [ ] VPC에 대한 이해가 더 필요하며, 서브넷 설정법 익히기
 
 **Sun Aug 30 2020**
-- [x] refactoring 조금..!
+- [x] refactoring-2nd 조금..! 6-7 읽고 정리
 - [x] `vue-cli` 기반 `app`으로 github action test 배포 성공..!
 - [x] `home`이외의 경로에서는 새로고침을 하면(가령, `about(/about)`), 404 Not Found 에러 발생 - 원인은 error에도 `index.html`을 설정해야 함 [stackoverflow 답변](https://stackoverflow.com/questions/43095823/vue-js-router-history-mode-and-aws-s3-routingrules)
 
