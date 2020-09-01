@@ -6,6 +6,15 @@
 
 ---
 
+**Tue Sep 01 2020**
+- [x] BusinessType Tab menu 
+- [ ] Dropdown menu
+- [ ] OM api setting
+- [ ] VPC setting
+- [ ] express App setting
+- [x] Refactoring-2nd 6-8 ~
+
+
 **Mon Aug 31 2020**
 - [x] EC2 인스턴스에 backend REST API 서버 배포, 프론트와 상호작용 테스트
 - [ ] VPC에 대한 이해가 더 필요하며, 서브넷 설정법 익히기
