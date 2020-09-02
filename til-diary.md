@@ -6,14 +6,20 @@
 
 ---
 
+
+**Wed Sep 02 2020**
+- [x] Refactoring-2nd ~ 6-11까지
+- 탈취되면 안 되는 정보가 있다면 `https`로 배포해야 한다.
+- S3만 backend를 바라볼 수 있도록..! 하기 위한 키워드
+  - 화이트 리스트 방식, 블랙 리스트 방식
+
 **Tue Sep 01 2020**
-- [x] BusinessType Tab menu 
+- [x] BusinessType Tab menu 개선
 - [ ] Dropdown menu
-- [ ] OM api setting
+- [ ] Orange Message api setting
 - [ ] VPC setting
 - [ ] express App setting
 - [x] Refactoring-2nd 6-8 ~
-
 
 **Mon Aug 31 2020**
 - [x] EC2 인스턴스에 backend REST API 서버 배포, 프론트와 상호작용 테스트
