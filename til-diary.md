@@ -6,12 +6,19 @@
 
 ---
 
+**Thu Sep 03 2020**
+- [x] CloudFront를 이용해 S3로 배포한 정적 자원을 https로 감쌈..! 
+  - [ ] Backend와 함께 https로 배포하는 숙제 남음
+- [ ] Vue 한 문장 번역하기
+- [ ] Admin 로그인 구현..
 
 **Wed Sep 02 2020**
 - [x] Refactoring-2nd ~ 6-11까지
 - 탈취되면 안 되는 정보가 있다면 `https`로 배포해야 한다.
 - S3만 backend를 바라볼 수 있도록..! 하기 위한 키워드
   - 화이트 리스트 방식, 블랙 리스트 방식
+  - `cors` 옵션으로 조정할 수 있지 않을까?
+    - [S3로부터 api 요청을 받으므로 S3 엔드포인트를 cors에서 허용](https://velog.io/@naseriansuzie/imcourseTIL25#1-%EC%82%AC%EC%9A%A9%EC%9E%90%EB%93%A4%EC%97%90%EA%B2%8C-%EC%96%B4%EB%96%BB%EA%B2%8C-spasingle-page-application%EB%A5%BC-%EC%A0%9C%EA%B3%B5%ED%95%A0-%EA%B2%83%EC%9D%B8%EA%B0%80)
 
 **Tue Sep 01 2020**
 - [x] BusinessType Tab menu 개선
