@@ -6,10 +6,14 @@
 
 ---
 
+**Fri Sep 04 2020**
+- [x] Admin 로그인 및 Page 작성
+- [x] backend API 서버 port env 환경변수 적용하도록 설정
+
 **Thu Sep 03 2020**
 - [x] CloudFront를 이용해 S3로 배포한 정적 자원을 https로 감쌈..! 
   - [ ] Backend와 함께 https로 배포하는 숙제 남음
-- [ ] Vue 한 문장 번역하기
+- [x] Vue3 a11y-semantics.md 한 문장씩 번역하기 - 28%
 - [ ] Admin 로그인 구현..
 
 **Wed Sep 02 2020**
