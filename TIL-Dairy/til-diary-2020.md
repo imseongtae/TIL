@@ -6,6 +6,9 @@
 
 ---
 
+**Sat Sep 05 2020**
+- [ ] Refactoring 1 ~ 6 작성
+
 **Fri Sep 04 2020**
 - [x] Admin 로그인 및 Page 작성
 - [x] backend API 서버 port env 환경변수 적용하도록 설정
