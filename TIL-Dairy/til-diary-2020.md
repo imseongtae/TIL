@@ -6,8 +6,12 @@
 
 ---
 
+**Sun Sep 06 2020**
+- [x] Refactoring 4 ~ 6 작성
+- [x] sequelize customer Model 수정
+
 **Sat Sep 05 2020**
-- [ ] Refactoring 1 ~ 6 작성
+- [x] Refactoring 1 ~ 3 작성
 
 **Fri Sep 04 2020**
 - [x] Admin 로그인 및 Page 작성
