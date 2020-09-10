@@ -6,6 +6,13 @@
 
 ---
 
+**Mon Sep 07 2020**
+- [x] Admin Page 상담내역 페이지
+  - TabMenu UI
+  - List UI
+  - Pagination UI
+
+
 **Sun Sep 06 2020**
 - [x] Refactoring 4 ~ 6 작성
 - [x] sequelize customer Model 수정
