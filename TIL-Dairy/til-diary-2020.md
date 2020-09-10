@@ -6,6 +6,11 @@
 
 ---
 
+
+**Tue Sep 08 2020**
+- [x] 리팩터링 읽기
+- [x] Admin 알림톡
+
 **Mon Sep 07 2020**
 - [x] Admin Page 상담내역 페이지
   - TabMenu UI
