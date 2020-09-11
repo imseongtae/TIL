@@ -6,6 +6,9 @@
 
 ---
 
+**Fri Sep 11 2020**
+- [ ] Sequelize의 강력함, `upsert`나 `findOrCreate`로 사용해보기 기존 코드 대체해보기
+- [x] 랜딩 페이지 section 별로 진행 중
 
 **Thu Sep 10 2020**
 - [x] jwt을 사용하면 데이터베이스 요청을 줄일 수 있다.
