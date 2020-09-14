@@ -6,9 +6,11 @@
 
 ---
 
+**Sun Sep 13 2020**
+- [x] Vue Popup UI 적용하기
+
 **Sat Sep 12 2020**
 - [x] refactoring-2nd
-
 
 **Fri Sep 11 2020**
 - [ ] Sequelize의 강력함, `upsert`나 `findOrCreate`로 사용해보기 기존 코드 대체해보기
