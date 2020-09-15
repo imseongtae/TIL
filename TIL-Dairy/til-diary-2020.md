@@ -6,6 +6,9 @@
 
 ---
 
+**Mon Sep 14 2020**
+- [x] 마크업 작성
+
 **Sun Sep 13 2020**
 - [x] Vue Popup UI 적용하기
 
