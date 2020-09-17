@@ -6,6 +6,10 @@
 
 ---
 
+**Wed Sep 16 2020**
+- [x] 좌우 스크롤 UI
+- [x] Refactoring-2nd
+
 **Tue Sep 15 2020**
 - [x] 가이드에 따라 화면을 더 정확하게 만들기 위해 Figma Slice 활용..!
 - [x] 슬라이드 UI 를 위한 snippet 작성 
