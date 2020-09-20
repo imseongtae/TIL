@@ -6,8 +6,13 @@
 
 ---
 
+
+**Fri Sep 18 2020**
+- [x] handphone UI & animation
+- [x] 마크업 빠진 부분 작성
+
 **Thu Sep 17 2020**
-- [x] Dropdown
+- [x] Dropdown UI
 - [x] 연락처 검증 정규표현식.. 휴대폰 번호의 경우와 전화번호의 경우 테스트
 
 **Wed Sep 16 2020**
