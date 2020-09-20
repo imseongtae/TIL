@@ -6,6 +6,11 @@
 
 ---
 
+**Sat Sep 19 2020**
+- [x] Intro Animation
+- [x] input 유효성 검사
+- [x] notification 1분 동안 입력 막기
+- [ ] consultation 1분 동안 입력 막기
 
 **Fri Sep 18 2020**
 - [x] handphone UI & animation
