@@ -7,6 +7,9 @@
 ---
 
 
+**Mon Sep 21 2020**
+- [ ] 모바일
+
 **Sun Sep 20 2020**
 - [ ] Intro Animation 
 - [ ] vue scollto library
