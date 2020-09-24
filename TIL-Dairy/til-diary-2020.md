@@ -6,6 +6,12 @@
 
 ---
 
+
+**Sun Sep 20 2020**
+- [ ] Intro Animation 
+- [ ] vue scollto library
+- [ ] 모바일
+
 **Sat Sep 19 2020**
 - [x] Intro Animation
 - [x] input 유효성 검사
