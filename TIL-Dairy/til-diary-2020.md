@@ -6,6 +6,10 @@
 
 ---
 
+**Fri Sep 25 2020**
+- [ ] 좌우 스크롤 없애기 위해 global-width에 `overflow: hidden`
+- [ ] Mobile 웹 최종 점검 및 피드백 적용
+
 **Thu Sep 24 2020**
 - [x] 피드백 받은 내용 적용
 - [ ] UI 마무리
