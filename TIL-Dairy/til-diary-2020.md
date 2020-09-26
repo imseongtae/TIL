@@ -6,9 +6,14 @@
 
 ---
 
+**Sat Sep 26 2020**
+- [x] Modal 수정사항 반영, 버튼 위치 점검
+- [ ] refactoring 2nd..
+
 **Fri Sep 25 2020**
-- [ ] 좌우 스크롤 없애기 위해 global-width에 `overflow: hidden`
+- [x] 좌우 스크롤 없애기 위해 global-width에 `overflow: hidden`
 - [ ] Mobile 웹 최종 점검 및 피드백 적용
+- [ ] 컴포넌트 이름 정리
 
 **Thu Sep 24 2020**
 - [x] 피드백 받은 내용 적용
