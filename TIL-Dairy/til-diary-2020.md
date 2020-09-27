@@ -6,6 +6,12 @@
 
 ---
 
+**Sun Sep 27 2020**
+- [ ] Modal.. 
+- [ ] store ...
+- [ ] 자주 사용하는 UI 작업 
+- [ ] Vue 에 대해 이해를 더 키우기 위한 공부
+
 **Sat Sep 26 2020**
 - [x] Modal 수정사항 반영, 버튼 위치 점검
 - [ ] refactoring 2nd..
