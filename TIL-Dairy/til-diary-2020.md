@@ -6,6 +6,10 @@
 
 ---
 
+**Tue Sep 29 2020**
+- [ ] dotenv는 git으로 관리하면 안 된다..
+- [ ] EC2 생성하고 VPC, Private Subnet 설정
+
 **Mon Sep 28 2020**
 - [ ] DB 정리
 - [ ] Admin 유효 문의 추가
