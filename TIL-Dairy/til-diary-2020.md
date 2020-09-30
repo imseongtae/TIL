@@ -6,6 +6,10 @@
 
 ---
 
+**Wed Sep 30 2020**
+- [ ] 집계탭 API 2번 요청하는 부분
+- VPC로 관리하며 Local에서 DB에 접속할 수 있는 방법을 모색중
+
 **Tue Sep 29 2020**
 - [ ] dotenv는 git으로 관리하면 안 된다..
 - [ ] EC2 생성하고 VPC, Private Subnet 설정
@@ -13,7 +17,6 @@
 **Mon Sep 28 2020**
 - [ ] DB 정리
 - [ ] Admin 유효 문의 추가
-- [ ] 집계탭 API 2번 요청하는 부분
 
 **Sun Sep 27 2020**
 - [ ] Modal.. 
