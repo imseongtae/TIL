@@ -6,8 +6,13 @@
 
 ---
 
+**Thu Oct 01 2020**
+- [ ] VPC 다시 설정
+- [ ] EC2 생성
+- [ ] Backend production 설정
+
 **Wed Sep 30 2020**
-- [ ] 집계탭 API 2번 요청하는 부분
+- [x] 집계탭 API 2번 요청하는 부분
 - VPC로 관리하며 Local에서 DB에 접속할 수 있는 방법을 모색중
 
 **Tue Sep 29 2020**
