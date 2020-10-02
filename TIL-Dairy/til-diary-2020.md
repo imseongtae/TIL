@@ -6,10 +6,13 @@
 
 ---
 
-**Thu Oct 01 2020**
-- [ ] VPC 다시 설정
-- [ ] EC2 생성
+**Fri Oct 02 2020**
+- [ ] 프론트엔드 index의 meta 태그 점검
 - [ ] Backend production 설정
+
+**Thu Oct 01 2020**
+- [x] VPC 다시 설정
+- [x] EC2 생성
 
 **Wed Sep 30 2020**
 - [x] 집계탭 API 2번 요청하는 부분
