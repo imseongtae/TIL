@@ -6,6 +6,9 @@
 
 ---
 
+**Sat Oct 03 2020**
+- [ ] nginx setting
+
 **Fri Oct 02 2020**
 - [ ] 프론트엔드 index의 meta 태그 점검
 - [ ] Backend production 설정
