@@ -6,6 +6,10 @@
 
 ---
 
+**Wed Oct 07 2020**
+- [ ] `node-schedule`을 통해 초기화 함수 등록
+- [ ] `crontab`을 이용한 `ssl` 자동 갱신 test
+
 **Tue Oct 06 2020**
 - [x] window chrome에서 가로 스크롤바 생기는 문제
 - [x] 드롭다운 부자연스러워 발생하는 문제 해결
