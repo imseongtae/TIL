@@ -1,8 +1,11 @@
-# ignore document
-test.md
+# ignore documents
+-IGNORE-docs-
+
 
 IGNORE
 .tmp
 goorm.manifest
 .DS_Store
 
+# setting
+change.sh
