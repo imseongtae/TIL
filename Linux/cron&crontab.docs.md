@@ -1,5 +1,18 @@
-# crontab
+# cron and crontab
+간략하게 말하면 cron은 실행, crontab은 설정이다.
 
+## cron
+리눅스 환경에서 정기적으로 일정 시간이 되면 쉘이나 프로그램 등을 실행시키고 싶을 때, cron을 사용하면 자동으로 지정한 시간에 프로그램을 작동 시킬 수 있다. 즉, 리눅스 환경에서 자동으로 실행하는 스케줄을 의미한다.
+
+- 정기적으로 같은 작업을 할 때 사용
+- 일정 시간마다 자동으로 실행
+- 윈도우 환경의 작업 스케줄러와 비슷한 기능
+
+## crontab
+crontab은 실행할 프로그램의 파일 경로나 실행할 시간 등을 설정하고 관리한다.  
+
+- 스케줄 시간을 설정 관리
+- 실행할 프로그램을 설정 관리
 
 ## table of contents
 - [crontab](#crontab)
@@ -75,5 +88,5 @@ $ crontab -r
 크론탭을 상세하게 알려주는 블로그
 - [리눅스 크론탭(Linux Crontab) 사용법](https://jdm.kr/blog/2)
 
-- [관리자 권한으로 크론탭을 작성할 경우, 크론탭이 작성될 위치](https://ponyozzang.tistory.com/401)
+- [관리자 권한으로 크론탭을 작성할 경우, 크론탭이 작성될 위치 - 리눅스 cron 설정 파일 경로(crontab 파일)](https://ponyozzang.tistory.com/401)
 - [시스템 크론탭과 개별 유저 크론탭의 차이](https://www.phpschool.com/gnuboard4/bbs/board.php?bo_table=qna_install&wr_id=65273)
