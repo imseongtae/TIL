@@ -20,7 +20,12 @@ crontab -e -l 등 명령어를 통한 설정은 개별 유저 crontab 입니다.
 
 
 ## 설치
-nginx에 프록시에 대한 초기 설정이 이루어진 후
+1. nginx에 프록시에 대한 초기 설정이 이루어진 후
+1. `certbot-auto`를 설치하기 위해 `/usr/local/bin/` 경로로 이동
+1. `certbot-auto`를 다운로드
+1. `certbot-auto`에 대해 실행권한 추가
+1. `certbot-auto` 실행
+
 
 ```bash
 wget https://dl.eff.org/certbot-auto
@@ -34,7 +39,7 @@ chmod a+x certbot-auto
 
 ### snap과 nginx
 snap과 nginx를 통해서 letsencrypt를 설치할 수도 있음  
-> 이 방법잉 더 쉬울 수도 있음 
+> 이 방법이 더 쉬울 수 있음 
 
 ```bash
 sudo snap install certbot --classic
@@ -50,7 +55,7 @@ sudo certbot --nginx
 ### 크론탭이 작성될 위치
 [관리자 권한으로 크론탭을 작성할 경우, 크론탭이 작성될 위치](https://ponyozzang.tistory.com/401) 를 참고한다..!
 
-> 관리자인 root 권한으로 프로그램을 실행해야 하는 경우에는 /etc/crontab에 작성을 해야 합니다. 또는 /etc/cron.d 안에 crontab 파일에 설정을 해도 자동으로 실행됩니다. 시간 단위, 분 단위, 일 단위, 월 단위 등 정기적으로 실행할 파일들의 설정을 할 수 있도록 나눠져 있습니다. 
+> 관리자인 root 권한으로 프로그램을 실행해야 하는 경우에는 /etc/crontab에 작성을 해야 합니다. 또는 /etc/cron.d 안에 crontab 파일에 설정을 해도 자동으로 실행됩니다. 시간 단위, 분 단위, 일 단위, 월 단위 등 정기적으로 실행할 파일들을 설정할 수 있도록 나눠져 있습니다. 
 
 ```bash
 /etc/crontab
@@ -63,10 +68,11 @@ sudo certbot --nginx
 
 
 ## 시스템 crontab에 등록할 명령어
-제로초님 블로그 및 다른 블로그 글을 참고해 작성한 코드
-관리자 권한을 가진 매일 실행할 크론탭을 `/etc/cron.d/certbot` 의 경로에 등록한다.
+제로초님 블로그 및 다른 블로그 글을 참고해 작성한 코드  
+관리자 권한을 가지고, 매일 실행할 **crontab**을 `/etc/cron.d/certbot` 의 경로에 등록한다.
 
 ### 등록할 명령어 타입1
+`certbot` 파일이 없다면 생성한 후 아래처럼 내용을 작성
 
 ```bash
 SHELL=/bin/sh
@@ -75,7 +81,6 @@ PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 ```
 
 ### Test
-
 
 ```bash
 # renew certbot-auto 
@@ -88,8 +93,6 @@ PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 # renew certbot-auto 
 0 */1 * * * /home/ubuntu/certbot-auto -q renew --nginx --renew-hook 'service nginx reload'
 ```
-
-
 
 
 ## Troubleshooting
