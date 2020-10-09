@@ -6,8 +6,12 @@
 
 ---
 
+**Thu Oct 08 2020**
+- [x] `crontab`에 `certbot-auto` 자동 갱신을 위한 명령 등록
+- [x] google search-console, google analytics, naver
+
 **Wed Oct 07 2020**
-- [ ] `node-schedule`을 통해 초기화 함수 등록
+- [x] `node-schedule`을 통해 초기화 함수 등록
 - [ ] `crontab`을 이용한 `ssl` 자동 갱신 test
 
 **Tue Oct 06 2020**
