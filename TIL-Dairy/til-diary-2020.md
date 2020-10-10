@@ -6,6 +6,14 @@
 
 ---
 
+**Fri Oct 09 2020**
+- [x] 리눅스 환경에서 `npm i`를 통한 패키지 설치 중 패키지가 설치되지 않는 에러 발생. `sudo` 권한을 주고 설치하니 에러 해결. 한참을 고생할 수도 있음... 에러 메시지의 중요성..!
+- css를 통해 요소에 style을 적용할 때 스페이스(공백) 한 칸의 무서움을 조심하자..! HTML에 대한 모든 디자인 제어는 `css`로...
+- [ ] 수평 스크롤 막기는 전체 html, body에 대한 설정과 overflow 속성을 사용하는 해당 UI에 대한 복수 설정이 필요할 수 있다. 
+  - 특정 section에서 overflow를 제어하는와중, 전체 body에 overflow를 설정하니.. 기존 section에 설정했던 overflow가 깨짐 
+- [ ] vue slick slider 패키지를 통해 모바일 터치를 지원하는 slider를 구현할 수 있을 것 같음
+
+
 **Thu Oct 08 2020**
 - [x] `crontab`에 `certbot-auto` 자동 갱신을 위한 명령 등록
 - [x] google search-console, google analytics, naver
