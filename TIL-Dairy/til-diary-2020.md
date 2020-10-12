@@ -6,6 +6,10 @@
 
 ---
 
+**Sun Oct 11 2020**
+- [ ] Growth Hacking 기본 개념
+- [x] Vue a11y-semantics.md 작업..!
+
 **Sat Oct 10 2020**
 - [x] label indicator가 모바일 웹 버전에서 깨지는 문제 해결
 - [ ] Growth Hacking 기본 개념
