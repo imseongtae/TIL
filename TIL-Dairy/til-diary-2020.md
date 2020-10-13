@@ -6,6 +6,9 @@
 
 ---
 
+**Mon Oct 12 2020**
+- [ ] Refactoring 정리
+
 **Sun Oct 11 2020**
 - [ ] Growth Hacking 기본 개념
 - [x] Vue a11y-semantics.md 작업..!
