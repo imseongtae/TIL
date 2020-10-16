@@ -6,6 +6,9 @@
 
 ---
 
+**Tue Oct 13 2020**
+- [ ] Refactoring 정리
+
 **Mon Oct 12 2020**
 - [ ] Refactoring 정리
 
