@@ -6,6 +6,9 @@
 
 ---
 
+**Thu Oct 15 2020**
+- [ ] nuxt...!
+
 **Wed Oct 14 2020**
 - [ ] Refactoring
 
