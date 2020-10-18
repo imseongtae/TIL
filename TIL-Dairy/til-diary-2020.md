@@ -6,6 +6,9 @@
 
 ---
 
+**Sat Oct 17 2020**
+- [ ] nuxt
+
 **Fri Oct 16 2020**
 - [ ] nuxt
 
