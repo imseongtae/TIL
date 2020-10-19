@@ -6,6 +6,10 @@
 
 ---
 
+**Mon Oct 19 2020**
+- [ ] Vue a11y-semantics.md 번역 작업!
+- [ ] PWA tutorial
+
 **Sun Oct 18 2020**
 - [ ] Refactoring-2nd 읽고 자료 만들기
 
