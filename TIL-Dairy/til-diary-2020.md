@@ -6,6 +6,9 @@
 
 ---
 
+**Sun Oct 18 2020**
+- [ ] Refactoring-2nd 읽고 자료 만들기
+
 **Sat Oct 17 2020**
 - [ ] nuxt
 
