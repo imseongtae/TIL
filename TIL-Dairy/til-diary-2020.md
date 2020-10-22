@@ -6,6 +6,9 @@
 
 ---
 
+**Thu Oct 22 2020**
+- [x] Refactoring-2nd 읽기
+- [x] Vue a11y-semantics.md Review 요청
 
 **Wed Oct 21 2020**
 - [ ] Refactoring-2nd 읽기
