@@ -7,6 +7,9 @@
 ---
 
 
+**Wed Oct 21 2020**
+- [ ] Refactoring-2nd 읽기
+
 **Tue Oct 20 2020**
 - [ ] Refactoring-2nd 읽기
 
