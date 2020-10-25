@@ -6,6 +6,8 @@
 
 ---
 
+**Sat Oct 24 2020**
+- [x] Refactoring-2nd 읽고 자료 만들기
 
 **Fri Oct 23 2020**
 - [x] [aoa11y 채널 웹 접근성 웨비나 자료](https://www.figma.com/proto/CzPQm0zckyvsDamqxu50XT/%EC%A0%91%EA%B7%BC%EC%84%B1%EC%9D%84-%EA%B3%A0%EB%A0%A4%ED%95%9C-%EB%94%94%EC%9E%90%EC%9D%B8(%EC%84%A4%EA%B3%84)-%E2%86%92-AOA11Y%2C-2020.10?node-id=48%3A174&viewport=-704%2C-1055%2C0.7183288931846619&scaling=min-zoom)
