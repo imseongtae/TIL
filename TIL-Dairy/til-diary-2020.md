@@ -6,6 +6,11 @@
 
 ---
 
+**Mon Oct 26 2020**
+- [x] meta tag 설정하기
+- [x] 리뷰 영역의 레이아웃과 컨텐츠 수정
+- [ ] `www`를 `non-www`로 리다이렉트하는 nginx setting
+
 **Sun Oct 25 2020**
 - [x] nuxt를 이용해 node-bird clone
 - [ ] [nuxt - auth 예제 만들어보기](https://github.com/nuxt/example-auth0)
