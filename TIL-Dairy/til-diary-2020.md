@@ -6,11 +6,14 @@
 
 ---
 
+**Thu Oct 29 2020**
+- [x] refactoring-2nd study
+- [x] title 변경
+- [x] 템플릿에 예시에 맞도록 이미지 및 애니메이션 수정 작업
+
 **Wed Oct 28 2020**
 - [x] refactoring-2nd study
 - [ ] nginx 리버스 프록시 개념 - 영상 다시 보기
-- [ ] 템플릿에 따른 예시 이미지 수정 작업
-- [ ] title 변경
 
 **Tue Oct 27 2020**
 - [x] `www`를 `non-www`로 리다이렉트하는 nginx setting
