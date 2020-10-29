@@ -6,15 +6,19 @@
 
 ---
 
-**Tue Oct 27 2020**
-- [x] `www`를 `non-www`로 리다이렉트하는 nginx setting
+**Wed Oct 28 2020**
+- [x] refactoring-2nd study
+- [ ] nginx 리버스 프록시 개념 - 영상 다시 보기
 - [ ] 템플릿에 따른 예시 이미지 수정 작업
 - [ ] title 변경
+
+**Tue Oct 27 2020**
+- [x] `www`를 `non-www`로 리다이렉트하는 nginx setting
 
 **Mon Oct 26 2020**
 - [x] meta tag 설정하기
 - [x] 리뷰 영역의 레이아웃과 컨텐츠 수정
-- [ ] `www`를 `non-www`로 리다이렉트하는 nginx setting
+
 
 **Sun Oct 25 2020**
 - [x] nuxt를 이용해 node-bird clone
