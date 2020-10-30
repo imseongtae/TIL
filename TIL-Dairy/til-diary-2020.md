@@ -6,6 +6,9 @@
 
 ---
 
+**Fri Oct 30 2020**
+- [x] refactoring-2nd - chapter.11
+
 **Thu Oct 29 2020**
 - [x] refactoring-2nd study
 - [x] title 변경
