@@ -6,6 +6,9 @@
 
 ---
 
+**Mon Nov 02 2020**
+- [ ] nuxt
+
 **Sun Nov 01 2020**
 - [ ] nuxt
 
