@@ -6,6 +6,9 @@
 
 ---
 
+**Sun Nov 01 2020**
+- [ ] nuxt
+
 **Sat Oct 31 2020**
 - [ ] refactoring-2nd - chapter.11
 
