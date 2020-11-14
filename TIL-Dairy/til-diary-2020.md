@@ -6,6 +6,9 @@
 
 ---
 
+**Fri Nov 13 2020**
+- [ ] marketing tool
+
 **Thu Nov 12 2020**
 - [ ] refactoring-2nd
 
