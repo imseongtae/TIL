@@ -6,6 +6,11 @@
 
 ---
 
+**Mon Nov 16 2020**
+- [ ] 손수 포맷 변환 작업 114번...
+- [ ] nuxt에 ESLint + Prettier Setting
+
+
 **Sat Nov 14 2020**
 - [ ] marketing tool
 
