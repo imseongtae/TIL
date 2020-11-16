@@ -6,6 +6,9 @@
 
 ---
 
+**Sat Nov 14 2020**
+- [ ] marketing tool
+
 **Fri Nov 13 2020**
 - [ ] marketing tool
 
