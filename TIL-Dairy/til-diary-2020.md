@@ -6,10 +6,14 @@
 
 ---
 
+**Tue Nov 17 2020**
+- [ ] scss 색상, 폰트 사이즈 등 변수 작업
+- [ ] footer 컴포넌트 제작
+- [ ] Web main 페이지 레이아웃
+
 **Mon Nov 16 2020**
 - [ ] 손수 포맷 변환 작업 114번...
 - [ ] nuxt에 ESLint + Prettier Setting
-
 
 **Sat Nov 14 2020**
 - [ ] marketing tool
