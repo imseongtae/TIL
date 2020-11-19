@@ -6,6 +6,10 @@
 
 ---
 
+**Wed Nov 18 2020**
+- [ ] Refactoring study 
+- [ ] BEM에 대한 이해를 키우기 위한 작업..!
+
 **Tue Nov 17 2020**
 - [ ] scss 색상, 폰트 사이즈 등 변수 작업
 - [ ] footer 컴포넌트 제작
