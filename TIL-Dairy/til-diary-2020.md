@@ -6,6 +6,10 @@
 
 ---
 
+**Thu Nov 19 2020**
+- [ ] web landing
+- [ ] 프로젝트 feedback
+
 **Wed Nov 18 2020**
 - [ ] Refactoring study 
 - [ ] BEM에 대한 이해를 키우기 위한 작업..!
