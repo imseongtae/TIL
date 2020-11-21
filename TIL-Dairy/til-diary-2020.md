@@ -6,6 +6,9 @@
 
 ---
 
+**Fri Nov 20 2020**
+- [ ] 진정한 의미의 Mobile First 를 위해
+
 **Thu Nov 19 2020**
 - [ ] web landing
 - [ ] 프로젝트 feedback
