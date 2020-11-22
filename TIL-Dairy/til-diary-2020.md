@@ -6,6 +6,9 @@
 
 ---
 
+**Sat Nov 21 2020**
+- [ ] Mobile Main 퍼블리싱
+
 **Fri Nov 20 2020**
 - [ ] 진정한 의미의 Mobile First 를 위해
 
