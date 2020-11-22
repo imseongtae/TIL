@@ -6,6 +6,9 @@
 
 ---
 
+**Sun Nov 22 2020**
+- [ ] Vuex 문제 해결, `middleware`는 `page`에서만 작동함. 이제까지 `component/` 폴더의 일반 컴포넌트 `.vue` 파일에서 `middleware` 를 사용했음
+
 **Sat Nov 21 2020**
 - [ ] Mobile Main 퍼블리싱
 
