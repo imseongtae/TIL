@@ -6,6 +6,11 @@
 
 ---
 
+**Tue Nov 24 2020**
+- [x] Header 컴포넌트 close warpper bug fix
+- [x] Signup Page 
+- [x] 결제완료 페이지
+
 **Mon Nov 23 2020**
 - [x] Header 컴포넌트 작업
 - [x] classItem 컴포넌트 반응형 작업
