@@ -6,6 +6,10 @@
 
 ---
 
+**Wed Nov 25 2020**
+- [x] workshop...
+  - [ ] 개발 방향성에 대해 이야기
+
 **Tue Nov 24 2020**
 - [x] Header 컴포넌트 close warpper bug fix
 - [x] Signup Page 
