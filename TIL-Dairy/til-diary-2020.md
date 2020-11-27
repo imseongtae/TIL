@@ -6,6 +6,9 @@
 
 ---
 
+**Thu Nov 26 2020**
+- [x] workshop...
+
 **Wed Nov 25 2020**
 - [x] workshop...
   - [ ] 개발 방향성에 대해 이야기
