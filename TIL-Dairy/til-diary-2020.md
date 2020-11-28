@@ -6,6 +6,10 @@
 
 ---
 
+**Fri Nov 27 2020**
+- [x] Macbook 초기 불량 테스트
+- [x] Macbook setting
+
 **Thu Nov 26 2020**
 - [x] workshop...
 
