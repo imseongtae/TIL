@@ -6,6 +6,9 @@
 
 ---
 
+**Sun Nov 29 2020**
+- [x] Project 구조 정리
+
 **Sat Nov 28 2020**
 - [x] Macbook development environment setting
 
