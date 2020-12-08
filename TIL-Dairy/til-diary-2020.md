@@ -6,6 +6,9 @@
 
 ---
 
+**Sun Dec 06 2020**
+- [ ] axios의 limit 인자값과 Vuex의 상호작용에 대해 고민
+
 **Sat Dec 05 2020**
 - [ ] Vue3 study를 위한 gitbook 작성
   - [ ] hello world 
