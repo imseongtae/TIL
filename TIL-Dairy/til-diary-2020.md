@@ -6,6 +6,9 @@
 
 ---
 
+**Tue Dec 08 2020**
+- [ ] axios의 limit 인자값과 Vuex의 상호작용에 대해 고민
+
 **Mon Dec 07 2020**
 - [x] express signup, login API
 - [x] express backend 구조 분리
