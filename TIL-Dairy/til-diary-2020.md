@@ -6,6 +6,9 @@
 
 ---
 
+**Wed Dec 09 2020**
+- [ ] axios의 limit 인자값과 Vuex의 상호작용에 대해 고민
+
 **Tue Dec 08 2020**
 - [ ] axios의 limit 인자값과 Vuex의 상호작용에 대해 고민
 
