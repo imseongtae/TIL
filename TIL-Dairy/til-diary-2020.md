@@ -6,6 +6,10 @@
 
 ---
 
+**Fri Dec 11 2020**
+- [ ] 전체적인 font-size 사이즈 및 form placeholder font-size 수정
+- [ ] Swagger API 명세를 보고 요청을 보내는 작업
+
 **Thu Dec 10 2020**
 - [ ] 모바일 레이아웃을 활용해 반응형 대응하도록 수정
 
