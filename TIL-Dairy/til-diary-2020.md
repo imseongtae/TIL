@@ -6,6 +6,9 @@
 
 ---
 
+**Sat Dec 12 2020**
+- [ ] vue3 study 준비
+
 **Fri Dec 11 2020**
 - [ ] 전체적인 font-size 사이즈 및 form placeholder font-size 수정
 - [ ] Swagger API 명세를 보고 요청을 보내는 작업
