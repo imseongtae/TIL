@@ -6,6 +6,10 @@
 
 ---
 
+**Tue Dec 22 2020**
+- [ ] 툴팁 쓸일이 있을지도..
+- [ ] https://developer.mozilla.org/ko/docs/Web/CSS/::after
+
 **Mon Dec 21 2020**
 - [ ] SelectBox UI
 - [ ] RadioField로 입력과 리턴 받는 값을 개선해야 함
