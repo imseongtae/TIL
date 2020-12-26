@@ -6,6 +6,9 @@
 
 ---
 
+**Thu Dec 24 2020**
+- [ ] TypeScript
+
 **Wed Dec 23 2020**
 - [x] Calendar UI 스타일링
 - [x] 공통 컴포넌트 마크업 구조 변경
