@@ -6,6 +6,10 @@
 
 ---
 
+**Sat Dec 26 2020**
+- [x] 햄버거 버튼 활성화 이후 스크롤 해제를 하지 않아 스크롤 막히는 문제 발생, active값을 false로 바꾸면 문제를 해결할 수 있음
+- [x] 여백이 발생하는 문제 => `list-container` 클래스 선택자에 margin-top 값이 있었음... margin 속성이 적용되면 요소간 간격이 벌어지는 문제가 발생
+
 **Fri Dec 25 2020**
 - [x] Calendar UI 프로퍼티 에러
 - [x] 컴포넌트들이 label과 value를 받도록 수정
