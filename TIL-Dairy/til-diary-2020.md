@@ -6,6 +6,10 @@
 
 ---
 
+**Thu Dec 31 2020**
+- [ ] UI 교통 정리
+- [x] flex의 속성 `flex-flow: row wrap` 을 사용해서 간격을 `padding`으로 띄우면 넓이가 어떠하든 균일한 크기의 아이템을 갖는 리스트를 만들 수 있음
+
 **Wed Dec 30 2020**
 - [ ] UI 교통 정리
 - [ ] AppHeader 컴포넌트 활성화에 따른 스크롤 에러 해결, `nuxt-link`와 관련 깊은 문제
