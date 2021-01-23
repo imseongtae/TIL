@@ -7,6 +7,10 @@
 
 ---
 
+**Sun Jan 17 2021**
+- [ ] Storybook
+- [ ] github package registry
+
 **Sat Jan 16 2021**
 - [ ] Storybook
 
