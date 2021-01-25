@@ -7,6 +7,9 @@
 
 ---
 
+**Mon Jan 18 2021**
+- [ ] github package registry
+
 **Sun Jan 17 2021**
 - [ ] Storybook
 - [ ] github package registry
