@@ -7,6 +7,10 @@
 
 ---
 
+**Fri Jan 22 2021**
+- [ ] github package registry
+- [ ] `vue component`와 `nuxt`의 상호작용
+
 **Thu Jan 21 2021**
 - [ ] github package registry
 - [ ] `vue component`와 `nuxt`의 상호작용
