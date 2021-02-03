@@ -7,6 +7,9 @@
 
 ---
 
+**Sun Jan 24 2021**
+- [ ] coding convention을 만드는 작업
+
 **Sat Jan 23 2021**
 - [ ] github package registry
 - [ ] `vue component`와 `nuxt`의 상호작용
