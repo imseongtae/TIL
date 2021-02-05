@@ -7,6 +7,9 @@
 
 ---
 
+**Mon Jan 25 2021**
+- [ ] coding convention을 만드는 작업
+
 **Sun Jan 24 2021**
 - [ ] coding convention을 만드는 작업
 
