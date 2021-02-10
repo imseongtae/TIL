@@ -7,6 +7,17 @@
 
 ---
 
+**Fri Jan 29 2021**
+- reset.css에 의해 초기화된 li 스타일을 해제하는 속성
+
+```css
+li {            
+  list-style: disc inside none;
+  display: list-item;
+  margin-left: 1rem;
+}
+```
+
 **Thu Jan 28 2021**
 - [ ] slot을 활용하면 의미있는 이름을 가진 마크업을 작성할 수 있다.
 
