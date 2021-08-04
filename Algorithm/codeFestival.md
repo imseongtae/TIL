@@ -626,7 +626,59 @@ rl.on('line', function (line) {
 ```
 
 
+### 문제:57 0부터 1000까지 1은 몇번 들어갔을까?
 
+#### for of
+
+```js
+let s = '';
+let count = 0;
+
+for (let i = 0; i <= 1000; i++) {
+  s += i;
+};
+
+for (const k of s) {
+	console.log(k);
+  if (k == 1) {
+    count++;
+  }
+}
+
+console.log('count: ', count);
+```
+
+#### for in
+
+```js
+let s = '';
+let count = 0;
+
+for (let i = 0; i < 1001; i++) {
+  s += i;
+};
+
+for (const k in s) {  
+  if (s[k] == 1) {
+    count++;
+  }
+}
+
+console.log('count: ', count);
+```
+
+#### 정규표현식
+
+```js
+let s = '';
+let count = 0;
+
+for (let i = 0; i < 1001; i++) {
+  s += i;
+};
+
+console.log(s.match(/1/g).length);
+```
 
 
 
