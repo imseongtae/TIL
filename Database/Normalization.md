@@ -173,4 +173,4 @@ X와 Y를 임의의 애트리뷰트 집합이라고 할 때, X의 값이 Y의 �
 - 데이터베이스 설계 및 구축(오세종 저)
 - [데이터베이스 정규화 - 이상현상 & 함수적 종속성](https://yaboong.github.io/database/2018/03/09/database-anomaly-and-functional-dependency/)
 - [관계 데이터베이스의 함수적 종속성과 정규화](http://cs.kangwon.ac.kr/~ysmoon/courses/2009_2/db/11.pdf)
-
+- [정규화(Normalization) 개념과 정규화 과정(1NF, 2NF, 3NF, BCNF)](https://minimax95.tistory.com/entry/%EC%A0%95%EA%B7%9C%ED%99%94Normalization-%EA%B0%9C%EB%85%90%EA%B3%BC-%EA%B8%B0%EB%B3%B8-%EA%B3%BC%EC%A0%95)
