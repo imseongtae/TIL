@@ -49,7 +49,7 @@
 ## 정규화를 이해하기 배경지식
 데이터베이스 설계는 정보시스템을 구축하기 위한 절차 가운데 설계 부분에 해당한다. 그리고 데이터베이스 설계 부분에는 정규화와 관계가 깊은 데이터 모델링이 있다.
 
-<img src="https://user-images.githubusercontent.com/60806840/137804109-792c126b-6f9a-4a22-a181-10f70ebd3ad4.png" align="left" alt="Information system design process">
+![Information system design process](https://user-images.githubusercontent.com/60806840/137804109-792c126b-6f9a-4a22-a181-10f70ebd3ad4.png)
 
 ### 데이터베이스 설계
 데이터베이스 설계란 데이터베이스 안에 **어떤 테이블들이 있어야 하고, 각 테이블들은 어떤 컬럼이 있어야 하며, 기본기와 외래키는 어떤 것인지 정하고**, 응용프로그램에서 필요로하는 뷰와 인덱스를 생성하는 일련의 과정을 말한다. 
@@ -60,7 +60,7 @@
 
 **즉 데이터 모델링이란 현실세계를 관찰, 분석하여 ERD로 불리는 개념적 모델을 만드는 과정**
 
-<img src="https://user-images.githubusercontent.com/60806840/137804151-8c3a3f79-a631-440e-b19a-96dd4241011f.png" align="left" alt="Database design">
+![Database design](https://user-images.githubusercontent.com/60806840/137804151-8c3a3f79-a631-440e-b19a-96dd4241011f.png)
 
 ### ERD
 데이터 모델링에서는 ERD라는 수단을 통해 모델링을 하고, 모델링의 결과를 표현한다.  
@@ -135,13 +135,18 @@ X와 Y를 임의의 애트리뷰트 집합이라고 할 때, X의 값이 Y의 �
 # Database : 데이터베이스 참조 by splin
 ```
 
-### 제 2정규화에 예시
+### 제 2정규화 예시
 
 #### 제 2정규화 적용 전
-<img src="https://user-images.githubusercontent.com/60806840/137789504-acc609a4-b636-4353-9ccc-9f2a27a091b5.png" align="left">
+![Before 2NF](https://user-images.githubusercontent.com/60806840/137789504-acc609a4-b636-4353-9ccc-9f2a27a091b5.png)
 
 #### 제 2정규화 적용 후
-<img src="https://user-images.githubusercontent.com/60806840/137789522-d1484f4f-3a27-40c0-aed4-f49e2846ced9.png" align="left">
+![After 2NF](https://user-images.githubusercontent.com/60806840/137789522-d1484f4f-3a27-40c0-aed4-f49e2846ced9.png)
+
+<div>
+<img src="https://user-images.githubusercontent.com/60806840/137789504-acc609a4-b636-4353-9ccc-9f2a27a091b5.png" align="left" />
+</div>
+
 
 ## 제 3정규화
 제 3정규화(3NF: Third Normal Form)는 주식별자가 아닌 속성들 사이에 종속관계가 있을 때 이를 제거하는 과정이다.
