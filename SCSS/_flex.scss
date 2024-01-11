@@ -1,0 +1,44 @@
+// NOTE: flex
+// Define common values as variables or maps for customization
+$flex-directions: (  
+  'row': row,
+  'row-reverse': row-reverse,
+  'col': column,
+  'col-reverse': column-reverse
+);
+
+$justify-content-values: (
+  'start': flex-start,
+  'end': flex-end,
+  'center': center,
+  'between': space-between,
+  'around': space-around,
+  'evenly': space-evenly
+);
+
+// Common mixin for flex properties
+@mixin flex-set($property, $values) {
+  @each $key, $value in $values {
+    &-#{$key} { #{$property}: #{$value}; }
+  }
+}
+
+// Flex
+.flex {
+  display: flex;
+  @include flex-set(flex-direction, $flex-directions);
+  @include flex-set(flex-wrap, ('wrap': wrap, 'wrap-reverse': wrap-reverse, 'nowrap': nowrap));
+  // Add other flex properties as needed
+}
+
+// Justify Content
+.justify {
+  @include flex-set(justify-content, $justify-content-values);
+}
+
+// Align Items
+.items {
+  @include flex-set(align-items, ('start': flex-start, 'end': flex-end, 'center': center, 'baseline': baseline, 'stretch': stretch));
+}
+
+// Similar mixins can be used for align-self, align-content, etc.
