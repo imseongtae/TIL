@@ -1,0 +1,22 @@
+// NOTE: margin, padding
+// Define the size scale
+$sizes: (0, 1, 2, 3, 4, 5, 6, 8, 10, 12, 16, 20, 24, 32, 40, 48, 56, 64);
+
+// Function to generate spacing classes for margin and padding
+@mixin generate-spacing-classes($property, $abbreviation) {
+  @each $size in $sizes {
+    .#{$abbreviation}-#{$size} { #{$property}: #{$size * 0.25rem}; }
+    .#{$abbreviation}t-#{$size} { #{$property}-top: #{$size * 0.25rem}; }
+    .#{$abbreviation}r-#{$size} { #{$property}-right: #{$size * 0.25rem}; }
+    .#{$abbreviation}b-#{$size} { #{$property}-bottom: #{$size * 0.25rem}; }
+    .#{$abbreviation}l-#{$size} { #{$property}-left: #{$size * 0.25rem}; }
+    .#{$abbreviation}x-#{$size} { #{$property}-left: #{$size * 0.25rem}; #{$property}-right: #{$size * 0.25rem}; }
+    .#{$abbreviation}y-#{$size} { #{$property}-top: #{$size * 0.25rem}; #{$property}-bottom: #{$size * 0.25rem}; }
+  }
+}
+
+// Generate margin classes
+@include generate-spacing-classes(margin, m);
+
+// Generate padding classes
+@include generate-spacing-classes(padding, p);
